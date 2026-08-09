@@ -1,0 +1,1137 @@
+{
+  "timePeriod": 1800,
+  "beltRate": 2,
+  "plan": [
+    {
+      "id": "蓝色晶能",
+      "qty": 50
+    },
+    {
+      "id": "绿色晶能",
+      "qty": 180
+    },
+    {
+      "id": "红色晶能",
+      "qty": 600
+    }
+  ],
+  "machines": [
+    {
+      "id": "铁锭",
+      "name": "铁锭",
+      "machine": "冶炼器",
+      "machineCountRaw": 3.5,
+      "machineCount": 4,
+      "power": 20,
+      "demand": 2100,
+      "actualOutput": 2400,
+      "overproduce": 300,
+      "efficiency": 87.5,
+      "belts": 1,
+      "flowRate": 1.33,
+      "recipe": {
+        "output": 1,
+        "time": 3,
+        "inputs": [
+          {
+            "item": "铁矿石",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "冶炼器",
+          "熔炉"
+        ]
+      }
+    },
+    {
+      "id": "铜锭",
+      "name": "铜锭",
+      "machine": "冶炼器",
+      "machineCountRaw": 3.25,
+      "machineCount": 4,
+      "power": 20,
+      "demand": 1950,
+      "actualOutput": 2400,
+      "overproduce": 450,
+      "efficiency": 81.3,
+      "belts": 1,
+      "flowRate": 1.33,
+      "recipe": {
+        "output": 1,
+        "time": 3,
+        "inputs": [
+          {
+            "item": "铜矿石",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "冶炼器",
+          "熔炉"
+        ]
+      }
+    },
+    {
+      "id": "线",
+      "name": "线",
+      "machine": "制作台",
+      "machineCountRaw": 3.6,
+      "machineCount": 4,
+      "power": 0,
+      "demand": 1080,
+      "actualOutput": 1200,
+      "overproduce": 120,
+      "efficiency": 90,
+      "belts": 1,
+      "flowRate": 0.67,
+      "recipe": {
+        "output": 1,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "木纤维",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "木纤维",
+      "name": "木纤维",
+      "machine": "制作台",
+      "machineCountRaw": 2.4,
+      "machineCount": 3,
+      "power": 0,
+      "demand": 2160,
+      "actualOutput": 2700,
+      "overproduce": 540,
+      "efficiency": 80,
+      "belts": 1,
+      "flowRate": 1.5,
+      "recipe": {
+        "output": 3,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "原木",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "木棒",
+      "name": "木棒",
+      "machine": "制作台",
+      "machineCountRaw": 1.0222,
+      "machineCount": 2,
+      "power": 0,
+      "demand": 920,
+      "actualOutput": 1800,
+      "overproduce": 880,
+      "efficiency": 51.1,
+      "belts": 1,
+      "flowRate": 1,
+      "recipe": {
+        "output": 3,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "木材",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "木材",
+      "name": "木材",
+      "machine": "制作台",
+      "machineCountRaw": 1.2444,
+      "machineCount": 2,
+      "power": 0,
+      "demand": 746.67,
+      "actualOutput": 1200,
+      "overproduce": 453.33,
+      "efficiency": 62.2,
+      "belts": 1,
+      "flowRate": 0.67,
+      "recipe": {
+        "output": 1,
+        "time": 3,
+        "inputs": [
+          {
+            "item": "原木",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "布",
+      "name": "布",
+      "machine": "制作台",
+      "machineCountRaw": 1.8,
+      "machineCount": 2,
+      "power": 0,
+      "demand": 540,
+      "actualOutput": 600,
+      "overproduce": 60,
+      "efficiency": 90,
+      "belts": 1,
+      "flowRate": 0.33,
+      "recipe": {
+        "output": 1,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "线",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "初级工具",
+      "name": "初级工具",
+      "machine": "制作台",
+      "machineCountRaw": 2,
+      "machineCount": 2,
+      "power": 0,
+      "demand": 360,
+      "actualOutput": 360,
+      "overproduce": 0,
+      "efficiency": 100,
+      "belts": 1,
+      "flowRate": 0.2,
+      "recipe": {
+        "output": 1,
+        "time": 10,
+        "inputs": [
+          {
+            "item": "木棒",
+            "qty": 2
+          },
+          {
+            "item": "石材",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "红色晶能",
+      "name": "红色晶能",
+      "machine": "晶体置换机",
+      "machineCountRaw": 2,
+      "machineCount": 2,
+      "power": 36,
+      "demand": 600,
+      "actualOutput": 600,
+      "overproduce": 0,
+      "efficiency": 100,
+      "belts": 1,
+      "flowRate": 0.33,
+      "recipe": {
+        "output": 1,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "铁锭",
+            "qty": 3
+          },
+          {
+            "item": "铜锭",
+            "qty": 3
+          }
+        ],
+        "equipment": [
+          "晶体置换机"
+        ]
+      }
+    },
+    {
+      "id": "蓝色晶能",
+      "name": "蓝色晶能",
+      "machine": "晶体置换机",
+      "machineCountRaw": 0.3333,
+      "machineCount": 1,
+      "power": 18,
+      "demand": 50,
+      "actualOutput": 150,
+      "overproduce": 100,
+      "efficiency": 33.3,
+      "belts": 1,
+      "flowRate": 0.08,
+      "recipe": {
+        "output": 1,
+        "time": 12,
+        "inputs": [
+          {
+            "item": "铁质核心",
+            "qty": 1
+          },
+          {
+            "item": "钢管",
+            "qty": 3
+          }
+        ],
+        "equipment": [
+          "晶体置换机"
+        ]
+      }
+    },
+    {
+      "id": "铁质核心",
+      "name": "铁质核心",
+      "machine": "制作台",
+      "machineCountRaw": 0.2778,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 50,
+      "actualOutput": 180,
+      "overproduce": 130,
+      "efficiency": 27.8,
+      "belts": 1,
+      "flowRate": 0.1,
+      "recipe": {
+        "output": 1,
+        "time": 10,
+        "inputs": [
+          {
+            "item": "加固铁板",
+            "qty": 1
+          },
+          {
+            "item": "C级能量块",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "加固铁板",
+      "name": "加固铁板",
+      "machine": "制作台",
+      "machineCountRaw": 0.1667,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 50,
+      "actualOutput": 300,
+      "overproduce": 250,
+      "efficiency": 16.7,
+      "belts": 1,
+      "flowRate": 0.17,
+      "recipe": {
+        "output": 1,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "铁板",
+            "qty": 2
+          },
+          {
+            "item": "螺丝",
+            "qty": 4
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "铁板",
+      "name": "铁板",
+      "machine": "制作台",
+      "machineCountRaw": 0.1667,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 100,
+      "actualOutput": 600,
+      "overproduce": 500,
+      "efficiency": 16.7,
+      "belts": 1,
+      "flowRate": 0.33,
+      "recipe": {
+        "output": 1,
+        "time": 3,
+        "inputs": [
+          {
+            "item": "铁锭",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "螺丝",
+      "name": "螺丝",
+      "machine": "制作台",
+      "machineCountRaw": 0.1852,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 500,
+      "actualOutput": 2700,
+      "overproduce": 2200,
+      "efficiency": 18.5,
+      "belts": 1,
+      "flowRate": 1.5,
+      "recipe": {
+        "output": 3,
+        "time": 2,
+        "inputs": [
+          {
+            "item": "铁棒",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "铁棒",
+      "name": "铁棒",
+      "machine": "制作台",
+      "machineCountRaw": 0.2593,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 233.33,
+      "actualOutput": 900,
+      "overproduce": 666.67,
+      "efficiency": 25.9,
+      "belts": 1,
+      "flowRate": 0.5,
+      "recipe": {
+        "output": 3,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "铁锭",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "C级能量块",
+      "name": "C级能量块",
+      "machine": "核心充能器",
+      "machineCountRaw": 0.5556,
+      "machineCount": 1,
+      "power": 20,
+      "demand": 50,
+      "actualOutput": 90,
+      "overproduce": 40,
+      "efficiency": 55.6,
+      "belts": 1,
+      "flowRate": 0.05,
+      "recipe": {
+        "output": 1,
+        "time": 20,
+        "inputs": [
+          {
+            "item": "铜板",
+            "qty": 3
+          },
+          {
+            "item": "木质框架",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "核心充能器"
+        ]
+      }
+    },
+    {
+      "id": "铜板",
+      "name": "铜板",
+      "machine": "制作台",
+      "machineCountRaw": 0.25,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 150,
+      "actualOutput": 600,
+      "overproduce": 450,
+      "efficiency": 25,
+      "belts": 1,
+      "flowRate": 0.33,
+      "recipe": {
+        "output": 1,
+        "time": 3,
+        "inputs": [
+          {
+            "item": "铜锭",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "木质框架",
+      "name": "木质框架",
+      "machine": "制作台",
+      "machineCountRaw": 0.1667,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 50,
+      "actualOutput": 300,
+      "overproduce": 250,
+      "efficiency": 16.7,
+      "belts": 1,
+      "flowRate": 0.17,
+      "recipe": {
+        "output": 1,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "木棒",
+            "qty": 4
+          },
+          {
+            "item": "螺丝",
+            "qty": 6
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "钢管",
+      "name": "钢管",
+      "machine": "制作台",
+      "machineCountRaw": 0.5,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 150,
+      "actualOutput": 300,
+      "overproduce": 150,
+      "efficiency": 50,
+      "belts": 1,
+      "flowRate": 0.17,
+      "recipe": {
+        "output": 1,
+        "time": 6,
+        "inputs": [
+          {
+            "item": "钢锭",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    },
+    {
+      "id": "钢锭",
+      "name": "钢锭",
+      "machine": "熔铸机",
+      "machineCountRaw": 0.6667,
+      "machineCount": 1,
+      "power": 16,
+      "demand": 300,
+      "actualOutput": 450,
+      "overproduce": 150,
+      "efficiency": 66.7,
+      "belts": 1,
+      "flowRate": 0.25,
+      "recipe": {
+        "output": 1,
+        "time": 4,
+        "inputs": [
+          {
+            "item": "铁矿石",
+            "qty": 2
+          },
+          {
+            "item": "煤矿石",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "熔铸机"
+        ]
+      }
+    },
+    {
+      "id": "绿色晶能",
+      "name": "绿色晶能",
+      "machine": "晶体置换机",
+      "machineCountRaw": 1,
+      "machineCount": 1,
+      "power": 18,
+      "demand": 180,
+      "actualOutput": 180,
+      "overproduce": 0,
+      "efficiency": 100,
+      "belts": 1,
+      "flowRate": 0.1,
+      "recipe": {
+        "output": 1,
+        "time": 10,
+        "inputs": [
+          {
+            "item": "布",
+            "qty": 3
+          },
+          {
+            "item": "初级工具",
+            "qty": 2
+          }
+        ],
+        "equipment": [
+          "晶体置换机"
+        ]
+      }
+    },
+    {
+      "id": "石材",
+      "name": "石材",
+      "machine": "制作台",
+      "machineCountRaw": 0.6,
+      "machineCount": 1,
+      "power": 0,
+      "demand": 360,
+      "actualOutput": 600,
+      "overproduce": 240,
+      "efficiency": 60,
+      "belts": 1,
+      "flowRate": 0.33,
+      "recipe": {
+        "output": 1,
+        "time": 3,
+        "inputs": [
+          {
+            "item": "石头",
+            "qty": 1
+          }
+        ],
+        "equipment": [
+          "制作台",
+          "制造机",
+          "组装机",
+          "合成机"
+        ]
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": "铁矿石",
+      "name": "铁矿石",
+      "totalQty": 5888.89,
+      "flowRate": 3.27,
+      "belts": 2
+    },
+    {
+      "id": "铜矿石",
+      "name": "铜矿石",
+      "totalQty": 4200,
+      "flowRate": 2.33,
+      "belts": 2
+    },
+    {
+      "id": "原木",
+      "name": "原木",
+      "totalQty": 2320,
+      "flowRate": 1.29,
+      "belts": 1
+    },
+    {
+      "id": "煤矿石",
+      "name": "煤矿石",
+      "totalQty": 600,
+      "flowRate": 0.33,
+      "belts": 1
+    },
+    {
+      "id": "石头",
+      "name": "石头",
+      "totalQty": 360,
+      "flowRate": 0.2,
+      "belts": 1
+    }
+  ],
+  "totalPower": 148,
+  "totalMachines": 38,
+  "totalBelts": 29,
+  "trees": [
+    {
+      "target": {
+        "id": "蓝色晶能",
+        "qty": 50
+      },
+      "tree": {
+        "id": "蓝色晶能",
+        "name": "蓝色晶能",
+        "qty": 50,
+        "isRaw": false,
+        "machine": "晶体置换机",
+        "machineCountRaw": 0.3333333333333333,
+        "children": [
+          {
+            "id": "铁质核心",
+            "name": "铁质核心",
+            "qty": 50,
+            "isRaw": false,
+            "machine": "制作台",
+            "machineCountRaw": 0.2777777777777778,
+            "children": [
+              {
+                "id": "加固铁板",
+                "name": "加固铁板",
+                "qty": 50,
+                "isRaw": false,
+                "machine": "制作台",
+                "machineCountRaw": 0.16666666666666666,
+                "children": [
+                  {
+                    "id": "铁板",
+                    "name": "铁板",
+                    "qty": 100,
+                    "isRaw": false,
+                    "machine": "制作台",
+                    "machineCountRaw": 0.16666666666666666,
+                    "children": [
+                      {
+                        "id": "铁锭",
+                        "name": "铁锭",
+                        "qty": 100,
+                        "isRaw": false,
+                        "machine": "冶炼器",
+                        "machineCountRaw": 0.16666666666666666,
+                        "children": [
+                          {
+                            "id": "铁矿石",
+                            "name": "铁矿石",
+                            "qty": 200,
+                            "isRaw": true,
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "螺丝",
+                    "name": "螺丝",
+                    "qty": 200,
+                    "isRaw": false,
+                    "machine": "制作台",
+                    "machineCountRaw": 0.07407407407407408,
+                    "children": [
+                      {
+                        "id": "铁棒",
+                        "name": "铁棒",
+                        "qty": 66.66666666666667,
+                        "isRaw": false,
+                        "machine": "制作台",
+                        "machineCountRaw": 0.07407407407407408,
+                        "children": [
+                          {
+                            "id": "铁锭",
+                            "name": "铁锭",
+                            "qty": 44.44444444444445,
+                            "isRaw": false,
+                            "machine": "冶炼器",
+                            "machineCountRaw": 0.24074074074074076,
+                            "children": [
+                              {
+                                "id": "铁矿石",
+                                "name": "铁矿石",
+                                "qty": 288.8888888888889,
+                                "isRaw": true,
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "C级能量块",
+                "name": "C级能量块",
+                "qty": 50,
+                "isRaw": false,
+                "machine": "核心充能器",
+                "machineCountRaw": 0.5555555555555556,
+                "children": [
+                  {
+                    "id": "铜板",
+                    "name": "铜板",
+                    "qty": 150,
+                    "isRaw": false,
+                    "machine": "制作台",
+                    "machineCountRaw": 0.25,
+                    "children": [
+                      {
+                        "id": "铜锭",
+                        "name": "铜锭",
+                        "qty": 150,
+                        "isRaw": false,
+                        "machine": "冶炼器",
+                        "machineCountRaw": 0.25,
+                        "children": [
+                          {
+                            "id": "铜矿石",
+                            "name": "铜矿石",
+                            "qty": 300,
+                            "isRaw": true,
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "木质框架",
+                    "name": "木质框架",
+                    "qty": 50,
+                    "isRaw": false,
+                    "machine": "制作台",
+                    "machineCountRaw": 0.16666666666666666,
+                    "children": [
+                      {
+                        "id": "木棒",
+                        "name": "木棒",
+                        "qty": 200,
+                        "isRaw": false,
+                        "machine": "制作台",
+                        "machineCountRaw": 0.22222222222222224,
+                        "children": [
+                          {
+                            "id": "木材",
+                            "name": "木材",
+                            "qty": 133.33333333333334,
+                            "isRaw": false,
+                            "machine": "制作台",
+                            "machineCountRaw": 0.22222222222222224,
+                            "children": [
+                              {
+                                "id": "原木",
+                                "name": "原木",
+                                "qty": 133.33333333333334,
+                                "isRaw": true,
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "螺丝",
+                        "name": "螺丝",
+                        "qty": 300,
+                        "isRaw": false,
+                        "machine": "制作台",
+                        "machineCountRaw": 0.18518518518518517,
+                        "children": [
+                          {
+                            "id": "铁棒",
+                            "name": "铁棒",
+                            "qty": 166.66666666666666,
+                            "isRaw": false,
+                            "machine": "制作台",
+                            "machineCountRaw": 0.25925925925925924,
+                            "children": [
+                              {
+                                "id": "铁锭",
+                                "name": "铁锭",
+                                "qty": 155.55555555555554,
+                                "isRaw": false,
+                                "machine": "冶炼器",
+                                "machineCountRaw": 0.5,
+                                "children": [
+                                  {
+                                    "id": "铁矿石",
+                                    "name": "铁矿石",
+                                    "qty": 600,
+                                    "isRaw": true,
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "钢管",
+            "name": "钢管",
+            "qty": 150,
+            "isRaw": false,
+            "machine": "制作台",
+            "machineCountRaw": 0.5,
+            "children": [
+              {
+                "id": "钢锭",
+                "name": "钢锭",
+                "qty": 300,
+                "isRaw": false,
+                "machine": "熔铸机",
+                "machineCountRaw": 0.6666666666666666,
+                "children": [
+                  {
+                    "id": "铁矿石",
+                    "name": "铁矿石",
+                    "qty": 600,
+                    "isRaw": true,
+                    "children": []
+                  },
+                  {
+                    "id": "煤矿石",
+                    "name": "煤矿石",
+                    "qty": 600,
+                    "isRaw": true,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "target": {
+        "id": "绿色晶能",
+        "qty": 180
+      },
+      "tree": {
+        "id": "绿色晶能",
+        "name": "绿色晶能",
+        "qty": 180,
+        "isRaw": false,
+        "machine": "晶体置换机",
+        "machineCountRaw": 1,
+        "children": [
+          {
+            "id": "布",
+            "name": "布",
+            "qty": 540,
+            "isRaw": false,
+            "machine": "制作台",
+            "machineCountRaw": 1.8,
+            "children": [
+              {
+                "id": "线",
+                "name": "线",
+                "qty": 1080,
+                "isRaw": false,
+                "machine": "制作台",
+                "machineCountRaw": 3.6,
+                "children": [
+                  {
+                    "id": "木纤维",
+                    "name": "木纤维",
+                    "qty": 2160,
+                    "isRaw": false,
+                    "machine": "制作台",
+                    "machineCountRaw": 2.4,
+                    "children": [
+                      {
+                        "id": "原木",
+                        "name": "原木",
+                        "qty": 1440,
+                        "isRaw": true,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "初级工具",
+            "name": "初级工具",
+            "qty": 360,
+            "isRaw": false,
+            "machine": "制作台",
+            "machineCountRaw": 2,
+            "children": [
+              {
+                "id": "木棒",
+                "name": "木棒",
+                "qty": 720,
+                "isRaw": false,
+                "machine": "制作台",
+                "machineCountRaw": 1.0222222222222224,
+                "children": [
+                  {
+                    "id": "木材",
+                    "name": "木材",
+                    "qty": 613.3333333333334,
+                    "isRaw": false,
+                    "machine": "制作台",
+                    "machineCountRaw": 1.2444444444444445,
+                    "children": [
+                      {
+                        "id": "原木",
+                        "name": "原木",
+                        "qty": 746.6666666666667,
+                        "isRaw": true,
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "石材",
+                "name": "石材",
+                "qty": 360,
+                "isRaw": false,
+                "machine": "制作台",
+                "machineCountRaw": 0.6,
+                "children": [
+                  {
+                    "id": "石头",
+                    "name": "石头",
+                    "qty": 360,
+                    "isRaw": true,
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "target": {
+        "id": "红色晶能",
+        "qty": 600
+      },
+      "tree": {
+        "id": "红色晶能",
+        "name": "红色晶能",
+        "qty": 600,
+        "isRaw": false,
+        "machine": "晶体置换机",
+        "machineCountRaw": 2,
+        "children": [
+          {
+            "id": "铁锭",
+            "name": "铁锭",
+            "qty": 1800,
+            "isRaw": false,
+            "machine": "冶炼器",
+            "machineCountRaw": 3.5,
+            "children": [
+              {
+                "id": "铁矿石",
+                "name": "铁矿石",
+                "qty": 4200,
+                "isRaw": true,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "铜锭",
+            "name": "铜锭",
+            "qty": 1800,
+            "isRaw": false,
+            "machine": "冶炼器",
+            "machineCountRaw": 3.25,
+            "children": [
+              {
+                "id": "铜矿石",
+                "name": "铜矿石",
+                "qty": 3900,
+                "isRaw": true,
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Node (if any tooling added later)
+node_modules/
+npm-debug.log*
+
+# Python venv (if created)
+venv/
+__pycache__/
+*.pyc
+
+# Local secrets — never commit
+*.token
+.env
