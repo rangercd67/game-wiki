@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《多娜多娜》整合攻略</title>
+<style>
+:root { --bg: #1a1a2e; --card: #16213e; --accent: #e94560; --text: #eee; --muted: #888; --border: #0f3460; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+header { text-align: center; padding: 40px 20px; border-bottom: 2px solid var(--accent); margin-bottom: 30px; }
+header h1 { font-size: 2.5em; color: var(--accent); margin-bottom: 10px; }
+header p { color: var(--muted); }
+.nav { position: sticky; top: 0; background: var(--bg); z-index: 100; padding: 10px 0; border-bottom: 1px solid var(--border); text-align: center; }
+.nav a { color: var(--accent); text-decoration: none; margin: 0 8px; padding: 5px 12px; border-radius: 4px; font-size: 14px; }
+.nav a:hover { background: var(--card); }
+.section { margin-bottom: 40px; }
+.section h2 { color: var(--accent); font-size: 1.8em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.section h3 { color: #4fc3f7; font-size: 1.3em; margin: 20px 0 10px; }
+.card { background: var(--card); border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--border); }
+.card img { max-width: 100%; border-radius: 4px; margin: 10px 0; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+th { background: var(--border); color: #4fc3f7; padding: 10px; text-align: left; font-weight: 600; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+tr:hover { background: rgba(79, 195, 247, 0.05); }
+.positive { color: #4caf50; }
+.negative { color: #f44336; }
+.star { color: #ffc107; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; margin: 2px; }
+.tag-good { background: rgba(76, 175, 80, 0.2); color: #4caf50; }
+.tag-bad { background: rgba(244, 67, 54, 0.2); color: #f44336; }
+.tag-info { background: rgba(79, 195, 247, 0.2); color: #4fc3f7; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+.filter-bar { margin-bottom: 15px; }
+.filter-bar input, .filter-bar select { background: var(--card); color: var(--text); border: 1px solid var(--border); padding: 8px 12px; border-radius: 4px; margin-right: 10px; }
+.filter-bar button { background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+.filter-bar button:hover { opacity: 0.9; }
+.hidden { display: none !important; }
+.footer { text-align: center; padding: 30px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); margin-top: 40px; }
+.scroll-top { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="#overview">概览</a>
+  <a href="#training">经营系统</a>
+  <a href="#tags">词条表</a>
+  <a href="#badges">徽章</a>
+  <a href="#weapons">武器刷取</a>
+  <a href="#weapon-choice">角色武器选择</a>
+  <a href="#characters">特殊角色</a>
+  <a href="#maps">地图机制</a>
+</div>
+
+<div class="container">
+<header id="overview">
+  <h1>《多娜多娜 一起来干坏事吧》</h1>
+  <p>整合攻略 | 来源：B站专栏 + 小黑盒 + 全网攻略</p>
+</header>
+
+<!-- 经营系统 -->
+<div class="section" id="training">
+  <h2>🎮 春销经营系统</h2>
+  
+  <div class="grid-2">
+    <div class="card">
+      <h3>人材三属性</h3>
+      <table>
+        <tr><th>属性</th><th>缩写</th><th>作用</th></tr>
+        <tr><td><b>容貌</b></td><td>LKS</td><td>顾客颜狗，颜值高容易被选中</td></tr>
+        <tr><td><b>技巧</b></td><td>TEC</td><td>与收入挂钩，越高评分越高钱越多</td></tr>
+        <tr><td><b>精神</b></td><td>MEN</td><td>低于D后崩溃，收入大幅降低</td></tr>
+      </table>
+    </div>
+    
+    <div class="card">
+      <h3>状态说明</h3>
+      <table>
+        <tr><th>状态</th><th>颜色</th><th>说明</th></tr>
+        <tr><td>安全</td><td><span class="positive">绿色</span></td><td>Def > 3，最安全</td></tr>
+        <tr><td>黄色/红色</td><td><span class="negative">黄/红</span></td><td>妊娠概率依次增加</td></tr>
+        <tr><td>独角兽</td><td><span class="positive">绿色胶囊</span></td><td>纯洁象征，收入增加</td></tr>
+        <tr><td>妊娠</td><td><span class="negative">粉色</span></td><td>属性变动扣更多，无法复原</td></tr>
+        <tr><td>崩溃</td><td><span class="negative">红色</span></td><td>收入大幅降低，无法复原</td></tr>
+      </table>
+    </div>
+  </div>
+  
+  <div class="card">
+    <h3>春销属性变动基础值</h3>
+    <table>
+      <tr><th>条件</th><th>LKS</th><th>TEC</th><th>MEN</th></tr>
+      <tr><td>正常春销</td><td class="negative">-200</td><td class="positive">+400</td><td class="negative">-800</td></tr>
+      <tr><td>妊娠状态</td><td class="negative">-400</td><td class="negative">-200</td><td class="negative">-1200</td></tr>
+    </table>
+    <p style="margin-top:10px;color:var(--muted);">词条会影响春销后的属性变动。例如"魔性+小恶魔+好色"组合：LKS+200, TEC+1800, MEN+500修正</p>
+  </div>
+  
+  <div class="card">
+    <h3>刷词条技巧</h3>
+    <p><span class="tag tag-info">春销酬宾日</span> 客人友好，但词条收敛</p>
+    <p><span class="tag tag-info">春销破灭日</span> 客人收入高，常出现S级顾客，大概率出现"顺从"等好词条</p>
+    <p><span class="tag tag-good">挡刀法</span> 找一个3D属性（低LKS）的妹子，遇到坏词条顾客时换她接客</p>
+  </div>
+</div>
+
+<!-- 词条表 -->
+<div class="section" id="tags">
+  <h2>🏷️ 完整词条表</h2>
+  
+  <div class="filter-bar">
+    <input type="text" id="tagSearch" placeholder="搜索词条名称..." onkeyup="filterTags()">
+    <select id="tagSort" onchange="sortTags()">
+      <option value="name">按名称排序</option>
+      <option value="lks">按LKS排序</option>
+      <option value="tec">按TEC排序</option>
+      <option value="men">按MEN排序</option>
+      <option value="lksm">按LKS修正排序</option>
+      <option value="tecm">按TEC修正排序</option>
+      <option value="menm">按MEN修正排序</option>
+    </select>
+    <button onclick="showGoodTags()">只看优质词条</button>
+    <button onclick="showAllTags()">显示全部</button>
+  </div>
+  
+  <div class="card" style="overflow-x:auto;">
+    <table id="tagTable">
+      <thead>
+        <tr>
+          <th>词条</th><th>LKS</th><th>TEC</th><th>MEN</th><th>LKS修正</th><th>TEC修正</th><th>MEN修正</th><th>评价</th>
+        </tr>
+      </thead>
+      <tbody id="tagBody"></tbody>
+    </table>
+  </div>
+  
+  <div class="card">
+    <h3>词条表截图（原始数据）</h3>
+    <p style="color:var(--muted);margin-bottom:10px;">完整词条表（共约70+词条）</p>
+    <img src="图片/09-wanzheng-citiao-2x.png" alt="完整词条表" style="max-width:100%;border-radius:4px;">
+    <p style="color:var(--muted);margin:10px 0;">精选优质词条（推荐培养用）</p>
+    <img src="图片/10-jingxuan-citiao-2x.png" alt="精选词条表" style="max-width:100%;border-radius:4px;">
+  </div>
+</div>
+
+<!-- 徽章 -->
+<div class="section" id="badges">
+  <h2>🎖️ 全徽章收集</h2>
+  
+  <div class="card" style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr><th>地图</th><th>位置</th><th>徽章</th><th>效果</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ASP</td><td>娱乐室</td><td>Atom</td><td>A技能 BUFF增益+20%</td></tr>
+        <tr><td>仕山医疗所</td><td>院长室</td><td>Herb1</td><td>最大HP+200</td></tr>
+        <tr><td>仕山医疗所</td><td>门诊挂号</td><td>b1</td><td>最大HP+200</td></tr>
+        <tr><td>产峰工业</td><td>产品仓库</td><td>Herb2</td><td>最大HP+400</td></tr>
+        <tr><td>美术馆</td><td>曜会天目碗</td><td>Alien</td><td>A技能 MP-6</td></tr>
+        <tr><td>芽生宿舍</td><td>宿舍管理员室</td><td>Skip</td><td>SPD+1</td></tr>
+        <tr><td>化学研究所</td><td>放射线间</td><td>Doom</td><td>D技能 BUFF增益+20%</td></tr>
+        <tr><td>化学研究所</td><td>解剖间</td><td>Brain</td><td>B技能 MP-6</td></tr>
+        <tr><td>东云码头</td><td>货港Y08</td><td>Ajari</td><td>A技能 BUFF持续+1回合</td></tr>
+        <tr><td>东云码头</td><td>变电设备</td><td>Ace</td><td>A技能 威力+20%</td></tr>
+        <tr><td>YR精废厂</td><td>组装室</td><td>Crown</td><td>C技能 BUFF增益+20%</td></tr>
+        <tr><td>亚商城</td><td>奴印良品</td><td>Herb3</td><td>HP+800</td></tr>
+        <tr><td>亚商城</td><td>得浦午餐</td><td>Virus</td><td>V技能 BUFF持续+2回合</td></tr>
+        <tr><td>后亚地</td><td>卓著工作室</td><td>Bear</td><td>B技能 威力+20%</td></tr>
+        <tr><td>信息工学楼</td><td>器材室</td><td>Candy</td><td>C技能 MP-6</td></tr>
+        <tr><td>信息工学楼</td><td>瓦礫</td><td>Herb5</td><td>HP+6000</td></tr>
+        <tr><td>造船所</td><td>舾装品仓库</td><td>Dice</td><td>D技能 威力+20%</td></tr>
+        <tr><td>造船所</td><td>资材仓库</td><td>Vamp</td><td>V技能 BUFF增益+40%</td></tr>
+        <tr><td>第三学校</td><td>烹饪室</td><td>Skip</td><td>SPD+1</td></tr>
+        <tr><td>第三学校</td><td>女子更衣室</td><td>Dream</td><td>D技能 BUFF持续+1回合</td></tr>
+        <tr><td>产业园区</td><td>间B3</td><td>Dose</td><td>D技能 MP-6</td></tr>
+        <tr><td>产业园区</td><td>会议室</td><td>Crash</td><td>C技能 威力+20%</td></tr>
+        <tr><td>花霞祭</td><td>野外茶会</td><td>Herb4</td><td>HP+2000</td></tr>
+        <tr><td>昂埃皮克</td><td>大套房</td><td>Cook</td><td>C技能 BUFF持续回合+1</td></tr>
+        <tr><td>昂埃皮克</td><td>舰桥</td><td>Viper</td><td>V技能 威力+40%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 武器 -->
+<div class="section" id="weapons">
+  <h2>⚔️ 武器刷取指南（实战验证版）</h2>
+  
+  <div class="card">
+    <h3>各等级武器刷取地点与路线</h3>
+    <table>
+      <tr><th>等级</th><th>首选地点</th><th>推荐路线 / 备注</th></tr>
+      <tr><td>2级</td><td>化学研究所 · 生物安全柜</td><td>二三级掉落点很多，<b>随便刷刷就齐</b></td></tr>
+      <tr><td>3级</td><td>信息工学楼 · 瓦砾；仕山医疗所 · 挂号处</td><td>同上，从4级开始才需要特地去刷</td></tr>
+      <tr><td>4级</td><td>产业园区 · F2、A1</td><td>⭐ <b>售货机角→E3→D2→C1→A2→A1</b>：刷两组怪，拿武器+三个道具</td></tr>
+      <tr><td>4级备选</td><td>产业园区 · F2</td><td>小展示会→H3→G3→F2：同样两组怪但拿不了道具，原则上不推荐；A1迟迟不出可试一次F2</td></tr>
+      <tr><td>5级</td><td>造船厂 · 离线门和G门后面</td><td><b>唯一指定地点</b>，掉率极高前几次基本必掉。每过一次离线门消耗一个炸药，且必须过了电波妹解锁G门的剧情</td></tr>
+      <tr><td>6级</td><td>迷宫(URN) · C4、F2</td><td>⭐ <b>A→C→F→J→N→不连续面N</b>：过两个掉落点后撤退的最短路线。进迷宫前存档，C和F都没掉就小退到标题读档（SL），效率最高</td></tr>
+    </table>
+    <p style="color:var(--muted);margin-top:8px;">其他掉落点补充：2级还可刷 ASP / 产峰工业 / 美术馆 / 芽生宿舍；3级还可刷 亚商城（乔伊哈涅掉率较高）/ 后亚地；YR精废厂离线门后、信息工学楼也有4级掉落。</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>武器类型说明（选终极武器前必读）</h3>
+      <table>
+        <tr><th>类型</th><th>特点</th><th>适用</th></tr>
+        <tr><td><b>均衡型</b></td><td>力量(POW)与技巧(TEC)均衡，<b>总数值最高</b></td><td>兼顾输出与被动触发</td></tr>
+        <tr><td><b>输出型</b></td><td>力量高、技巧低。力量与输出直接挂钩</td><td>纯输出定位角色</td></tr>
+        <tr><td><b>技巧型</b></td><td>技巧高、力量很低</td><td>个别功能型角色</td></tr>
+        <tr><td><b>廉价型</b></td><td>便宜但数值低</td><td>不缺钱，<b>不用考虑</b></td></tr>
+      </table>
+      <p style="margin-top:8px;"><span class="tag tag-info">TEC的作用</span> 对伤害<b>没有直接提升</b>，而是提升：①被动技能发动几率 ②主动技能上debuff的成功率 ③攻击暴击率</p>
+    </div>
+    
+    <div class="card">
+      <h3>URN高难副本路线</h3>
+      <table>
+        <tr><th>路线</th><th>战斗</th><th>武器</th><th>说明</th></tr>
+        <tr><td><b>CFIMR</b></td><td>20战</td><td>3武</td><td>效率最高，面R撤退</td></tr>
+        <tr><td>CEHL</td><td>14战</td><td>2武</td><td>消耗最小</td></tr>
+        <tr><td>ACEHMR</td><td>19战</td><td>3武</td><td>不连续面R撤退</td></tr>
+        <tr><td>ACEHLQV</td><td>22战</td><td>3武</td><td>直冲boss</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 角色武器选择 -->
+<div class="section" id="weapon-choice">
+  <h2>🎯 角色六级终极武器选择与战斗定位</h2>
+  <p style="color:var(--muted);margin-bottom:15px;">基于后期刷高难迷宫的最优流程得出。先看结论，再看分析。</p>
+  
+  <div class="card">
+    <h3>武器选择结论速查表</h3>
+    <table>
+      <tr><th>角色</th><th>推荐武器</th><th>定位</th><th>核心理由</th></tr>
+      <tr><td><b>男主</b></td><td><span class="tag tag-good">输出型</span></td><td>单体输出主力</td><td>没有受TEC影响的技能；最好放前锋（被动回合回蓝，后排不触发）</td></tr>
+      <tr><td><b>菊千代</b></td><td><span class="tag tag-info">均衡型</span></td><td>单体+AOE主力</td><td>星威落+二动被动输出翻倍，均衡兼顾输出与被动触发率</td></tr>
+      <tr><td><b>电波妹</b></td><td><span class="tag tag-good">输出型</span></td><td>AOE输出主力</td><td>唯一全场AOE，开场开AOE秒全场=无伤刷怪；可喂怒气道具提升输出</td></tr>
+      <tr><td><b>粉毛</b></td><td><span class="tag tag-info">均衡型</span>（输出型亦可）</td><td>前期清怪副手</td><td>AOE伤害低，用于前期清怪给主力省蓝；被动「防对手行动」有用</td></tr>
+      <tr><td><b>白毛</b></td><td><span class="tag tag-bad">技巧型</span></td><td>抢一动主力</td><td>必带双速徽章堆S+速度；靠TEC保证降防debuff成功率（打猫猫怪）</td></tr>
+      <tr><td><b>护士妹</b></td><td><span class="tag tag-bad">技巧型</span></td><td>迷宫奶妈</td><td>被动按TEC回血+喂道具效果翻倍；迷宫蓝量紧张，喂回蓝药更省</td></tr>
+      <tr><td><b>爱丽丝</b></td><td><span class="tag tag-info">均衡型</span>（输出型亦可）</td><td>对特殊BOSS奇兵</td><td>对付站位极靠后的BOSS，被动抢一动；均衡型备注「在里面装满了快乐的梦想」❤</td></tr>
+      <tr><td><b>小丑</b></td><td><span class="tag tag-good">输出型</span></td><td>灵活万金油</td><td>没有TEC相关被动；练起来非常肉（血量仅次于大哥），三技能可回血</td></tr>
+      <tr><td><b>虎太郎</b></td><td><span class="tag tag-good">输出型</span>（随便）</td><td>真·工具人</td><td>唯一作用：四技能+80防御帮队友挡刀（配+1回合徽章持续两回合）</td></tr>
+      <tr><td><b>大哥</b></td><td><span class="tag tag-good">输出型</span></td><td>AOE输出主力</td><td>拥有<b>伤害最高的AOE</b>，比电波妹和菊千代单次星威落更高</td></tr>
+    </table>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>⚠️ 白毛使用小贴士（重要）</h3>
+      <ol style="padding-left:20px;">
+        <li style="margin:8px 0;">千万不要让白毛<b>用完第一管MP</b>，否则速度大幅下降，无法抢一动</li>
+        <li style="margin:8px 0;">绿猫/红猫/蓝猫的攻击距离分别是 <b>1 / 2 / 3</b>，注意站位防止白毛上完debuff被攻击到</li>
+        <li style="margin:8px 0;">必要时让第四位动的角色把白毛换回来，保证下回合还是一动；不想浪费蓝可以放摔炮轮空</li>
+      </ol>
+    </div>
+    
+    <div class="card">
+      <h3>💡 其他实战要点</h3>
+      <ul style="padding-left:20px;">
+        <li style="margin:8px 0;"><b>男主放前锋</b>：被动回合开始时回蓝，放后排不触发</li>
+        <li style="margin:8px 0;"><b>电波妹开场喂怒气道具</b>：怒气值能提升输出</li>
+        <li style="margin:8px 0;"><b>护士喂蓝药</b>：迷宫流程极长不能撤退，蓝量是大问题，被动喂回复道具效果翻倍</li>
+        <li style="margin:8px 0;"><b>速通注意</b>：护士二技能和帕尔诺三技能是高伤单体，做百天通关成就时可换武器提高伤害</li>
+        <li style="margin:8px 0;"><b>虎太郎的徽章</b>：「四技能+1回合」徽章前期给他，打BOSS前<b>换给电波妹</b></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 特殊角色 -->
+<div class="section" id="characters">
+  <h2>👥 全特殊角色招募</h2>
+  
+  <div class="card" style="overflow-x:auto;">
+    <table>
+      <thead>
+        <tr><th>#</th><th>角色</th><th>阶段1</th><th>阶段2</th><th>阶段3</th><th>地点</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>鎌瀬衣縫</td><td>接客两次后卖给指定样貌</td><td>接客这个样貌的人</td><td>和她说话</td><td>めぐみ通り</td></tr>
+        <tr><td>2</td><td>辻リリヱ</td><td>处○状态卖给吉田学</td><td>TEC达A以上卖给吉田学</td><td>和她说话</td><td>美术馆</td></tr>
+        <tr><td>3</td><td>阿久津恭花</td><td>接客两次后卖给指定样貌</td><td>MEN在C以下卖给前田康平</td><td>和她说话</td><td>化学研究所</td></tr>
+        <tr><td>4</td><td>嶽見かのの</td><td>处○状态卖给指定样貌</td><td>接客总计3w后卖给指定样貌</td><td>和她说话</td><td>东云码头</td></tr>
+        <tr><td>5</td><td>神麓凛</td><td>TEC在A以上卖给指定样貌</td><td>卖给神麓大輔</td><td>同上</td><td>アモル</td></tr>
+        <tr><td>6</td><td>春夏秋ノエル</td><td>TEC在B以下卖给指定样貌</td><td>接客3回以上派遣给南梨武</td><td>和她说话</td><td>ASP</td></tr>
+        <tr><td>7</td><td>橘心瑠姫</td><td>卖给指定样貌</td><td>接客总计3w后卖给孕岩生真</td><td>和她说话</td><td>-</td></tr>
+        <tr><td>8</td><td>槇環</td><td>处○状态派遣给岡翔太</td><td>还是派给岡翔太</td><td>处分她</td><td>-</td></tr>
+        <tr><td>9</td><td>清水千晴</td><td>TEC在B以下卖给指定样貌</td><td>MEN在C以下卖给指定样貌</td><td>TEC在S以上卖给指定样貌</td><td>仕山病院</td></tr>
+        <tr><td>10</td><td>笹月フミ</td><td>卖给指定样貌</td><td>接客总计8w后派遣给鶏飼明日美</td><td>和她说话</td><td>-</td></tr>
+        <tr><td>11</td><td>小林早奈</td><td>接客两次后卖给指定样貌</td><td>接客四次后卖给指定样貌</td><td>和她说话</td><td>第三学校</td></tr>
+        <tr><td>12</td><td>高橋菜々実</td><td>接客总计6w后卖给高橋宗一郎</td><td>卖给高橋宗一郎三次后，怀yun状态再卖</td><td>卖给高橋宗一郎</td><td>サンホー工業</td></tr>
+        <tr><td>13</td><td>三うらしゅ子</td><td>卖给指定样貌</td><td>卖给指定样貌</td><td>处分她</td><td>造船所</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px;color:var(--muted);">注：高橋宗一郎出现概率迷之低，是最难收集的特殊女主。</p>
+  </div>
+</div>
+
+<!-- 地图机制 -->
+<div class="section" id="maps">
+  <h2>🗺️ 地图特殊机制</h2>
+  
+  <div class="grid-2">
+    <div class="card">
+      <h3>特殊门进入方法</h3>
+      <table>
+        <tr><th>地图</th><th>特殊门</th><th>进入方法</th></tr>
+        <tr><td>仕山医疗所</td><td>安全门</td><td>猫猫入队后进入</td></tr>
+        <tr><td>YR精废厂</td><td>离线门</td><td>商店买炸药炸开</td></tr>
+        <tr><td>造船所</td><td>G门后酬宾室</td><td>需要炸药开门</td></tr>
+      </table>
+    </div>
+    
+    <div class="card">
+      <h3>宝箱获取提示</h3>
+      <p><span class="tag tag-good">后亚地</span> 卓著工作室只需要打一关，25%出3级武器</p>
+      <p><span class="tag tag-good">造船所</span> 酬宾室5级武器掉率很高，每次需1炸药</p>
+      <p><span class="tag tag-info">YR精废厂</span> 组装室箱子白给，可刷2级武器</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>整合来源：B站专栏（轰击星辰）| 小黑盒 | 逗游网 | 3DM | 教程之家 | 梦想之路 | 游侠网</p>
+  <p>仅供学习参考，游戏内容以实际版本为准</p>
+</div>
+
+</div>
+
+<a href="#overview" class="scroll-top">↑</a>
+
+<script>
+// 词条数据
+const tags = [
+  {name:"安产型",lks:1000,tec:200,men:0,lksm:0,tecm:100,menm:0},
+  {name:"班长",lks:200,tec:0,men:200,lksm:0,tecm:0,menm:0},
+  {name:"变态",lks:0,tec:1000,men:0,lksm:-100,tecm:300,menm:300},
+  {name:"病弱",lks:-200,tec:-1000,men:-1000,lksm:-300,tecm:-200,menm:-200},
+  {name:"痴情",lks:0,tec:0,men:600,lksm:0,tecm:0,menm:200},
+  {name:"穿显疤",lks:1000,tec:200,men:0,lksm:0,tecm:100,menm:0},
+  {name:"纯洁",lks:200,tec:-200,men:0,lksm:200,tecm:100,menm:300},
+  {name:"大小姐",lks:1000,tec:-600,men:-600,lksm:-100,tecm:-100,menm:-300},
+  {name:"胆小",lks:0,tec:-600,men:-600,lksm:0,tecm:-100,menm:-200},
+  {name:"低血压",lks:-200,tec:-200,men:0,lksm:0,tecm:-200,menm:-100},
+  {name:"耳洞",lks:-200,tec:200,men:0,lksm:0,tecm:100,menm:0},
+  {name:"骨折",lks:-600,tec:-1000,men:-1000,lksm:-200,tecm:-300,menm:-300},
+  {name:"顾家",lks:0,tec:0,men:0,lksm:0,tecm:0,menm:0},
+  {name:"寡言",lks:0,tec:-200,men:0,lksm:0,tecm:-200,menm:0},
+  {name:"好色",lks:200,tec:1000,men:0,lksm:200,tecm:300,menm:300},
+  {name:"积极",lks:0,tec:0,men:600,lksm:0,tecm:0,menm:200},
+  {name:"健硕",lks:0,tec:0,men:0,lksm:100,tecm:200,menm:0},
+  {name:"娇柔",lks:600,tec:0,men:0,lksm:0,tecm:200,menm:0},
+  {name:"洁癖",lks:200,tec:-1000,men:0,lksm:0,tecm:-300,menm:-300},
+  {name:"经产妇",lks:-200,tec:200,men:200,lksm:0,tecm:0,menm:0},
+  {name:"巨乳",lks:1000,tec:600,men:0,lksm:0,tecm:200,menm:0},
+  {name:"冷酷",lks:0,tec:0,men:200,lksm:0,tecm:0,menm:200},
+  {name:"美肌",lks:1000,tec:0,men:0,lksm:200,tecm:100,menm:0},
+  {name:"美腿",lks:1000,tec:200,men:0,lksm:0,tecm:100,menm:0},
+  {name:"敏感",lks:0,tec:1000,men:0,lksm:0,tecm:300,menm:0},
+  {name:"名器",lks:0,tec:1000,men:0,lksm:0,tecm:300,menm:0},
+  {name:"名人",lks:1000,tec:0,men:0,lksm:-100,tecm:0,menm:-200},
+  {name:"魔性",lks:0,tec:0,men:0,lksm:200,tecm:200,menm:300},
+  {name:"男孩子",lks:-1000,tec:200,men:0,lksm:0,tecm:0,menm:0},
+  {name:"泥中莲",lks:0,tec:0,men:0,lksm:300,tecm:-300,menm:0},
+  {name:"暖心",lks:0,tec:0,men:0,lksm:100,tecm:200,menm:200},
+  {name:"贫苦",lks:-200,tec:0,men:200,lksm:0,tecm:0,menm:200},
+  {name:"贫乳",lks:-600,tec:-600,men:0,lksm:0,tecm:0,menm:0},
+  {name:"奇妙",lks:0,tec:0,men:0,lksm:0,tecm:0,menm:200},
+  {name:"强横",lks:-200,tec:-200,men:600,lksm:0,tecm:-100,menm:100},
+  {name:"认真",lks:200,tec:0,men:-200,lksm:0,tecm:200,menm:-100},
+  {name:"失明",lks:-200,tec:-600,men:-1000,lksm:0,tecm:-200,menm:-200},
+  {name:"失足",lks:-200,tec:0,men:0,lksm:0,tecm:0,menm:200},
+  {name:"受欢迎",lks:600,tec:0,men:0,lksm:0,tecm:0,menm:0},
+  {name:"双性",lks:-1000,tec:600,men:0,lksm:0,tecm:300,menm:0},
+  {name:"顺从",lks:200,tec:0,men:0,lksm:100,tecm:200,menm:200},
+  {name:"松弛",lks:0,tec:-600,men:0,lksm:0,tecm:-300,menm:0},
+  {name:"体臭",lks:-600,tec:-600,men:0,lksm:0,tecm:-200,menm:0},
+  {name:"外伤",lks:-1000,tec:-600,men:-1000,lksm:-300,tecm:-300,menm:-300},
+  {name:"顽固",lks:0,tec:0,men:1000,lksm:0,tecm:0,menm:200},
+  {name:"王子",lks:600,tec:0,men:0,lksm:0,tecm:0,menm:0},
+  {name:"纹身",lks:-1000,tec:0,men:0,lksm:0,tecm:0,menm:0},
+  {name:"无况",lks:0,tec:0,men:0,lksm:0,tecm:400,menm:0},
+  {name:"无相",lks:0,tec:0,men:0,lksm:400,tecm:0,menm:0},
+  {name:"无想",lks:0,tec:0,men:0,lksm:0,tecm:0,menm:800},
+  {name:"小恶魔",lks:0,tec:600,men:600,lksm:100,tecm:100,menm:200},
+  {name:"心理病",lks:0,tec:200,men:1000,lksm:-200,tecm:100,menm:300},
+  {name:"羞涩",lks:200,tec:-200,men:-200,lksm:0,tecm:-100,menm:-200},
+  {name:"已婚",lks:0,tec:200,men:0,lksm:0,tecm:0,menm:0},
+  {name:"阴郁",lks:0,tec:0,men:0,lksm:-200,tecm:100,menm:-200},
+  {name:"优等生",lks:200,tec:0,men:0,lksm:0,tecm:100,menm:0},
+  {name:"优雅",lks:600,tec:0,men:0,lksm:0,tecm:-100,menm:-200},
+  {name:"有男友",lks:0,tec:200,men:0,lksm:0,tecm:0,menm:-100},
+  {name:"有女友",lks:200,tec:-1000,men:-1000,lksm:0,tecm:-300,menm:-300},
+  {name:"运动部",lks:0,tec:0,men:200,lksm:0,tecm:0,menm:0},
+  {name:"正义感",lks:0,tec:0,men:200,lksm:0,tecm:-100,menm:200},
+  {name:"自虐",lks:0,tec:0,men:-200,lksm:0,tecm:100,menm:-300},
+  {name:"坐轮椅",lks:-200,tec:-1000,men:-1000,lksm:-100,tecm:-300,menm:-200}
+];
+
+const goodTags = ["无想","好色","魔性","纯洁","变态","心理病","顺从","暖心","小恶魔","顽固","积极","痴情","冷酷","贫苦","奇妙","失足","正义感","强横"];
+
+function formatVal(v) {
+  if (v > 0) return '<span class="positive">+' + v + '</span>';
+  if (v < 0) return '<span class="negative">' + v + '</span>';
+  return '0';
+}
+
+function renderTags(data) {
+  const tbody = document.getElementById('tagBody');
+  tbody.innerHTML = data.map(t => {
+    const isGood = goodTags.includes(t.name);
+    return `<tr ${isGood ? 'style="background:rgba(76,175,80,0.08)"' : ''}>
+      <td><b>${t.name}</b>${isGood ? ' <span class="star">★</span>' : ''}</td>
+      <td>${formatVal(t.lks)}</td>
+      <td>${formatVal(t.tec)}</td>
+      <td>${formatVal(t.men)}</td>
+      <td>${formatVal(t.lksm)}</td>
+      <td>${formatVal(t.tecm)}</td>
+      <td>${formatVal(t.menm)}</td>
+      <td>${isGood ? '<span class="tag tag-good">推荐</span>' : ''}</td>
+    </tr>`;
+  }).join('');
+}
+
+function filterTags() {
+  const q = document.getElementById('tagSearch').value.toLowerCase();
+  const filtered = tags.filter(t => t.name.toLowerCase().includes(q));
+  renderTags(filtered);
+}
+
+function sortTags() {
+  const sortBy = document.getElementById('tagSort').value;
+  const q = document.getElementById('tagSearch').value.toLowerCase();
+  let filtered = tags.filter(t => t.name.toLowerCase().includes(q));
+  filtered.sort((a, b) => b[sortBy] - a[sortBy]);
+  renderTags(filtered);
+}
+
+function showGoodTags() {
+  document.getElementById('tagSearch').value = '';
+  const filtered = tags.filter(t => goodTags.includes(t.name));
+  renderTags(filtered);
+}
+
+function showAllTags() {
+  document.getElementById('tagSearch').value = '';
+  renderTags(tags);
+}
+
+// 初始化
+renderTags(tags);
+</script>
+</body>
+</html>
