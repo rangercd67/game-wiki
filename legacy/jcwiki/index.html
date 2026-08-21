@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>江城创业记 - 产线计算器</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 顶部栏 -->
+<div class="topbar">
+  <div class="logo">江城创业记 · 产线计算器</div>
+  <span class="version">v0.7.8</span>
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="搜索产物名称..." />
+  </div>
+  <div class="time-setting">
+    <label>生产周期</label>
+    <input type="number" id="timePeriod" value="1800" min="1" />
+    <select id="timeUnit">
+      <option value="1">秒</option>
+      <option value="60">分</option>
+      <option value="3600">时</option>
+    </select>
+  </div>
+  <div class="belt-setting">
+    <label>传送带</label>
+    <select id="beltLevel">
+      <option value="1">1级 (1个/秒)</option>
+      <option value="2" selected>2级 (2个/秒)</option>
+      <option value="3">3级 (3个/秒)</option>
+      <option value="4">4级 (4个/秒)</option>
+    </select>
+  </div>
+  <button class="btn-toggle active" id="btnBrowse">浏览</button>
+  <button class="btn-toggle" id="btnCalc">计算</button>
+</div>
+
+<!-- 主布局 -->
+<div class="main-layout">
+
+  <!-- 左侧边栏 -->
+  <div class="sidebar">
+    <div class="sidebar-header">产物分类</div>
+    <div class="cat-list" id="catList"></div>
+    
+    <!-- 生产计划 -->
+    <div class="plan-panel">
+      <div class="plan-header">
+        <span class="plan-title">📋 生产计划</span>
+        <span class="plan-count" id="planCount">0 项</span>
+      </div>
+      <div id="planList"></div>
+      <div class="plan-actions">
+        <button class="btn-calc" id="btnDoCalc">开始计算</button>
+        <button class="btn-clear" id="btnClearPlan">清空</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主内容区 -->
+  <div class="content" id="mainContent">
+    <!-- 动态渲染 -->
+  </div>
+
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

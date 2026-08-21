@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑流树海节点生成原理研究报告</title>
+<style>
+:root {
+  --primary: #1a1a2e;
+  --secondary: #16213e;
+  --accent: #e94560;
+  --accent2: #0f3460;
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --border: #e0e0e0;
+  --green: #27ae60;
+  --yellow: #f39c12;
+  --red: #e74c3c;
+  --blue: #2980b9;
+  --purple: #8e44ad;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent2) 100%);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+header .subtitle {
+  font-size: 1.1em;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+header .badges {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85em;
+}
+
+nav {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+nav a {
+  color: var(--accent2);
+  text-decoration: none;
+  padding: 8px 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+section {
+  margin: 40px 0;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  color: var(--accent2);
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+section h3 {
+  color: var(--accent2);
+  font-size: 1.2em;
+  margin: 20px 0 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 0.9em;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f8f9fa;
+}
+
+.info-box {
+  background: #eaf4fd;
+  border-left: 4px solid var(--blue);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.warning-box {
+  background: #fef9e7;
+  border-left: 4px solid var(--yellow);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.success-box {
+  background: #eafaf1;
+  border-left: 4px solid var(--green);
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* 基底地图可视化 */
+.base-map-container {
+  margin: 20px 0;
+}
+
+.base-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.base-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: all 0.3s;
+  color: var(--text);
+}
+
+.base-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.base-btn.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.zone-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.zone-tab {
+  padding: 6px 14px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.zone-tab:hover {
+  border-color: var(--accent2);
+}
+
+.zone-tab.active {
+  background: var(--accent2);
+  color: white;
+  border-color: var(--accent2);
+}
+
+.grid-map {
+  display: inline-block;
+  padding: 20px;
+  background: #1a1a2e;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  position: relative;
+}
+
+.grid-cell.empty {
+  background: rgba(255,255,255,0.03);
+}
+
+.grid-cell.start {
+  background: #27ae60;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  color: white;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.grid-cell.end {
+  background: #e74c3c;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  color: white;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.grid-cell.battleend {
+  background: #c0392b;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  color: white;
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
+.grid-cell.battle {
+  background: #e74c3c;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  margin: 6px;
+}
+
+.grid-cell.shop {
+  background: #f39c12;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  margin: 6px;
+}
+
+.grid-cell.conn {
+  background: #27ae60;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 16px;
+}
+
+.base-info {
+  margin: 15px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.base-info p {
+  margin: 5px 0;
+}
+
+/* 节点类型标签 */
+.node-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin: 2px;
+  color: white;
+}
+
+.node-battle { background: var(--red); }
+.node-elite { background: #c0392b; }
+.node-shop { background: var(--yellow); }
+.node-scrap { background: #d4a017; }
+.node-incident { background: var(--blue); }
+.node-other { background: var(--purple); }
+.node-special { background: var(--green); }
+
+/* 折叠面板 */
+.collapsible {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.collapsible-header {
+  padding: 15px;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapsible-header:hover {
+  background: #e9ecef;
+}
+
+.collapsible-body {
+  padding: 20px;
+  display: none;
+}
+
+.collapsible.open .collapsible-body {
+  display: block;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border-top: 4px solid var(--accent);
+}
+
+.stat-card .number {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-card .label {
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+video-section {
+  margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .grid-cell {
+    width: 32px;
+    height: 32px;
+  }
+  .grid-cell.start, .grid-cell.end, .grid-cell.battleend {
+    width: 28px;
+    height: 28px;
+    margin: 2px;
+    font-size: 0.5em;
+  }
+  header h1 { font-size: 1.6em; }
+  section { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>《明日方舟》"黑流树海"节点生成原理研究报告</h1>
+  <div class="subtitle">基于黑蓑影语集（arkrog.com）与B站视频（BV1J5MQ6PEQF）的深度解析</div>
+  <div class="badges">
+    <span class="badge">🎮 游戏：明日方舟</span>
+    <span class="badge">🏷️ 主题：黑流树海</span>
+    <span class="badge">📊 基底：43种</span>
+    <span class="badge">🗂️ 节点：20种</span>
+    <span class="badge">📅 2026年8月</span>
+  </div>
+</header>
+
+<nav>
+  <a href="#video">视频信息</a>
+  <a href="#website">网站功能</a>
+  <a href="#zones">区域信息</a>
+  <a href="#nodes">节点规则</a>
+  <a href="#bases">基底地图</a>
+  <a href="#principle">生成原理</a>
+  <a href="#strategy">运营策略</a>
+</nav>
+
+<div class="container">
+
+<section id="video">
+  <h2>📺 B站视频详情</h2>
+  
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="number">16.9万</div>
+      <div class="label">播放量</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">8658</div>
+      <div class="label">点赞</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">3445</div>
+      <div class="label">投币</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">5983</div>
+      <div class="label">收藏</div>
+    </div>
+    <div class="stat-card">
+      <div class="number">7'14"</div>
+      <div class="label">时长</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th style="width:150px">项目</th><th>内容</th></tr>
+    <tr><td><strong>标题</strong></td><td>【黑流树海】全网最细！从底层看懂 节点生成 & 路线运营</td></tr>
+    <tr><td><strong>UP主</strong></td><td>黑蓑影卫攻略组（B站知名游戏UP主，粉丝25.2万）</td></tr>
+    <tr><td><strong>发布时间</strong></td><td>2026-08-03 12:10</td></tr>
+    <tr><td><strong>参与人员</strong></td><td>数据分析：红兔、元初、gpt老师、雅阁 ｜ 文案：雅阁 ｜ 配音：郁枫 ｜ 网站功能：刺倾 ｜ 封面：拉乎</td></tr>
+    <tr><td><strong>数据来源</strong></td><td>血狼破军、我长颈鹿懂了、凉笙及对应群聊玩家</td></tr>
+  </table>
+
+  <div class="info-box">
+    <strong>视频简介：</strong>数据收集：感谢血狼破军，我长颈鹿懂了，凉笙及对应群聊玩家的积极参与<br>
+    数据分析：红兔，元初，gpt老师，雅阁<br>
+    文案：雅阁<br>
+    前期机制讨论：欧的堵，某中二的鸽子，Visu<br>
+    校对＆配音：郁枫<br>
+    后期：何琐<br>
+    网站功能：刺倾<br>
+    封面：拉乎<br>
+    前往黑蓑影语集使用工具：https://arkrog.com/tool/blackflowmap
+  </div>
+</section>
+
+<section id="website">
+  <h2>🌐 黑蓑影语集网站功能</h2>
+  
+  <p>网站 <strong>影语集</strong>（arkrog.com）由<strong>黑蓑影卫攻略组</strong>运营，是明日方舟集成战略（肉鸽）的攻略分享与工具平台。</p>
+
+  <h3>导航栏目</h3>
+  <table>
+    <tr><th>栏目</th><th>URL</th><th>定位</th></tr>
+    <tr><td>集语成舟</td><td>/</td><td>首页（攻略博客流）</td></tr>
+    <tr><td>穷集一生</td><td>/relic-free</td><td>无藏收录（无收藏品通关纪录）</td></tr>
+    <tr><td>集思广益</td><td>/blog</td><td>攻略博客</td></tr>
+    <tr><td>小集器人</td><td>/tool</td><td>伤害计算工具</td></tr>
+    <tr><td><strong>黑流树海</strong></td><td><strong>/tool/blackflowmap</strong></td><td><strong>地图记录工具</strong></td></tr>
+    <tr><td>高手云集</td><td>/tournament</td><td>赛事整理</td></tr>
+  </table>
+
+  <h3>工具核心功能</h3>
+  <div class="info-box">
+    <strong>1. 区域选择：</strong>I-V层（玻利瓦尔肤层 → 卡德霍之颅）<br>
+    <strong>2. 基底选择：</strong>内置43种基底（1a~5j），显示各基底的结构图<br>
+    <strong>3. 节点预览：</strong>20种节点类型，点击添加至地图<br>
+    <strong>4. 截图识别：</strong>OCR + 图像连通域分析自动识别地图基底（实验性）<br>
+    <strong>5. 节点预测：</strong>根据当前地图状态预测未知节点的可能类型
+  </div>
+</section>
+
+<section id="zones">
+  <h2>🏞️ 区域信息（6+2层）</h2>
+  
+  <table>
+    <tr><th>层级</th><th>名称</th><th>西语名</th><th>初始行动力</th><th>有效节点数</th><th>特点</th></tr>
+    <tr><td><strong>I</strong></td><td>玻利瓦尔肤层</td><td>Superficie</td><td>5</td><td>7-8个</td><td>固定生成诡意行商和作战</td></tr>
+    <tr><td><strong>II</strong></td><td>甜美的伤口</td><td>Carne</td><td>6</td><td>10-13个</td><td>无保底，易出极端情况</td></tr>
+    <tr><td><strong>III</strong></td><td>血色空脉</td><td>Vena</td><td>7</td><td>17-20个</td><td>必须进入险路恶敌，易生成曲折密道</td></tr>
+    <tr><td><strong>IV</strong></td><td>受害者腐殖</td><td>Dolor</td><td>8</td><td>18-21个</td><td>保底生成羽瞰点，易出现双羽瞰点</td></tr>
+    <tr><td><strong>V</strong></td><td>卡德霍之颅</td><td>Bolívar</td><td>8</td><td>约24个</td><td>必须进入险路恶敌，有保底填充机制</td></tr>
+    <tr><td><strong>VI</strong></td><td>源流交汇处</td><td>Bestia</td><td>5</td><td>隐藏层</td><td>隐藏层，兽主欢迎你</td></tr>
+    <tr><td><strong>??</strong></td><td>未萌生的摇篮</td><td>feto</td><td>2-3</td><td>隐藏层</td><td>需通过"误入奇境"节点进入</td></tr>
+  </table>
+
+  <div class="collapsible">
+    <div class="collapsible-header">📖 各层详细说明 <span>▼</span></div>
+    <div class="collapsible-body" id="zone-details">
+      <!-- 由JS动态填充 -->
+    </div>
+  </div>
+</section>
+
+<section id="nodes">
+  <h2>🗂️ 节点类型与生成规则</h2>
+  
+  <h3>节点类型（20种）</h3>
+  <div id="node-list"></div>
+
+  <h3>每层有效节点数量上限</h3>
+  <table id="limit-table"></table>
+</section>
+
+<section id="bases">
+  <h2>🗺️ 基底地图可视化</h2>
+  
+  <p>内置全部 <strong>43种</strong> 基底结构。选择区域后查看对应基底的地图结构。</p>
+  
+  <div class="zone-tabs" id="zone-tabs"></div>
+  <div class="base-selector" id="base-selector"></div>
+  <div class="base-info" id="base-info"></div>
+  <div id="base-map"></div>
+</section>
+
+<section id="principle">
+  <h2>🔬 节点生成原理总结</h2>
+  
+  <h3>核心原理</h3>
+  <div class="success-box">
+    <strong>地图非完全随机生成！</strong>每张地图基于预设的<strong>基底</strong>结构生成。基底定义了固定的起点、终点、地图网格拓扑。游戏从基底池中随机选取一个基底，然后在特定位置按约束填充节点。
+  </div>
+
+  <h3>节点填充规则</h3>
+  <table>
+    <tr><th>规则</th><th>说明</th></tr>
+    <tr><td><strong>距起点步数范围</strong></td><td>每种节点类型只能生成在距起点特定步数范围内的位置（min/max约束）</td></tr>
+    <tr><td><strong>最大允许数量</strong></td><td>每种节点类型在每层有最大生成数量上限（maxAllowed）</td></tr>
+    <tr><td><strong>固定生成</strong></td><td>险路尽头/险路恶敌固定生成；部分商店和作战节点固定生成</td></tr>
+    <tr><td><strong>保底机制</strong></td><td>IV层保底生成羽瞰点；V层有效节点不够时非作战→得偿所愿、作战→紧急作战</td></tr>
+    <tr><td><strong>节点类型分类</strong></td><td>凶戾类（战斗）和诡秘类（非战斗）分别有独立的生成池</td></tr>
+  </table>
+
+  <h3>各层特征总结</h3>
+  <div class="info-box">
+    <strong>I层：</strong>节点少而简单，商店和作战固定生成，秘境行商概率下降<br>
+    <strong>II层：</strong>无保底，仅起点附近普通作战固定，易出极端情况<br>
+    <strong>III层：</strong>必须打险路恶敌，非作战节点占比大，易生成曲折密道<br>
+    <strong>IV层：</strong>保底羽瞰点，双羽瞰点概率大，最后出先行一步的层数<br>
+    <strong>V层：</strong>节点最多，有保底填充机制（得偿所愿/紧急作战），命运所指占用节点
+  </div>
+</section>
+
+<section id="strategy">
+  <h2>🎯 运营策略推荐</h2>
+  
+  <h3>核心运营思路</h3>
+  <table>
+    <tr><th>策略</th><th>说明</th></tr>
+    <tr><td><strong>商店优先</strong></td><td>黄色商店（秘境行商）是关键，优先找到并访问</td></tr>
+    <tr><td><strong>自然物投资</strong></td><td>购买可升值的自然物（玉米、蘑菇等），后期变现滚雪球</td></tr>
+    <tr><td><strong>加工品获取</strong></td><td>获取"小八戒"、"喷气背包"等强加工品可获得免费行动力</td></tr>
+    <tr><td><strong>节点优先级</strong></td><td>居民据点 > 误入奇境 > 狭路相逢 > 紧急作战 > 普通作战</td></tr>
+    <tr><td><strong>避免追猎</strong></td><td>尽量不进入追猎模式（行动力耗尽强制触发）</td></tr>
+  </table>
+
+  <h3>各层策略</h3>
+  <table>
+    <tr><th>层级</th><th>策略</th></tr>
+    <tr><td><strong>I层</strong></td><td>优先选节点多、战斗多的路线；保证稳定2战，有加工品可走满3战</td></tr>
+    <tr><td><strong>II层</strong></td><td>探店寻觅黄色商店；购买增长类自然物、加工品；主力升精二</td></tr>
+    <tr><td><strong>III-IV层</strong></td><td>主要发育期，规划好"最后几步"，尽量多走高收益节点</td></tr>
+    <tr><td><strong>V层</strong></td><td>优中选优，紧急不一定打，关注行动力规划</td></tr>
+    <tr><td><strong>VI层</strong></td><td>抢商店、打紧急，完成三结局</td></tr>
+  </table>
+</section>
+
+</div>
+
+<script>
+// 所有基底数据（从data.json获取）
+let BASES = [];
+let NODE_TYPES = [];
+let ZONE_LIMITS = [];
+let ZONE_DESCRIPTIONS = {};
+
+// 区域信息
+const ZONES = {
+  'zone_1': {name: 'I·玻利瓦尔肤层', short: 'I层'},
+  'zone_2': {name: 'II·甜美的伤口', short: 'II层'},
+  'zone_3': {name: 'III·血色空脉', short: 'III层'},
+  'zone_4': {name: 'IV·受害者腐殖', short: 'IV层'},
+  'zone_5': {name: 'V·卡德霍之颅', short: 'V层'}
+};
+
+// 节点类型颜色
+const NODE_COLORS = {
+  '作战': '#e74c3c',
+  '紧急作战': '#c0392b',
+  '"居民"据点': '#922b21',
+  '诡意行商': '#f39c12',
+  '秘境行商': '#d4a017',
+  '应急助力': '#8e44ad',
+  '不期而遇': '#2980b9',
+  '安全的角落': '#16a085',
+  '得偿所愿': '#27ae60',
+  '失与得': '#e67e22',
+  '先行一步': '#3498db',
+  '狭路相逢': '#9b59b6',
+  '险路小径': '#2c3e50',
+  '误入奇境': '#1abc9c',
+  '曲折密道': '#7f8c8d',
+  '羽瞰点': '#f1c40f',
+  '命运所指': '#ecf0f1',
+  '未知的凶戾': '#e74c3c',
+  '未知的诡秘': '#2980b9',
+  '林间空地': '#95a5a6'
+};
+
+// 加载数据
+async function loadData() {
+  try {
+    const res = await fetch('./data.json');
+    const data = await res.json();
+    BASES = data.bases;
+    NODE_TYPES = data.node_types;
+    ZONE_LIMITS = data.zone_node_limits;
+    ZONE_DESCRIPTIONS = data.zone_descriptions;
+    init();
+  } catch (e) {
+    // 如果data.json不可用，使用内置数据
+    console.log('data.json 加载失败，使用内置数据');
+    init();
+  }
+}
+
+function init() {
+  renderZoneTabs();
+  renderNodes();
+  renderLimits();
+  renderZoneDetails();
+  renderBaseMaps();
+  setupCollapsibles();
+}
+
+// 区域Tab
+function renderZoneTabs() {
+  const container = document.getElementById('zone-tabs');
+  container.innerHTML = '';
+  Object.entries(ZONES).forEach(([zoneId, zone]) => {
+    const btn = document.createElement('button');
+    btn.className = 'zone-tab' + (zoneId === 'zone_1' ? ' active' : '');
+    btn.textContent = zone.name;
+    btn.onclick = () => selectZone(zoneId);
+    container.appendChild(btn);
+  });
+}
+
+let currentZone = 'zone_1';
+let currentBase = null;
+
+function selectZone(zoneId) {
+  currentZone = zoneId;
+  document.querySelectorAll('.zone-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  renderBaseSelector();
+  // 选中第一个基底
+  const zoneBases = BASES.filter(b => b.zone === zoneId);
+  if (zoneBases.length > 0) {
+    selectBase(zoneBases[0].id);
+  }
+}
+
+function renderBaseSelector() {
+  const container = document.getElementById('base-selector');
+  container.innerHTML = '';
+  const zoneBases = BASES.filter(b => b.zone === currentZone);
+  zoneBases.forEach(base => {
+    const btn = document.createElement('button');
+    btn.className = 'base-btn';
+    btn.textContent = base.id;
+    btn.dataset.baseId = base.id;
+    btn.onclick = () => selectBase(base.id);
+    container.appendChild(btn);
+  });
+  // 如果当前base属于当前zone，保持选中
+  if (currentBase && currentBase.zone === currentZone) {
+    const btns = document.querySelectorAll('.base-btn');
+    btns.forEach(b => b.classList.toggle('active', b.dataset.baseId === currentBase.id));
+  }
+}
+
+function selectBase(baseId) {
+  currentBase = BASES.find(b => b.id === baseId);
+  if (!currentBase) return;
+  document.querySelectorAll('.base-btn').forEach(b => b.classList.toggle('active', b.dataset.baseId === baseId));
+  renderBaseInfo();
+  renderBaseMap();
+}
+
+function renderBaseInfo() {
+  const container = document.getElementById('base-info');
+  const b = currentBase;
+  if (!b) return;
+  const zoneInfo = ZONES[b.zone] || {};
+  const startStr = `(${b.start[0]}, ${b.start[1]})`;
+  const endStr = b.battleEnd ? `战斗终点 (${b.battleEnd[0]}, ${b.battleEnd[1]})` : 
+                (b.ends ? b.ends.map(e => `(${e[0]}, ${e[1]})`).join(', ') : '');
+  
+  let html = `
+    <h3 style="margin-top:0">基底 ${b.id}（${zoneInfo.name || b.zone}）</h3>
+    <p><strong>网格大小：</strong>${b.rows} × ${b.cols}</p>
+    <p><strong>起点：</strong>${startStr}</p>
+    <p><strong>终点：</strong>${endStr}</p>
+  `;
+  if (b.knownBattles && b.knownBattles.length > 0) {
+    html += `<p><strong>已知作战：</strong>${b.knownBattles.map(c => `(${c[0]}, ${c[1]})`).join(', ')}</p>`;
+  }
+  if (b.knownShops && b.knownShops.length > 0) {
+    html += `<p><strong>已知商店：</strong>${b.knownShops.map(c => `(${c[0]}, ${c[1]})`).join(', ')}</p>`;
+  }
+  if (b.notes) {
+    html += `<p><strong>特性：</strong><span style="color:var(--accent);font-weight:600">${b.notes}</span></p>`;
+  }
+  container.innerHTML = html;
+}
+
+function renderBaseMap() {
+  const container = document.getElementById('base-map');
+  const b = currentBase;
+  if (!b) return;
+
+  // 创建网格节点映射
+  const nodes = {};
+  for (let r = 0; r < b.rows; r++) {
+    for (let c = 0; c < b.cols; c++) {
+      nodes[`${r},${c}`] = { type: 'empty', row: r, col: c };
+    }
+  }
+  
+  // 标记起点
+  nodes[`${b.start[0]},${b.start[1]}`] = { type: 'start', row: b.start[0], col: b.start[1] };
+  
+  // 标记终点
+  if (b.battleEnd) {
+    nodes[`${b.battleEnd[0]},${b.battleEnd[1]}`] = { type: 'battleend', row: b.battleEnd[0], col: b.battleEnd[1] };
+  }
+  if (b.ends) {
+    b.ends.forEach(([r, c]) => {
+      if (!nodes[`${r},${c}`] || nodes[`${r},${c}`].type === 'empty') {
+        nodes[`${r},${c}`] = { type: 'end', row: r, col: c };
+      }
+    });
+  }
+  
+  // 标记已知作战
+  if (b.knownBattles) {
+    b.knownBattles.forEach(([r, c]) => {
+      if (!nodes[`${r},${c}`] || nodes[`${r},${c}`].type === 'empty') {
+        nodes[`${r},${c}`] = { type: 'battle', row: r, col: c };
+      }
+    });
+  }
+  
+  // 标记已知商店
+  if (b.knownShops) {
+    b.knownShops.forEach(([r, c]) => {
+      if (!nodes[`${r},${c}`] || nodes[`${r},${c}`].type === 'empty') {
+        nodes[`${r},${c}`] = { type: 'shop', row: r, col: c };
+      }
+    });
+  }
+
+  // 创建网格HTML
+  let html = '<div class="grid-map">';
+  // 添加列标
+  html += '<div class="grid-row">';
+  html += '<div class="grid-cell" style="background:transparent;border:none"></div>';
+  for (let c = 0; c < b.cols; c++) {
+    html += `<div class="grid-cell" style="background:rgba(255,255,255,0.1);border:none;color:white;font-size:0.6em">${c}</div>`;
+  }
+  html += '</div>';
+  
+  // 用SVG绘制连线
+  // 先收集边
+  const edges = b.edges || [];
+  
+  for (let r = 0; r < b.rows; r++) {
+    html += '<div class="grid-row">';
+    html += `<div class="grid-cell" style="background:rgba(255,255,255,0.1);border:none;color:white;font-size:0.6em">${r}</div>`;
+    for (let c = 0; c < b.cols; c++) {
+      const node = nodes[`${r},${c}`];
+      const isConnected = edges.some(([r1,c1,r2,c2]) => 
+        (r1===r && c1===c) || (r2===r && c2===c));
+      
+      let cellClass = 'grid-cell';
+      let content = '';
+      let style = '';
+      
+      if (node.type === 'empty') {
+        cellClass += ' empty';
+        if (isConnected) {
+          content = '•';
+          style = 'color:rgba(255,255,255,0.3);font-size:0.6em';
+        }
+      } else if (node.type === 'start') {
+        cellClass += ' start';
+        content = '起点';
+      } else if (node.type === 'end') {
+        cellClass += ' end';
+        content = '终点';
+      } else if (node.type === 'battleend') {
+        cellClass += ' battleend';
+        content = '战终';
+      } else if (node.type === 'battle') {
+        cellClass += ' battle';
+        content = '战';
+      } else if (node.type === 'shop') {
+        cellClass += ' shop';
+        content = '商';
+      }
+      
+      html += `<div class="${cellClass}" style="${style}">${content}</div>`;
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  
+  // 图例
+  html += `
+    <div style="margin-top:15px;display:flex;gap:15px;flex-wrap:wrap;align-items:center;font-size:0.85em">
+      <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:16px;height:16px;border-radius:50%;background:#27ae60;display:inline-block"></span>起点</span>
+      <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:16px;height:16px;border-radius:50%;background:#e74c3c;display:inline-block"></span>险路尽头</span>
+      <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:16px;height:16px;border-radius:50%;background:#c0392b;display:inline-block"></span>险路恶敌</span>
+      <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:16px;height:16px;border-radius:4px;background:#e74c3c;display:inline-block"></span>已知作战</span>
+      <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:16px;height:16px;border-radius:4px;background:#f39c12;display:inline-block"></span>已知商店</span>
+      <span style="display:inline-flex;align-items:center;gap:5px"><span style="width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.3);display:inline-block"></span>可达节点</span>
+    </div>
+  `;
+  
+  container.innerHTML = html;
+}
+
+// 节点类型表格
+function renderNodes() {
+  const container = document.getElementById('node-list');
+  let html = '<table><tr><th>ID</th><th>名称</th><th>类型</th><th>出现层数</th><th>生成位置约束</th></tr>';
+  
+  NODE_TYPES.forEach(node => {
+    const zoneStr = node.steps.map(s => s.zone.replace('zone_', '')).join(', ');
+    const stepsStr = node.steps.map(s => {
+      const maxStr = s.max === '1/0' ? '∞' : s.max;
+      return `L${s.zone.replace('zone_','')}: ${s.min}-${maxStr}步`;
+    }).join('<br>') || '特殊节点';
+    
+    const typeColor = node.type === 'battle' ? 'var(--red)' : (node.type === 'other' ? 'var(--blue)' : 'var(--purple)');
+    
+    html += `<tr>
+      <td><code>${node.id}</code></td>
+      <td><strong>${node.name}</strong></td>
+      <td><span class="node-tag" style="background:${typeColor}">${node.type === 'battle' ? '战斗' : '非战斗'}</span></td>
+      <td>${zoneStr || '—'}</td>
+      <td style="font-size:0.85em">${stepsStr}</td>
+    </tr>`;
+  });
+  
+  html += '</table>';
+  container.innerHTML = html;
+}
+
+// 数量上限表格
+function renderLimits() {
+  const container = document.getElementById('limit-table');
+  let html = '<tr><th>类型</th><th>I层</th><th>II层</th><th>III层</th><th>IV层</th><th>V层</th></tr>';
+  
+  ZONE_LIMITS.forEach(limit => {
+    const label = limit.type === 'other' ? '非作战节点' : '战斗节点';
+    const cells = ['zone_1','zone_2','zone_3','zone_4','zone_5'].map(z => {
+      const item = limit.maxAllowed.find(m => m.zone === z);
+      return item ? item.maxAllowed : '—';
+    });
+    html += `<tr><td><strong>${label}</strong></td><td>${cells.join('</td><td>')}</td></tr>`;
+  });
+  
+  container.innerHTML = html;
+}
+
+// 各层详细说明
+function renderZoneDetails() {
+  const container = document.getElementById('zone-details');
+  let html = '';
+  Object.entries(ZONES).forEach(([zoneId, zone]) => {
+    const desc = ZONE_DESCRIPTIONS[zoneId] || '暂无数据';
+    html += `
+      <div style="margin:15px 0;padding:15px;background:#f8f9fa;border-radius:8px">
+        <h4 style="margin:0 0 8px;color:var(--accent2)">${zone.name}</h4>
+        <p style="white-space:pre-line;margin:0">${desc}</p>
+      </div>
+    `;
+  });
+  container.innerHTML = html;
+}
+
+// 折叠面板
+function setupCollapsibles() {
+  document.querySelectorAll('.collapsible-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.parentElement.classList.toggle('open');
+      const arrow = header.querySelector('span');
+      if (arrow) arrow.textContent = header.parentElement.classList.contains('open') ? '▲' : '▼';
+    });
+  });
+}
+
+// 初始化
+loadData();
+</script>
+
+</body>
+</html>

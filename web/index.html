@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="本地游戏资料元数据索引、分类浏览与安全按需预览。">
+  <title>藏经阁 · Game Wiki</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="/" aria-label="藏经阁首页">
+      <span class="brand-mark">藏</span>
+      <span><strong>藏经阁</strong><small>GAME WIKI ARCHIVE</small></span>
+    </a>
+    <div class="source-note"><span class="pulse"></span> 本地只读索引</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">PERSONAL GAME KNOWLEDGE BASE</p>
+      <h1>让散落的攻略，<br><em>重新变得可寻。</em></h1>
+      <p class="lede">只索引文件元数据。内容留在原处，只有你主动预览时才读取单个受支持文件。</p>
+      <form id="searchForm" class="search" role="search">
+        <label class="sr-only" for="searchInput">搜索资料</label>
+        <input id="searchInput" autocomplete="off" placeholder="搜索文件名、路径或游戏…">
+        <button type="submit">检索资料</button>
+      </form>
+      <div id="stats" class="stats" aria-live="polite"></div>
+    </section>
+
+    <section class="workspace">
+      <aside class="filters">
+        <div class="section-heading"><span>01</span><h2>游戏分类</h2></div>
+        <button class="filter active" data-game="">全部资料 <b id="allCount">—</b></button>
+        <div id="games"></div>
+        <div class="section-heading types"><span>02</span><h2>资料类型</h2></div>
+        <div id="kinds" class="kind-grid"></div>
+      </aside>
+
+      <section class="results">
+        <div class="results-head">
+          <div><p id="resultKicker">全部馆藏</p><h2 id="resultTitle">最新资料</h2></div>
+          <span id="resultCount">正在载入…</span>
+        </div>
+        <div id="fileList" class="file-list" aria-live="polite"></div>
+        <div class="pager">
+          <button id="prevPage" type="button">← 上一页</button>
+          <span id="pageInfo"></span>
+          <button id="nextPage" type="button">下一页 →</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="previewDialog">
+    <div class="dialog-head">
+      <div><small>按需预览</small><h2 id="previewTitle"></h2></div>
+      <button id="closePreview" aria-label="关闭预览">×</button>
+    </div>
+    <div id="previewBody" class="preview-body"></div>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
