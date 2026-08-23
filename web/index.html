@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="本地游戏资料元数据索引、分类浏览与安全按需预览。">
   <title>藏经阁 · Game Wiki</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -13,7 +20,13 @@
       <span class="brand-mark">藏</span>
       <span><strong>藏经阁</strong><small>GAME WIKI ARCHIVE</small></span>
     </a>
-    <div class="source-note"><span class="pulse"></span> 本地只读索引</div>
+    <div class="header-actions">
+      <div class="source-note"><span class="pulse"></span> 本地只读索引</div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+        <span class="theme-label">深色</span>
+      </button>
+    </div>
   </header>
 
   <main>

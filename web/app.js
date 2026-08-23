@@ -14,6 +14,20 @@ const formatBytes = (value) => {
 };
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
 
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  $("#themeToggle").setAttribute("aria-pressed", String(isDark));
+  $("#themeToggle").setAttribute("aria-label", isDark ? "切换为浅色主题" : "切换为深色主题");
+  $(".theme-label").textContent = isDark ? "浅色" : "深色";
+}
+
+function toggleTheme() {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  localStorage.setItem("wiki-theme", next);
+  applyTheme(next);
+}
+
 async function api(path) {
   const response = await fetch(path);
   const type = response.headers.get("content-type") || "";
@@ -113,5 +127,7 @@ $("#prevPage").addEventListener("click", () => { state.page -= 1; loadFiles(); w
 $("#nextPage").addEventListener("click", () => { state.page += 1; loadFiles(); window.scrollTo({ top: $(".workspace").offsetTop, behavior: "smooth" }); });
 $("#closePreview").addEventListener("click", () => $("#previewDialog").close());
 $("#previewDialog").addEventListener("close", () => $("#previewBody").replaceChildren());
+$("#themeToggle").addEventListener("click", toggleTheme);
 
+applyTheme(document.documentElement.dataset.theme);
 loadOverview().then(loadFiles);
