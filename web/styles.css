@@ -3,7 +3,7 @@
   --bg: #eef1f5; --surface: #fff; --surface-2: #f6f8fa;
   --text: #171b22; --muted: #6d7580; --line: #dce1e7; --line-strong: #bdc5cf;
   --brand: #101419; --accent: #12b8d2; --accent-strong: #008ca7; --accent-soft: #e1f7fb;
-  --danger: #d84a5d; --on-dark: #f7f9fb; --on-dark-muted: #aeb8c4;
+  --danger: #d84a5d; --on-dark: #f7f9fb; --on-dark-muted: #aeb8c4; --control: #11151a; --control-2: #191f26;
   --shadow: 0 12px 34px rgb(24 31 41 / 9%); --backdrop: rgb(5 8 12 / 78%);
 }
 :root[data-theme="dark"] {
@@ -11,7 +11,7 @@
   --bg: #080a0d; --surface: #11151a; --surface-2: #171c22;
   --text: #f1f4f7; --muted: #939ca7; --line: #282f37; --line-strong: #46515d;
   --brand: #050607; --accent: #18d1ff; --accent-strong: #72e5ff; --accent-soft: #0a2931;
-  --danger: #ff6b78; --on-dark: #f7f8fa; --on-dark-muted: #8c949d;
+  --danger: #ff6b78; --on-dark: #f7f8fa; --on-dark-muted: #8c949d; --control: #050607; --control-2: #101318;
   --shadow: 0 18px 50px rgb(0 0 0 / 36%); --backdrop: rgb(0 0 0 / 84%);
 }
 
@@ -68,20 +68,34 @@ h1 { margin: 0; font-size: clamp(32px, 4.2vw, 56px); line-height: 1.1; letter-sp
 .stats span { min-width: 128px; padding: 9px 12px; border: 1px solid rgb(255 255 255 / 10%); background: rgb(255 255 255 / 4%); color: var(--on-dark-muted); font-size: 11px; }
 .stats b { color: var(--on-dark); font: 700 15px "Courier New", monospace; margin-right: 5px; }
 
-.workspace { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 18px; padding: 18px 0 42px; align-items: start; }
+.game-deck { margin-top: 18px; padding: 20px 22px 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 4px 18px rgb(24 31 41 / 5%); }
+.deck-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 15px; }
+.deck-heading span { color: var(--accent-strong); font: 800 9px "Courier New", monospace; letter-spacing: .16em; }
+.deck-heading h2 { margin: 4px 0 0; font-size: 20px; }
+.deck-heading p { margin: 0; color: var(--muted); font-size: 11px; }
+.game-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.game-card { position: relative; min-height: 104px; overflow: hidden; display: flex; flex-direction: column; align-items: start; justify-content: end; border: 1px solid #29313a; border-radius: 5px; background: linear-gradient(140deg, var(--control-2), var(--control)); padding: 15px; color: var(--on-dark); text-align: left; }
+.game-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 48%, rgb(24 209 255 / 6%) 48% 52%, transparent 52%); }
+.game-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 24px rgb(5 10 16 / 18%); }
+.game-card-index { position: absolute; top: 12px; left: 14px; color: var(--accent); font: 800 10px "Courier New", monospace; }
+.game-card strong { position: relative; z-index: 1; max-width: calc(100% - 24px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
+.game-card small { position: relative; z-index: 1; margin-top: 5px; color: var(--on-dark-muted); font: 9px "Courier New", monospace; }
+.game-card i { position: absolute; right: 13px; bottom: 13px; color: var(--accent); font-style: normal; font-size: 17px; }
+
+.workspace { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 18px; padding: 18px 0 42px; align-items: start; }
 .panel { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 4px 18px rgb(24 31 41 / 5%); }
-.filters { position: sticky; top: 86px; padding: 18px; max-height: calc(100vh - 106px); overflow: auto; }
+.filters { position: sticky; top: 86px; padding: 20px 16px; max-height: calc(100vh - 106px); overflow: auto; border-color: #29313a; background: var(--control); color: var(--on-dark); }
 .section-heading { display: flex; align-items: center; gap: 9px; margin: 0 0 11px; }
-.section-heading span { color: var(--accent-strong); font: 800 10px "Courier New", monospace; }
+.section-heading span { color: var(--accent); font: 800 10px "Courier New", monospace; }
 .section-heading h2 { margin: 0; font-size: 13px; letter-spacing: .06em; }
 .section-heading.types { margin-top: 24px; }
-.filter { width: 100%; display: flex; justify-content: space-between; border: 0; border-radius: 5px; padding: 10px 11px; background: transparent; color: var(--muted); text-align: left; }
-.filter:hover { background: var(--surface-2); color: var(--text); }
-.filter.active { background: var(--accent-soft); color: var(--accent-strong); font-weight: 700; box-shadow: inset 3px 0 0 var(--accent); }
+.filter { width: 100%; display: flex; justify-content: space-between; border: 0; border-radius: 4px; padding: 10px 11px; background: transparent; color: var(--on-dark-muted); text-align: left; }
+.filter:hover { background: var(--control-2); color: var(--on-dark); }
+.filter.active { background: var(--accent); color: #061217; font-weight: 800; box-shadow: none; }
 .filter b { font: 600 10px "Courier New", monospace; }
 .kind-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-.kind { min-height: 39px; border: 1px solid var(--line); border-radius: 5px; background: var(--surface-2); color: var(--muted); padding: 7px; font-size: 11px; }
-.kind:hover { border-color: var(--line-strong); color: var(--text); }
+.kind { min-height: 39px; border: 1px solid #303842; border-radius: 4px; background: var(--control-2); color: var(--on-dark-muted); padding: 7px; font-size: 11px; }
+.kind:hover { border-color: var(--accent); color: var(--on-dark); }
 .kind.active { border-color: var(--accent); background: var(--accent); color: #061217; font-weight: 700; }
 
 .results { overflow: hidden; }
@@ -89,17 +103,18 @@ h1 { margin: 0; font-size: clamp(32px, 4.2vw, 56px); line-height: 1.1; letter-sp
 .results-head p { margin: 0 0 5px; color: var(--accent-strong); font: 700 9px "Courier New", monospace; letter-spacing: .15em; text-transform: uppercase; }
 .results-head h2 { margin: 0; font-size: 24px; }
 #resultCount { color: var(--muted); font: 11px "Courier New", monospace; }
-.file-list { padding: 5px 16px; }
-.file-row { display: grid; grid-template-columns: 46px minmax(0, 1fr) 105px 96px; gap: 14px; align-items: center; min-height: 72px; padding: 11px 7px; border-bottom: 1px solid var(--line); transition: background-color .14s ease; }
-.file-row:last-child { border-bottom: 0; }
-.file-row:hover { background: var(--surface-2); }
-.file-icon { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 3px; background: var(--surface-2); color: var(--accent-strong); font: 700 9px monospace; text-transform: uppercase; }
+.file-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; padding: 14px; }
+.file-row { position: relative; min-width: 0; min-height: 210px; display: flex; flex-direction: column; gap: 12px; padding: 15px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); transition: border-color .14s ease, transform .14s ease, box-shadow .14s ease; }
+.file-row:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 25px rgb(22 33 46 / 9%); }
+.file-card-top { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font: 9px "Courier New", monospace; text-transform: uppercase; }
+.file-icon { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 3px; background: var(--surface-2); color: var(--accent-strong); font: 700 9px monospace; text-transform: uppercase; }
 .file-main { min-width: 0; }
-.file-main strong, .file-main small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.file-main strong { font-size: 13px; }
-.file-main small { margin-top: 6px; color: var(--muted); font-size: 10px; }
-.file-meta { color: var(--muted); font: 10px/1.7 "Courier New", monospace; }
-.preview-btn { min-height: 34px; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--surface); padding: 7px 9px; font-size: 11px; }
+.file-main strong, .file-main small, .file-main p { display: block; overflow: hidden; text-overflow: ellipsis; }
+.file-main strong { min-height: 38px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: 13px; line-height: 1.5; }
+.file-main small { width: fit-content; max-width: 100%; margin-top: 7px; padding: 3px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent-strong); white-space: nowrap; font-size: 9px; }
+.file-main p { margin: 8px 0 0; color: var(--muted); white-space: nowrap; font-size: 9px; }
+.file-meta { display: flex; justify-content: space-between; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font: 9px "Courier New", monospace; }
+.preview-btn { width: 100%; min-height: 34px; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--surface-2); padding: 7px 9px; font-size: 11px; }
 .preview-btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent); color: #061217; }
 .preview-btn:disabled { opacity: .35; cursor: not-allowed; }
 .empty { padding: 68px 10px; color: var(--muted); text-align: center; }
@@ -125,6 +140,10 @@ dialog::backdrop { background: var(--backdrop); }
 .preview-body img { display: block; max-width: 100%; max-height: 70vh; margin: auto; object-fit: contain; }
 .error { color: var(--danger); }
 
+@media (max-width: 1180px) {
+  .file-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 900px) {
   .main-nav { display: none; }
   .nav-inner { grid-template-columns: 1fr auto; }
@@ -143,8 +162,8 @@ dialog::backdrop { background: var(--backdrop); }
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); }
   .stats span { min-width: 0; padding: 8px; }
   .stats b { display: block; margin-bottom: 3px; }
-  .file-row { grid-template-columns: 40px minmax(0, 1fr) 82px; gap: 9px; }
-  .file-meta { display: none; }
+  .file-list, .game-cards { grid-template-columns: 1fr; }
+  .file-meta { display: flex; }
   .site-footer { display: block; }
   .site-footer p { margin-top: 13px; }
 }

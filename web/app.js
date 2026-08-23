@@ -43,6 +43,12 @@ async function loadOverview() {
     $("#stats").innerHTML = `<span><b>${formatNumber(meta.indexed)}</b>份资料</span><span><b>${formatBytes(meta.total_bytes)}</b>索引体量</span><span><b>${games.games.length}</b>个分类</span>`;
     $("#allCount").textContent = formatNumber(meta.indexed);
     $("#games").innerHTML = games.games.map((item) => `<button class="filter" data-game="${escapeHtml(item.game)}"><span>${escapeHtml(item.game)}</span><b>${formatNumber(item.count)}</b></button>`).join("");
+    $("#gameCards").innerHTML = games.games.slice(0, 8).map((item, index) => `<button class="game-card" data-game="${escapeHtml(item.game)}">
+      <span class="game-card-index">0${index + 1}</span>
+      <strong>${escapeHtml(item.game)}</strong>
+      <small>${formatNumber(item.count)} FILES</small>
+      <i aria-hidden="true">↗</i>
+    </button>`).join("");
     $("#kinds").innerHTML = `<button class="kind active" data-kind="">全部</button>${stats.kinds.map((item) => `<button class="kind" data-kind="${item.kind}">${kindNames[item.kind] || item.kind} · ${formatNumber(item.count)}</button>`).join("")}`;
   } catch (error) {
     $("#stats").innerHTML = `<span class="error">${escapeHtml(error.message)}</span>`;
@@ -76,9 +82,9 @@ function fileRow(file) {
   const canPreview = previewableText.has(file.extension) || previewableImages.has(file.extension);
   const modified = new Date(file.modified_at).toLocaleDateString("zh-CN");
   return `<article class="file-row">
-    <div class="file-icon">${escapeHtml((file.extension || "file").slice(1, 5))}</div>
-    <div class="file-main"><strong title="${escapeHtml(file.name)}">${escapeHtml(file.name)}</strong><small title="${escapeHtml(file.relative_path)}">${escapeHtml(file.game)} · ${escapeHtml(file.relative_path)}</small></div>
-    <div class="file-meta">${formatBytes(file.size)}<br>${modified}</div>
+    <div class="file-card-top"><div class="file-icon">${escapeHtml((file.extension || "file").slice(1, 5))}</div><span>${escapeHtml(kindNames[file.kind] || file.kind)}</span></div>
+    <div class="file-main"><strong title="${escapeHtml(file.name)}">${escapeHtml(file.name)}</strong><small>${escapeHtml(file.game)}</small><p title="${escapeHtml(file.relative_path)}">${escapeHtml(file.relative_path)}</p></div>
+    <div class="file-meta"><span>${formatBytes(file.size)}</span><span>${modified}</span></div>
     <button class="preview-btn" data-path="${escapeHtml(file.relative_path)}" data-name="${escapeHtml(file.name)}" data-ext="${escapeHtml(file.extension)}" ${canPreview ? "" : "disabled"}>${canPreview ? "预览" : "仅元数据"}</button>
   </article>`;
 }
@@ -112,6 +118,7 @@ document.addEventListener("click", (event) => {
   if (game) {
     document.querySelectorAll("[data-game]").forEach((el) => el.classList.remove("active"));
     game.classList.add("active"); state.game = game.dataset.game; state.page = 1; loadFiles();
+    if (game.classList.contains("game-card")) $("#archive").scrollIntoView({ behavior: "smooth", block: "start" });
   }
   const kind = event.target.closest("[data-kind]");
   if (kind) {
