@@ -42,7 +42,7 @@ async function loadOverview() {
     const meta = stats.metadata;
     $("#stats").innerHTML = `<span><b>${formatNumber(meta.indexed)}</b>份资料</span><span><b>${formatBytes(meta.total_bytes)}</b>索引体量</span><span><b>${games.games.length}</b>个分类</span>`;
     $("#allCount").textContent = formatNumber(meta.indexed);
-    $("#games").innerHTML = games.games.map((item) => `<button class="filter" data-game="${escapeHtml(item.game)}"><span>${escapeHtml(item.game)}</span><b>${formatNumber(item.count)}</b></button>`).join("");
+    $("#gameList").innerHTML = games.games.map((item) => `<button class="filter" data-game="${escapeHtml(item.game)}"><span>${escapeHtml(item.game)}</span><b>${formatNumber(item.count)}</b></button>`).join("");
     $("#gameCards").innerHTML = games.games.slice(0, 8).map((item, index) => `<button class="game-card" data-game="${escapeHtml(item.game)}">
       <span class="game-card-index">0${index + 1}</span>
       <strong>${escapeHtml(item.game)}</strong>

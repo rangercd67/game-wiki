@@ -30,4 +30,12 @@ py -m gamewiki.server
 
 浏览器访问 `http://127.0.0.1:8765`。默认数据源为 `E:\Games\GameTools`，索引写入仓库的 `data/local/`（已忽略）。
 
+## 测试
+
+```powershell
+py -m unittest discover -s tests -t .
+```
+
+无需网络与第三方依赖。`tests/test_web_assets.py` 静态校验 `web/index.html` 与 `web/app.js` 之间的 id、class 选择器及资源引用是否自洽——重复 id 或选择器失配会让整块界面静默失效，这类问题无法靠后端测试发现。
+
 安全设计与自定义参数见 [docs/architecture.md](docs/architecture.md)。既有 GitHub 项目成果统一保存在 `legacy/jcwiki/`，不参与主程序执行。
