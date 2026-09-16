@@ -1,6 +1,4 @@
 const state = { q: "", game: "", kind: "", page: 1, limit: 40, total: 0 };
-const previewableText = new Set([".txt", ".md", ".markdown", ".rst", ".csv", ".tsv", ".json", ".jsonl", ".geojson", ".xml", ".yaml", ".yml", ".ini", ".cfg"]);
-const previewableImages = new Set([".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp"]);
 const kindNames = { document: "文档", image: "图片", data: "数据", archive: "压缩包", binary: "程序/二进制" };
 
 const $ = (selector) => document.querySelector(selector);
@@ -79,24 +77,24 @@ async function loadFiles() {
 }
 
 function fileRow(file) {
-  const canPreview = previewableText.has(file.extension) || previewableImages.has(file.extension);
+  const canPreview = Boolean(file.preview);
   const modified = new Date(file.modified_at).toLocaleDateString("zh-CN");
   return `<article class="file-row">
     <div class="file-card-top"><div class="file-icon">${escapeHtml((file.extension || "file").slice(1, 5))}</div><span>${escapeHtml(kindNames[file.kind] || file.kind)}</span></div>
     <div class="file-main"><strong title="${escapeHtml(file.name)}">${escapeHtml(file.name)}</strong><small>${escapeHtml(file.game)}</small><p title="${escapeHtml(file.relative_path)}">${escapeHtml(file.relative_path)}</p></div>
     <div class="file-meta"><span>${formatBytes(file.size)}</span><span>${modified}</span></div>
-    <button class="preview-btn" data-path="${escapeHtml(file.relative_path)}" data-name="${escapeHtml(file.name)}" data-ext="${escapeHtml(file.extension)}" ${canPreview ? "" : "disabled"}>${canPreview ? "预览" : "仅元数据"}</button>
+    <button class="preview-btn" data-path="${escapeHtml(file.relative_path)}" data-name="${escapeHtml(file.name)}" data-preview="${escapeHtml(file.preview || "")}" ${canPreview ? "" : "disabled"}>${canPreview ? "预览" : "仅元数据"}</button>
   </article>`;
 }
 
-async function openPreview(path, name, extension) {
+async function openPreview(path, name, preview) {
   const dialog = $("#previewDialog");
   $("#previewTitle").textContent = name;
   $("#previewBody").innerHTML = `<div class="empty">正在按需读取单个文件…</div>`;
   dialog.showModal();
   const url = `/api/preview?path=${encodeURIComponent(path)}`;
   try {
-    if (previewableImages.has(extension)) {
+    if (preview === "image") {
       const image = new Image();
       image.alt = name;
       image.src = url;
@@ -126,7 +124,7 @@ document.addEventListener("click", (event) => {
     kind.classList.add("active"); state.kind = kind.dataset.kind; state.page = 1; loadFiles();
   }
   const preview = event.target.closest(".preview-btn:not(:disabled)");
-  if (preview) openPreview(preview.dataset.path, preview.dataset.name, preview.dataset.ext);
+  if (preview) openPreview(preview.dataset.path, preview.dataset.name, preview.dataset.preview);
 });
 
 $("#searchForm").addEventListener("submit", (event) => { event.preventDefault(); state.q = $("#searchInput").value.trim(); state.page = 1; loadFiles(); });

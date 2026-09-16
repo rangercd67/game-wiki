@@ -35,6 +35,13 @@ IMAGE_PREVIEW_EXTENSIONS = IMAGE_EXTENSIONS - {".svg"}
 MAX_TEXT_PREVIEW_BYTES = 2 * 1024 * 1024
 MAX_IMAGE_PREVIEW_BYTES = 30 * 1024 * 1024
 
+# OOXML 容器（ZIP + XML）由标准库解析，因此需要分别限制容器体积、
+# 单个部件解压后的体积（防压缩炸弹）与最终输出的字符数。
+OOXML_PREVIEW_EXTENSIONS = {".docx", ".xlsx"}
+MAX_OOXML_ARCHIVE_BYTES = 16 * 1024 * 1024
+MAX_OOXML_MEMBER_BYTES = 8 * 1024 * 1024
+MAX_OOXML_TEXT_CHARS = 200_000
+
 
 def kind_for_extension(extension: str) -> str:
     if extension in IMAGE_EXTENSIONS:
@@ -46,3 +53,15 @@ def kind_for_extension(extension: str) -> str:
     if extension in ARCHIVE_EXTENSIONS:
         return "archive"
     return "binary"
+
+
+def preview_kind(extension: str) -> str | None:
+    """返回预览载荷类型；None 表示该类型只提供元数据。
+
+    前端据此决定渲染方式，避免在 JavaScript 里重复维护一份扩展名清单。
+    """
+    if extension in IMAGE_PREVIEW_EXTENSIONS:
+        return "image"
+    if extension in TEXT_PREVIEW_EXTENSIONS or extension in OOXML_PREVIEW_EXTENSIONS:
+        return "text"
+    return None

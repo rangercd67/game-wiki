@@ -15,9 +15,13 @@ from .config import (
     DEFAULT_SOURCE,
     IMAGE_PREVIEW_EXTENSIONS,
     MAX_IMAGE_PREVIEW_BYTES,
+    MAX_OOXML_ARCHIVE_BYTES,
     MAX_TEXT_PREVIEW_BYTES,
+    OOXML_PREVIEW_EXTENSIONS,
     TEXT_PREVIEW_EXTENSIONS,
+    preview_kind,
 )
+from .ooxml import OoxmlError, extract_text
 
 WEB_ROOT = Path(__file__).resolve().parents[1] / "web"
 
@@ -52,6 +56,8 @@ class WikiHandler(SimpleHTTPRequestHandler):
                 self._json({"error": "索引尚未建立，请先运行扫描。"}, HTTPStatus.SERVICE_UNAVAILABLE)
             except PermissionError as error:
                 self._json({"error": str(error)}, HTTPStatus.FORBIDDEN)
+            except OoxmlError as error:
+                self._json({"error": f"文档无法解析：{error}"}, HTTPStatus.UNPROCESSABLE_ENTITY)
             except (KeyError, ValueError) as error:
                 self._json({"error": str(error)}, HTTPStatus.BAD_REQUEST)
             return
@@ -118,7 +124,10 @@ class WikiHandler(SimpleHTTPRequestHandler):
                 LIMIT ? OFFSET ?""",
                 [*parameters, limit, (page - 1) * limit],
             )
-            files = [dict(row) for row in rows]
+            files = [
+                {**dict(row), "preview": preview_kind(row["extension"])}
+                for row in rows
+            ]
         self._json({"files": files, "total": total, "page": page, "limit": limit})
 
     def _preview(self, query: dict[str, list[str]]) -> None:
@@ -144,6 +153,16 @@ class WikiHandler(SimpleHTTPRequestHandler):
                 raise PermissionError("文本超过 2 MB，仅保留元数据")
             content = target.read_text(encoding="utf-8", errors="replace")
             self._json({"type": "text", "content": content, "path": relative})
+            return
+        if extension in OOXML_PREVIEW_EXTENSIONS:
+            if size > MAX_OOXML_ARCHIVE_BYTES:
+                raise PermissionError(
+                    f"文档超过 {MAX_OOXML_ARCHIVE_BYTES // 1048576} MB，仅保留元数据"
+                )
+            content = extract_text(target, extension)
+            self._json(
+                {"type": "text", "format": "ooxml", "content": content, "path": relative}
+            )
             return
         if extension in IMAGE_PREVIEW_EXTENSIONS:
             if size > MAX_IMAGE_PREVIEW_BYTES:
