@@ -1,7 +1,8 @@
 from pathlib import Path
 
-DEFAULT_SOURCE = Path(r"E:\Games\GameTools")
-DEFAULT_DATABASE = Path(__file__).resolve().parents[1] / "data" / "local" / "index.sqlite3"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_SOURCE = PROJECT_ROOT / "library"
+DEFAULT_DATABASE = PROJECT_ROOT / "data" / "local" / "index.sqlite3"
 
 DOCUMENT_EXTENSIONS = {
     ".txt", ".md", ".markdown", ".rst", ".pdf", ".doc", ".docx",

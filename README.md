@@ -5,7 +5,10 @@
 ## 目录边界
 
 - 工作目录：`D:\Development\Projects\game-wiki`
-- 外部数据源：`E:\Games\GameTools`（只读引用，不纳入本仓库）
+- 资料库：`library/`——被索引的本地资料（攻略、图集等），**不纳入 Git**
+- 历史外部源：`E:\Games\GameTools` 已不再参与索引，仅作个人归档保留
+
+资料库是仓库内的普通目录，但被 `.gitignore` 排除：其中的攻略多为他人作品，且体积上百 MB，提交入库会让仓库永久膨胀。
 
 ## 协作流程
 
@@ -28,7 +31,7 @@ py -m gamewiki.indexer
 py -m gamewiki.server
 ```
 
-浏览器访问 `http://127.0.0.1:8765`。默认数据源为 `E:\Games\GameTools`，索引写入仓库的 `data/local/`（已忽略）。
+浏览器访问 `http://127.0.0.1:8765`。默认数据源为仓库内的 `library/`，索引写入仓库的 `data/local/`（已忽略）。两者都可用 `--source` 与 `--database` 覆盖。
 
 ## 测试
 

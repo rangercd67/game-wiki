@@ -24,6 +24,9 @@ data/local/
 *.sqlite
 *.sqlite3
 
+# Local content library: game guides and source material stay out of Git
+library/
+
 # IDE and OS files
 .idea/
 .vscode/
