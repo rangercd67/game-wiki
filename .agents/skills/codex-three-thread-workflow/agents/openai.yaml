@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex 三线程交付"
+  short_description: "用主线程决策、执行线程改动、验证线程独立审查完成复杂任务"
+  default_prompt: "使用 $codex-three-thread-workflow 将这个复杂任务拆成主线程、执行线程和独立验证线程，并在证据齐全后验收。"
