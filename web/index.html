@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="本地游戏资料元数据索引、分类浏览与安全按需预览。">
+  <meta name="description" content="游戏资料索引：分类浏览、检索与按需预览。">
   <title>藏经阁 · Game Wiki</title>
   <script>
     (() => {
@@ -27,7 +27,7 @@
         <a href="#about">关于项目</a>
       </nav>
       <div class="header-actions">
-        <div class="source-note"><span class="pulse"></span> 数据源在线</div>
+        <div class="source-note"><span class="pulse"></span> <span data-server="数据源在线" data-static="静态快照">数据源在线</span></div>
         <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题" aria-pressed="false">
           <span class="theme-icon" aria-hidden="true"></span>
           <span class="theme-label">深色</span>
@@ -43,9 +43,9 @@
         <div>
           <p class="eyebrow">GAME RESOURCE ARCHIVE</p>
           <h1>游戏资料档案馆</h1>
-          <p class="lede">索引、分类与检索本地游戏资料。源文件保持原位，仅在主动预览时读取单个受支持文件。</p>
+          <p class="lede" data-server="索引、分类与检索本地游戏资料。源文件保持原位，仅在主动预览时读取单个受支持文件。" data-static="游戏资料的分类索引与检索。本页是构建时生成的静态快照，不含任何可执行的服务端逻辑。">索引、分类与检索本地游戏资料。源文件保持原位，仅在主动预览时读取单个受支持文件。</p>
         </div>
-        <div class="hero-badge"><span>LOCAL</span><strong>只读模式</strong><small>READ ONLY MODE</small></div>
+        <div class="hero-badge"><span data-server="LOCAL" data-static="PUBLIC">LOCAL</span><strong data-server="只读模式" data-static="静态快照">只读模式</strong><small data-server="READ ONLY MODE" data-static="STATIC SNAPSHOT">READ ONLY MODE</small></div>
       </div>
       <form id="searchForm" class="search" role="search">
         <label class="sr-only" for="searchInput">搜索资料</label>
@@ -88,7 +88,7 @@
 
     <footer id="about" class="site-footer">
       <div><strong>藏经阁 · GAME WIKI</strong><span>本地游戏资料索引工具</span></div>
-      <p>元数据只读扫描 · 单文件按需预览 · 原始数据不做修改</p>
+      <p data-server="元数据只读扫描 · 单文件按需预览 · 原始数据不做修改" data-static="构建时生成静态快照 · 无服务端逻辑 · 原始数据不做修改">元数据只读扫描 · 单文件按需预览 · 原始数据不做修改</p>
     </footer>
   </main>
 
