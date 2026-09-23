@@ -59,6 +59,12 @@ py -m gamewiki.wiki
 # 附带写 CNAME，用于自定义域名
 py -m gamewiki.wiki --domain xiaomenghua.top
 
+# 沿用素材原始格式（默认会把 PNG 转 WebP，体积约为原来的 1/4）
+py -m gamewiki.wiki --image-format keep
+
+# 检查产物里的站内引用（死链、根路径引用、Jekyll 隐患）
+py -m gamewiki.checklinks
+
 # 本地预览
 cd dist-wiki; py -m http.server 8099 --bind 127.0.0.1
 ```
@@ -69,9 +75,9 @@ cd dist-wiki; py -m http.server 8099 --bind 127.0.0.1
 py -m unittest discover -s tests -t .
 ```
 
-无需网络与第三方依赖。`tests/test_mdrender.py` 覆盖自研 Markdown 渲染器的转义、
-表格对齐、列表嵌套等边界；`tests/test_web_assets.py` 静态校验早期预览器的
-`web/index.html` 与 `web/app.js` 选择器自洽性。
+无需网络与第三方依赖。覆盖自研 Markdown 渲染器的转义、表格对齐、列表嵌套等边界
+（`test_mdrender.py`），导航链接的深度计算（`test_nav_prefix.py`），以及早期预览器
+`web/index.html` 与 `web/app.js` 的选择器自洽性（`test_web_assets.py`）。
 
 ## 已收录游戏
 
@@ -90,6 +96,12 @@ py -m unittest discover -s tests -t .
 ```powershell
 py -m gamewiki.deploy --remote https://github.com/<user>/<repo>.git
 ```
+
+发布前会自动跑一遍站内引用检查，**有死链就拒绝推送**——死链在本地很难被发现，
+上线却是对外可见的破损。`--dry-run` 只提交不推送。
+
+第一次推送 18 MB 左右（其中图片约 17 MB）。之后是普通快进推送，git 按内容去重，
+未改动的图片不会重复上传，日常只改 HTML 时推送量在 1 MB 以内。
 
 ## 协作流程
 

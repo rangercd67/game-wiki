@@ -40,7 +40,7 @@ import re
 import shutil
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 from .config import PROJECT_ROOT
 from .mdrender import render
@@ -58,6 +58,14 @@ RESERVED_DIRS = {"data", "media", "assets", "_drafts"}
 _FRONT_MATTER = re.compile(r"^---[ \t]*\n(.*?)\n---[ \t]*\n?", re.S)
 _REBASE = re.compile(r'(?P<attr>href|src)="/(?!/)')
 _TAG = re.compile(r"<[^>]+>")
+# 产物里的图片引用，用于把 /media/<内容源名> 换成实际投递的文件名
+_MEDIA_REF = re.compile(r"/media/([^\"'\s)>]+)")
+
+# PNG 是 3D 截图的糟糕容器：实测 1124x635 的殿堂截图存成 PNG 要 1.25 MB
+# （1.75 字节/像素，几乎不压缩）。同一张图转 WebP 后可省 3/4 左右，
+# 而这些图本来就只有 ~1130px 宽，不需要降采样。
+WEBP_QUALITY = 90
+DEFAULT_IMAGE_FORMAT = "webp"
 _SPACE = re.compile(r"\s+")
 
 
@@ -211,16 +219,36 @@ def _groups_for(site: dict, game_id: str) -> list[tuple[str, str]]:
     return []
 
 
-def build_media(content_root: Path, output: Path, library: Path) -> dict:
-    """按 content/media.json 把原图处理进 dist/media/，返回统计。
+def deliver_media_name(name: str, image_format: str, has_pillow: bool) -> str:
+    """决定图片投递时用的文件名。
+
+    内容源里统一写 `.png`（作者视角稳定），投递格式由构建决定。
+    只转 PNG：JPEG 本来就小，二次有损不划算。
+    """
+    if image_format != "webp" or not has_pillow:
+        return name
+    path = PurePosixPath(name)
+    if path.suffix.lower() != ".png":
+        return name
+    return str(path.with_suffix(".webp"))
+
+
+def build_media(
+    content_root: Path, output: Path, library: Path, image_format: str = DEFAULT_IMAGE_FORMAT,
+) -> tuple[dict, dict[str, str]]:
+    """按 content/media.json 把原图处理进 dist/media/，返回（统计, 名字映射）。
 
     刻意不把图片放进内容源：原图合计上百 MB，进 git 会让仓库无法使用。
     构建时从 library 取、按需缩放重编码，产物体积可控且可随时重建。
+
+    返回的映射是「内容源里的名字 → 实际投递的相对路径」，页面渲染时据此
+    改写引用，否则 `.png` 的链接会指向不存在的文件。
     """
     mapping = _load_json(content_root / "media.json")
-    stats = {"written": 0, "missing": 0, "bytes": 0, "failed": 0}
+    stats = {"written": 0, "missing": 0, "bytes": 0, "failed": 0, "format": image_format}
+    urls: dict[str, str] = {}
     if not mapping:
-        return stats
+        return stats, urls
 
     try:
         from PIL import Image
@@ -229,24 +257,30 @@ def build_media(content_root: Path, output: Path, library: Path) -> dict:
 
     for name, spec in mapping.items():
         source = library / (spec["source"] if isinstance(spec, dict) else spec)
-        target = output / MEDIA_DIR / name
         if not source.is_file():
             stats["missing"] += 1
             continue
+
+        delivered = deliver_media_name(name, image_format, Image is not None)
+        max_edge = int(spec.get("max_edge", 0)) if isinstance(spec, dict) else 0
+        # 无事可做时保持原样复制，避免对无需处理的文件做无谓的重编码
+        needs_encode = Image is not None and (delivered != name or max_edge > 0)
+        target = output / MEDIA_DIR / delivered
         target.parent.mkdir(parents=True, exist_ok=True)
 
-        max_edge = int(spec.get("max_edge", 0)) if isinstance(spec, dict) else 0
-        if max_edge and Image is not None:
+        if needs_encode:
             try:
                 with Image.open(source) as image:
                     image.load()
-                    if max(image.size) > max_edge:
+                    if max_edge and max(image.size) > max_edge:
                         scale = max_edge / max(image.size)
                         image = image.resize(
                             (max(1, round(image.width * scale)), max(1, round(image.height * scale))),
                             Image.LANCZOS,
                         )
-                    if target.suffix.lower() == ".png":
+                    if target.suffix.lower() == ".webp":
+                        image.save(target, format="WEBP", quality=WEBP_QUALITY, method=6)
+                    elif target.suffix.lower() == ".png":
                         image.save(target, format="PNG", optimize=True)
                     else:
                         image.convert("RGB").save(
@@ -254,14 +288,20 @@ def build_media(content_root: Path, output: Path, library: Path) -> dict:
                         )
                 stats["written"] += 1
                 stats["bytes"] += target.stat().st_size
+                urls[name] = f"{MEDIA_DIR}/{delivered}"
                 continue
             except Exception:
                 stats["failed"] += 1
-                # 缩放失败就退回原样复制，宁可大一点也不要缺图
+                # 重编码失败就退回原样复制，宁可大一点也不要缺图
+                delivered = name
+                target = output / MEDIA_DIR / delivered
+                target.parent.mkdir(parents=True, exist_ok=True)
+
         shutil.copy2(source, target)
         stats["written"] += 1
         stats["bytes"] += target.stat().st_size
-    return stats
+        urls[name] = f"{MEDIA_DIR}/{delivered}"
+    return stats, urls
 
 
 def _render_nav(site: dict, pages: list[Page], current: Page | None) -> str:
@@ -276,10 +316,11 @@ def _render_nav(site: dict, pages: list[Page], current: Page | None) -> str:
         parts.append('<div class="nav-game">')
         heading = html.escape(game["title"])
         if index_page:
-            parts.append(
-                f'<a class="nav-game-title" href="{_rel(index_page.prefix, _url_for(index_page))}">'
-                f"{heading}</a>"
-            )
+            # 前缀必须取「当前页」的深度。早先这里误用了 index_page.prefix
+            # （链接目标的深度），于是所有页面都发出 ../<game>/，只有在深度 1
+            # 的页面碰巧成立——内容页的侧边导航整片 404。
+            href = _rel(current.prefix if current else "./", _url_for(index_page))
+            parts.append(f'<a class="nav-game-title" href="{href}">{heading}</a>')
         else:
             parts.append(f'<span class="nav-game-title">{heading}</span>')
 
@@ -401,6 +442,7 @@ def build(
     library: Path | None = None,
     domain: str | None = None,
     clean: bool = True,
+    image_format: str = DEFAULT_IMAGE_FORMAT,
 ) -> dict:
     """生成静态 wiki，返回构建清单。"""
     from .config import DEFAULT_SOURCE
@@ -424,8 +466,17 @@ def build(
     if domain:
         (output / "CNAME").write_text(domain.strip() + "\n", encoding="utf-8")
 
+    # 图片先落地，页面才知道实际投递的文件名（PNG 可能被转成 WebP）
+    media_stats, media_urls = build_media(content, output, library, image_format)
+
+    def _remap_media(match: re.Match) -> str:
+        name = match.group(1)
+        return "/" + media_urls.get(name, f"{MEDIA_DIR}/{name}")
+
     for page in pages:
         body_html = render(page.body) + _render_data_table(content, page)
+        if media_urls:
+            body_html = _MEDIA_REF.sub(_remap_media, body_html)
         page.html = _REBASE.sub(lambda m: f'{m.group("attr")}="{page.prefix}', body_html)
         page.text = to_plain_text(body_html)
 
@@ -518,14 +569,12 @@ def build(
     (output / "search.json").write_text(
         json.dumps(search, ensure_ascii=False), encoding="utf-8")
 
-    media = build_media(content, output, library)
-
     manifest = {
         "built_at": datetime.now(tz=timezone.utc).isoformat(),
         "pages": len(pages),
         "by_game": {game["id"]: sum(1 for p in pages if p.game == game["id"])
                     for game in site.get("games", [])},
-        "media": media,
+        "media": media_stats,
         "site_bytes": sum(p.stat().st_size for p in output.rglob("*") if p.is_file()),
         "warnings": warnings,
         "output": str(output),
@@ -542,9 +591,17 @@ def main() -> None:
     parser.add_argument("--library", type=Path, default=None)
     parser.add_argument("--domain", default=None, help="写入 CNAME，例如 xiaomenghua.top")
     parser.add_argument("--keep", action="store_true", help="不清理输出目录")
+    parser.add_argument(
+        "--image-format", choices=("webp", "keep"), default=DEFAULT_IMAGE_FORMAT,
+        help="投递图片格式。webp（默认）会把 PNG 转 WebP，体积约为原来的 1/4；"
+             "keep 表示沿用素材原始格式",
+    )
     args = parser.parse_args()
 
-    manifest = build(args.content, args.output, args.library, args.domain, clean=not args.keep)
+    manifest = build(
+        args.content, args.output, args.library, args.domain,
+        clean=not args.keep, image_format=args.image_format,
+    )
     print(
         f"构建完成：{manifest['pages']} 个页面，"
         f"图片 {manifest['media']['written']} 张（缺失 {manifest['media']['missing']}），"

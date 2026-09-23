@@ -30,6 +30,7 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
+from .checklinks import check as check_links
 from .config import PROJECT_ROOT
 from .wiki import CONTENT_ROOT, DEFAULT_OUTPUT, build
 
@@ -97,6 +98,13 @@ def scan(output: Path) -> tuple[int, int, list[str]]:
             problems.append(f"{name}：顶层下划线开头会被 Jekyll 忽略（缺少 .nojekyll？）")
         if any(char in name for char in _BAD_URL_CHARS):
             problems.append(f"{name}：文件名含 {'、'.join(_BAD_URL_CHARS)}，静态托管下 URL 会被截断")
+
+    # 死链在本地预览时很难被发现（只有点过去才知道），但一旦上线就是对外可见的
+    # 破损。既然发布前必然要读一遍产物，就把这件事做成硬闸门。
+    dead, violations, _ = check_links(output)
+    problems.extend(f"{item}（死链）" for item in dead)
+    problems.extend(violations)
+
     return len(files), total, problems
 
 
