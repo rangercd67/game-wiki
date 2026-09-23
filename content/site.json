@@ -1,0 +1,47 @@
+{
+  "lang": "zh-CN",
+  "title": "藏经阁",
+  "subtitle": "PERSONA GUIDE WIKI",
+  "description": "女神异闻录系列攻略资料：殿堂走法、人格面具图鉴、合成表与日程规划。",
+  "footer": "攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。",
+  "games": [
+    {
+      "id": "dohna",
+      "title": "多娜多娜",
+      "groups": [
+        { "id": "common", "title": "常用攻略" },
+        { "id": "data", "title": "数据图鉴" },
+        { "id": "story", "title": "剧情与分支" }
+      ]
+    },
+    {
+      "id": "p5r",
+      "title": "P5R 皇家版",
+      "groups": [
+        { "id": "common", "title": "常用攻略" },
+        { "id": "palace", "title": "殿堂攻略" },
+        { "id": "recommend", "title": "推荐攻略" },
+        { "id": "data", "title": "数据图鉴" },
+        { "id": "daily", "title": "日常" },
+        { "id": "misc", "title": "其他" }
+      ]
+    },
+    {
+      "id": "p3p",
+      "title": "P3P 携带版",
+      "groups": [
+        { "id": "common", "title": "常用攻略" },
+        { "id": "data", "title": "数据图鉴" }
+      ]
+    },
+    {
+      "id": "p4g",
+      "title": "P4G 黄金版",
+      "groups": [
+        { "id": "common", "title": "常用攻略" },
+        { "id": "data", "title": "数据图鉴" },
+        { "id": "daily", "title": "日常" }
+      ]
+    }
+  ]
+}

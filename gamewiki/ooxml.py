@@ -12,6 +12,7 @@ OOXML 文件本质是 ZIP 容器内含 XML 部件，因此仅用标准库即可�
 
 from __future__ import annotations
 
+import re
 import zipfile
 from pathlib import Path
 from xml.etree import ElementTree
@@ -184,21 +185,73 @@ def _cell_text(cell: ElementTree.Element, shared: list[str]) -> str:
     return raw.text
 
 
+def _parse_range(reference: str) -> tuple[int, int, int, int] | None:
+    """解析 `A2:C5` 形式的合并区域，返回 (起始列, 起始行, 结束列, 结束行)。"""
+    match = re.match(r"^([A-Za-z]+)(\d+)(?::([A-Za-z]+)(\d+))?$", reference.strip())
+    if not match:
+        return None
+    first_column = _column_index(match.group(1))
+    if first_column is None:
+        return None
+    first_row = int(match.group(2))
+    if match.group(3):
+        last_column = _column_index(match.group(3))
+        last_row = int(match.group(4))
+        if last_column is None:
+            return None
+    else:
+        last_column, last_row = first_column, first_row
+    return first_column, first_row, last_column, last_row
+
+
+def _sheet_rows(
+    archive: zipfile.ZipFile, target: str, shared: list[str], max_member_bytes: int
+) -> list[list[str]]:
+    """读取工作表为行列表（等宽、补空格）。
+
+    合并单元格必须被填充：合成表里 `Lv` / `名称` 常跨多行合并，不填充的话
+    表格会出现大片空白，读者无法判断哪一行属于哪个条目。
+    """
+    root = ElementTree.fromstring(_read_member(archive, target, max_member_bytes))
+    grid: dict[int, dict[int, str]] = {}
+    width = 0
+    for position, row in enumerate(root.iter(SHEET + "row"), start=1):
+        row_index = int(row.get("r") or position)
+        cells: dict[int, str] = {}
+        for cell_position, cell in enumerate(row.iter(SHEET + "c")):
+            column = _column_index(cell.get("r") or "")
+            cells[cell_position if column is None else column] = _cell_text(cell, shared)
+        if not cells:
+            continue
+        grid[row_index] = cells
+        width = max(width, max(cells) + 1)
+
+    merged = root.find(SHEET + "mergeCells")
+    if merged is not None:
+        for item in merged.iter(SHEET + "mergeCell"):
+            bounds = _parse_range(item.get("ref") or "")
+            if bounds is None:
+                continue
+            first_column, first_row, last_column, last_row = bounds
+            value = grid.get(first_row, {}).get(first_column, "")
+            if not value:
+                continue
+            for row_index in range(first_row, last_row + 1):
+                for column in range(first_column, last_column + 1):
+                    grid.setdefault(row_index, {}).setdefault(column, value)
+
+    return [
+        [grid[row_index].get(column, "") for column in range(width)]
+        for row_index in sorted(grid)
+    ]
+
+
 def _sheet_text(
     archive: zipfile.ZipFile, target: str, shared: list[str], max_member_bytes: int
 ) -> str:
-    root = ElementTree.fromstring(_read_member(archive, target, max_member_bytes))
-    lines: list[str] = []
-    for row in root.iter(SHEET + "row"):
-        cells: dict[int, str] = {}
-        for position, cell in enumerate(row.iter(SHEET + "c")):
-            column = _column_index(cell.get("r") or "")
-            cells[position if column is None else column] = _cell_text(cell, shared)
-        if not cells:
-            continue
-        width = max(cells) + 1
-        lines.append("\t".join(cells.get(index, "") for index in range(width)).rstrip())
-    return "\n".join(lines)
+    return "\n".join(
+        "\t".join(row).rstrip() for row in _sheet_rows(archive, target, shared, max_member_bytes)
+    )
 
 
 def _xlsx_text(archive: zipfile.ZipFile, max_member_bytes: int) -> str:
@@ -211,3 +264,46 @@ def _xlsx_text(archive: zipfile.ZipFile, max_member_bytes: int) -> str:
     if not sections:
         raise OoxmlError("容器中未找到可读工作表")
     return "\n\n".join(sections)
+
+
+def extract_sheets(
+    path: Path,
+    extension: str = ".xlsx",
+    max_archive_bytes: int = MAX_OOXML_ARCHIVE_BYTES,
+    max_member_bytes: int = MAX_OOXML_MEMBER_BYTES,
+) -> list[tuple[str, list[list[str]]]]:
+    """把工作簿读成 `[(工作表名, 行列表)]`，供表格类 wiki 页面使用。
+
+    与 `extract_text` 的区别：保留行列结构，因此调用方可以直接生成
+    HTML/Markdown 表格，而不是拿到一堆制表符分隔的文本再猜列边界。
+    """
+    if extension.lower() != XLSX:
+        raise OoxmlError(f"结构化表格读取仅支持 {XLSX}，收到 {extension}")
+
+    try:
+        archive_bytes = path.stat().st_size
+    except OSError as error:
+        raise OoxmlError("文件不可读") from error
+    if archive_bytes > max_archive_bytes:
+        raise OoxmlError(
+            f"容器 {archive_bytes / 1048576:.1f} MB 超过上限 {max_archive_bytes // 1048576} MB"
+        )
+
+    try:
+        with zipfile.ZipFile(path) as archive:
+            names = set(archive.namelist())
+            shared = _shared_strings(archive, names, max_member_bytes)
+            sheets = [
+                (title, _sheet_rows(archive, target, shared, max_member_bytes))
+                for title, target in _sheet_targets(archive, names, max_member_bytes)
+            ]
+    except zipfile.BadZipFile as error:
+        raise OoxmlError("不是有效的 ZIP 容器") from error
+    except ElementTree.ParseError as error:
+        raise OoxmlError("XML 部件无法解析") from error
+    except OSError as error:
+        raise OoxmlError("文件读取失败") from error
+
+    if not sheets:
+        raise OoxmlError("容器中未找到可读工作表")
+    return sheets

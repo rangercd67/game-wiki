@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="{{lang}}" data-prefix="{{prefix}}" data-site="{{site_title}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{description}}">
+  <title>{{title}} · {{site_title}}</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="{{prefix}}assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="{{prefix}}">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>{{site_title}}</strong><small>{{site_subtitle}}</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+{{game_tabs}}
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+{{nav}}
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="{{prefix}}">首页</a>
+          <b>/</b>
+          <span>{{breadcrumb_game}}</span>
+          <b>/</b>
+          <span aria-current="page">{{breadcrumb_title}}</span>
+        </nav>
+        <header class="article-head">
+          <h1>{{title}}</h1>
+          <p class="article-meta">最近更新于 {{updated}}</p>
+        </header>
+        <div class="prose">
+{{content}}
+        </div>
+{{page_nav}}
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>{{footer}}</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="{{prefix}}assets/wiki.js" defer></script>
+</body>
+</html>
