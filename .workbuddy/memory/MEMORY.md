@@ -138,11 +138,64 @@ data: <game>/<name> # 可选，引用结构化表格
 python -m gamewiki.sources
 # 内容源 → 静态站点
 python -m gamewiki.wiki                     # 输出 dist-wiki/
-python -m gamewiki.wiki --domain xiaomenghua.top   # 附带写 CNAME
+python -m gamewiki.wiki --domain wiki.example.com  # 才需要写 CNAME
+# 站内引用检查（发布前的硬闸门，deploy 会自动跑）
+python -m gamewiki.checklinks
 # 测试
 python -m unittest discover -s tests -t .
-# 本地预览
+# 发布到 GitHub Pages（--build 会先重建）
+python -m gamewiki.deploy --remote https://github.com/rangercd67/game-wiki.git --build
+# 本地预览（线上已可用，日常不必再开）
 cd dist-wiki && python -m http.server 8099 --bind 127.0.0.1
+```
+
+## 部署（已上线）
+
+**线上地址：<https://rangercd67.github.io/game-wiki/>**
+
+| 项 | 值 |
+| --- | --- |
+| 仓库 | `rangercd67/game-wiki`，**public**（Pages 免费账号只能发公开仓库） |
+| 站点分支 | `gh-pages`（孤立分支，`main` 只放源码） |
+| Pages 模式 | `build_type=legacy`，分支直发，**不依赖 Actions** |
+| 自定义域名 | **没绑**。`game-wiki` 挂在 `/game-wiki/` 子路径下 |
+
+**为什么没绑 `xiaomenghua.top`**：那个域名是用户的 Hexo 博客（Cloudflare 后面，
+jquery / fancybox / katex / atom.xml，带 `ctf-wp` 导航）。绑上去会把博客整个顶掉。
+`rangercd67.github.io` 本身也已被占用（404 Site not found，无用户站）。
+
+**子路径部署靠的是「输出一律相对路径」那条约定**——`checklinks` 里
+「禁止 `href="/..."`」这条规则就是为它兜底的。
+
+### 三个分支的分工
+
+| 分支 | 内容 | 说明 |
+| --- | --- | --- |
+| `main` | 项目源码 + `legacy/` | 公开；`library/`、`dist-wiki/`、`tmp/` 被忽略 |
+| `gh-pages` | 站点产物 | 发布目标，每次 deploy 覆盖 |
+| `legacy-static` | 远端旧站（`7604eeb`） | 早期「江城创业记/多娜多娜/黑柳树海」静态站，换 main 前存下来的 |
+
+远端原 `main` 与本地**无共同祖先**（旧站是被 `git filter-repo` 从 jcwiki 拆出来的），
+所以 2026-09-25 那次换 main 用的是 `--force-with-lease`，不是强推裸 `--force`。
+旧内容没丢：既在 `legacy-static` 分支上，也在本地 `legacy/` 与 `tmp/legacy-backup/` 里。
+
+### 发布凭据
+
+- 代理必须走 `http://127.0.0.1:7890`（`7891`/`1080`/`10809` 都不通）。
+- 令牌在 `~/.hermes/github_token_ruankao`（40 字符），作用域含 `repo`、`delete_repo`，
+  **不含 `workflow`** —— 所以 Pages 只能走「分支直发」，不能用 Actions 方式建站。
+- 无人值守下必须显式清空 `credential.helper` 再注入，否则会挂在本机
+  `git-credential-manager` 上空转 ~70 秒：
+
+```bash
+export TOKEN=$(cat ~/.hermes/github_token_ruankao | tr -d '\r\n')
+export GIT_CONFIG_COUNT=3
+export GIT_CONFIG_KEY_0=http.proxy
+export GIT_CONFIG_VALUE_0=http://127.0.0.1:7890
+export GIT_CONFIG_KEY_1=credential.helper
+export GIT_CONFIG_VALUE_1=
+export GIT_CONFIG_KEY_2=credential.helper
+export GIT_CONFIG_VALUE_2='!f() { echo username=x-access-token; echo password=$TOKEN; }; f'
 ```
 
 ## 用户偏好
@@ -150,4 +203,4 @@ cd dist-wiki && python -m http.server 8099 --bind 127.0.0.1
 - UI：极简医学风格，≤2 主色（科技蓝 `#0EA5E9` / 活力绿 `#22C55E`），背景 `#F0F7F7`，
   圆角 12px，无衬线。深浅双主题只切表面与文字色，主色不变。
 - 沟通：先确认目标产物形态再动手；用户对方向性错误容忍度极低。
-- 部署目标：GitHub Pages + 自有域名 `xiaomenghua.top`。
+- 部署：**GitHub Pages 子路径**，不再在本地长期挂预览服务。
