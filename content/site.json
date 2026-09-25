@@ -42,6 +42,16 @@
         { "id": "data", "title": "数据图鉴" },
         { "id": "daily", "title": "日常" }
       ]
+    },
+    {
+      "id": "arknights",
+      "title": "明日方舟",
+      "groups": [
+        { "id": "blackflow", "title": "集成战略·黑流树海" },
+        { "id": "jieyuan", "title": "集成战略·界园" },
+        { "id": "gen", "title": "集成战略·通用机制" },
+        { "id": "xianshu", "title": "仙术杯#6 赛事数据" }
+      ]
     }
   ]
 }

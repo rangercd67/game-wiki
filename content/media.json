@@ -710,5 +710,21 @@
  "p5r/palace-shido/10.png": {
   "max_edge": 2200,
   "source": "P5R攻略2.0/P5R/1鸭志田殿堂/鸭志田隐藏房间.png"
+ },
+ "arknights/mirage-iii/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/III-血色空脉-默认规则.png"
+ },
+ "arknights/mirage-iv/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/IV-受害者腐殖-默认规则.png"
+ },
+ "arknights/mirage-v/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/V-卡德霍之颅-默认规则.png"
+ },
+ "arknights/mirage-iv-recall/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/IV-受害者腐殖-追忆规则.png"
  }
 }
