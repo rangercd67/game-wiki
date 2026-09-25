@@ -56,8 +56,8 @@ py -m gamewiki.sources
 # 内容源 → 静态站点（输出 dist-wiki/）
 py -m gamewiki.wiki
 
-# 附带写 CNAME，用于自定义域名
-py -m gamewiki.wiki --domain xiaomenghua.top
+# 附带写 CNAME，用于自定义域名（本例绑在域名根目录）
+py -m gamewiki.wiki --domain wiki.example.com
 
 # 沿用素材原始格式（默认会把 PNG 转 WebP，体积约为原来的 1/4）
 py -m gamewiki.wiki --image-format keep
@@ -69,6 +69,37 @@ py -m gamewiki.checklinks
 cd dist-wiki; py -m http.server 8099 --bind 127.0.0.1
 ```
 
+## 数据导入
+
+素材形态不同，导入链也不同，都收敛在 `gamewiki/sources.py` 的声明式清单里，
+**改数据不改代码**：
+
+| 素材形态 | 声明方式 | 用途 |
+| --- | --- | --- |
+| 多工作表 xlsx | `Workbook` | 每个工作表抽成一张表 |
+| 长文 / 图片目录 | `Document` / `Gallery` | 正文与图集 |
+| 在线表格导出网格 | `SheetGrid` | 明日方舟《集批宝典》23 个子表 |
+
+`SheetGrid` 支持 7 种取数模式，对应在线表格里常见的排版：
+
+| mode | 场景 |
+| --- | --- |
+| `grid` | 原样网格，保留原表行号列标，空白即原表留空 |
+| `header` | 首行是表头，跳过前置空列 |
+| `sections` | 多段「小节 → 键值」结构 |
+| `matrix` | 二维交叉表，单元格内的竖排列表合并为顿号 |
+| `melt` | 宽表转长表（列名当属性） |
+| `pairs` | 两列一组，按编号配对 |
+| `placeholder` | 原文档只给了图，建页标注资料缺口 |
+
+几条自己踩出来的规矩，写在 README 里是为了别再踩一次：
+
+- **素材编码必须探测**：UTF-8 → GB18030 → Big5 回退。GBK 文件用 UTF-8 读会**静默**乱码。
+- **留空列按需向下填充**，但必须按列声明——合成表的 `Lv`/`名称` 空白是「同上」，
+  掉落列的空白是「无掉落」，两者不能一概而论。
+- **不编数据**。公开来源只有标题没有数值时，页面写「资料缺口」而不是估算填充。
+- 素材目录名 / 工作表名匹配不上时**报错跳过并记录**，不要猜。
+
 ## 测试
 
 ```powershell
@@ -76,7 +107,8 @@ py -m unittest discover -s tests -t .
 ```
 
 无需网络与第三方依赖。覆盖自研 Markdown 渲染器的转义、表格对齐、列表嵌套等边界
-（`test_mdrender.py`），导航链接的深度计算（`test_nav_prefix.py`），以及早期预览器
+（`test_mdrender.py`），导航链接的深度计算（`test_nav_prefix.py`），`SheetGrid` 的
+7 种取数模式与引号/空行/参差行的边界（`test_sources_grid.py`），以及早期预览器
 `web/index.html` 与 `web/app.js` 的选择器自洽性（`test_web_assets.py`）。
 
 ## 已收录游戏
@@ -87,10 +119,18 @@ py -m unittest discover -s tests -t .
 | 女神异闻录 5 皇家版 | 20 | 殿堂走法地图、印象空间、面具合成、日程、社群 |
 | 女神异闻录 3 携带版 | 13 | 男女主双线日程、全面具合成、装备获取 |
 | 女神异闻录 4 黄金版 | 19 | 流程、技能卡、支线任务、成就 |
+| 明日方舟 · 集成战略 | 27 | 黑流树海误入奇境、界园合订本与藏品、通用机制数值、仙术杯#6 赛事数据 |
+
+> 明日方舟部分的数据源是腾讯文档《集批宝典》的 23 个子表，由
+> `gamewiki/sources.py` 里的声明式 `SheetGrid` 清单导入（见「数据导入」一节）。
+> 其中 2 个子表原文档只给了图，页面为占位并标注资料缺口，不做推测性重绘。
 
 ## 部署
 
-站点为纯静态产物，只用相对路径，因此放在域名根目录或子路径下都能正确工作。
+线上站点：**<https://rangercd67.github.io/game-wiki/>**
+
+站点为纯静态产物，只用相对路径，因此放在域名根目录或子路径下都能正确工作——
+上面这个地址就挂在 `/game-wiki/` 子路径下，没有绑自定义域名。
 发布走独立的 `gh-pages` 分支，`main` 只保留源码。
 
 ```powershell
@@ -100,8 +140,11 @@ py -m gamewiki.deploy --remote https://github.com/<user>/<repo>.git
 发布前会自动跑一遍站内引用检查，**有死链就拒绝推送**——死链在本地很难被发现，
 上线却是对外可见的破损。`--dry-run` 只提交不推送。
 
-第一次推送 18 MB 左右（其中图片约 17 MB）。之后是普通快进推送，git 按内容去重，
+第一次推送约 20 MB（其中图片约 17 MB）。之后是普通快进推送，git 按内容去重，
 未改动的图片不会重复上传，日常只改 HTML 时推送量在 1 MB 以内。
+
+站点由 `gh-pages` 分支直接发布（Pages 的 `build_type=legacy`），不依赖 Actions，
+因此发布令牌无需 `workflow` 作用域。
 
 ## 协作流程
 
