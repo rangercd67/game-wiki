@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="四类武器的数值差异、力量(POW)与技巧(TEC)的实际作用，以及各角色的选型结论。">
+  <title>武器系统与选型 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/" class="active">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/" class="active">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>多娜多娜</span>
+          <b>/</b>
+          <span aria-current="page">武器系统与选型</span>
+        </nav>
+        <header class="article-head">
+          <h1>武器系统与选型</h1>
+          <p class="article-meta">最近更新于 2026-09-17</p>
+        </header>
+        <div class="prose">
+<p>每个角色的武器分 <strong>6 个等级</strong>，第 6 级为该角色的终极武器。同一等级的武器会提供 若干种「类型」，类型决定力量与技巧的分配比例。</p>
+<h2 id="四类武器">四类武器</h2>
+<table>
+<thead>
+<tr><th>类型</th><th>力量(POW)</th><th>技巧(TEC)</th><th>特点与适用</th></tr>
+</thead>
+<tbody>
+<tr><td>均衡型</td><td>中</td><td>中</td><td>力技较为均衡，<strong>总数值最高</strong>。后期刷高难迷宫的稳妥选择</td></tr>
+<tr><td>输出型</td><td>高</td><td>低</td><td>力量更高，<strong>直接提升伤害</strong>。输出角色的首选</td></tr>
+<tr><td>技巧型</td><td>很低</td><td>高</td><td>只有个别功能型角色才会考虑</td></tr>
+<tr><td>廉价型</td><td>低</td><td>低</td><td>价格便宜但数值低。本游戏不缺钱，<strong>不必考虑</strong></td></tr>
+</tbody>
+</table>
+<h2 id="力量与技巧分别管什么">力量与技巧分别管什么</h2>
+<p>这是最容易误解的一点：</p>
+<ul>
+<li><strong>力量（POW）</strong> 直接与角色输出伤害挂钩。</li>
+<li><strong>技巧（TEC）</strong> 对伤害<strong>没有直接提升</strong>，它影响的是三件事：<ol>
+<li>被动技能的发动几率</li>
+<li>主动技能施加负面状态（debuff）的成功几率</li>
+<li>攻击的暴击率</li>
+</ol></li>
+</ul>
+<p>因此「技巧型武器输出低」并不是缺点，而是取舍：把数值从伤害转移到了触发率上， 只有依赖被动、debuff 或暴击的功能型角色才划算。</p>
+<h2 id="选型结论">选型结论</h2>
+<ul>
+<li>大部分输出角色：<strong>输出型</strong>（力量优先，伤害最直接）</li>
+<li>部分角色均衡型与输出型均可：差别在于用总数值换力量，按自己的队伍分工取舍</li>
+<li>功能型角色：<strong>技巧型</strong>（需要被动与 debuff 触发率）</li>
+</ul>
+<p>各角色的具体推荐见 <a href="../../dohna/characters/">可操作角色一览</a>。</p>
+<blockquote><p><strong>实战提示</strong> 第 17 章进入花霞祭之前，建议把主力角色的武器刷到 <strong>3 级以上</strong>—— 该章的战斗难度会明显上升，且存在不可逆的结局分歧。</p></blockquote>
+<h2 id="资料缺口">资料缺口</h2>
+<p>以下内容在公开来源中没有可核实的数据，因此本站暂不提供：</p>
+<ul>
+<li>各武器的具体数值表（攻击力、POW / TEC 加成数值、每级成长）</li>
+<li>各武器类型的掉落地图与掉落率</li>
+<li>各角色 6 级武器的完整名称</li>
+</ul>
+<h2 id="内容出处">内容出处</h2>
+<blockquote><p>百度贴吧《萌新向，关于武器种类的选择，以及武器掉落的地点问题》 <code>https://tieba.baidu.com/p/7302499396</code> 武器等级与花霞祭提示：游侠网《多娜多娜一起做坏事吧怎么避免ntr》攻略</p></blockquote>
+        </div>
+
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

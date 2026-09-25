@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="全成就奖杯的获取条件。">
+  <title>成就奖杯列表 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/" class="active">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/" class="active">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>P4G 黄金版</span>
+          <b>/</b>
+          <span aria-current="page">成就奖杯列表</span>
+        </nav>
+        <header class="article-head">
+          <h1>成就奖杯列表</h1>
+          <p class="article-meta">最近更新于 2026-09-16</p>
+        </header>
+        <div class="prose">
+<p>全成就奖杯的获取条件。</p><figure class="data-table"><table data-rows="149"><caption>成就奖杯列表（取自 成就奖杯列表（转自PSNINE）.xlsx · 工作表 Sheet1）</caption><thead><tr><th>白1 金3 银6 铜40 总50</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>6.40%非常珍贵</td><td></td></tr><tr><td></td><td>#1黃金稱霸 58 Tips</td><td></td><td></td></tr><tr><td></td><td>取得所有獎盃</td><td></td><td></td></tr><tr><td></td><td></td><td>72.60%一般</td><td></td></tr><tr><td></td><td>#2王子殿下現身 2 Tips</td><td></td><td></td></tr><tr><td></td><td>平安救出天城雪子</td><td></td><td></td></tr><tr><td></td><td></td><td>60.60%一般</td><td></td></tr><tr><td></td><td>#3頂天立地的男子漢 1 Tips</td><td></td><td></td></tr><tr><td></td><td>平安救出巽完二</td><td></td><td></td></tr><tr><td></td><td></td><td>53.60%一般</td><td></td></tr><tr><td></td><td>#4脫衣秀落幕 1 Tips</td><td></td><td></td></tr><tr><td></td><td>平安救出久慈川理世</td><td></td><td></td></tr><tr><td></td><td></td><td>49.10%珍贵</td><td></td></tr><tr><td></td><td>#5冒險結束 1 Tips</td><td></td><td></td></tr><tr><td></td><td>逮捕久保美津雄</td><td></td><td></td></tr><tr><td></td><td></td><td>45.20%珍贵</td><td></td></tr><tr><td></td><td>#6緊急封閉研究室</td><td></td><td></td></tr><tr><td></td><td>平安救出白鐘直斗</td><td></td><td></td></tr><tr><td></td><td></td><td>41.40%珍贵</td><td></td></tr><tr><td></td><td>#7天使們凱旋歸來</td><td></td><td></td></tr><tr><td></td><td>平安救出堂島菜菜子</td><td></td><td></td></tr><tr><td></td><td></td><td>34.80%珍贵</td><td></td></tr><tr><td></td><td>#8於是霧散了 13 Tips</td><td></td><td></td></tr><tr><td></td><td>逮捕足立透</td><td></td><td></td></tr><tr><td></td><td></td><td>25.70%珍贵</td><td></td></tr><tr><td></td><td>#9歡迎回來 10 Tips</td><td></td><td></td></tr><tr><td></td><td>平安救出瑪麗</td><td></td><td></td></tr><tr><td></td><td></td><td>26.50%珍贵</td><td></td></tr><tr><td></td><td>#10親手掌握真相 5 Tips</td><td></td><td></td></tr><tr><td></td><td>打倒伊邪那美</td><td></td><td></td></tr><tr><td></td><td></td><td>31.20%珍贵</td><td></td></tr><tr><td></td><td>#11合體高手</td><td></td><td></td></tr><tr><td></td><td>進行過５０次人格面具合體</td><td></td><td></td></tr><tr><td></td><td></td><td>37.80%珍贵</td><td></td></tr><tr><td></td><td>#12特殊合體大師 1 Tips</td><td></td><td></td></tr><tr><td></td><td>進行過４身以上的人格面具合體</td><td></td><td></td></tr><tr><td></td><td></td><td>42.60%珍贵</td><td></td></tr><tr><td></td><td>#13鷹勾鼻也有失誤之時 24 Tips</td><td></td><td></td></tr><tr><td></td><td>發生合體事故</td><td></td><td></td></tr><tr><td></td><td></td><td>50.10%一般</td><td></td></tr><tr><td></td><td>#14購買人格面具</td><td></td><td></td></tr><tr><td></td><td>從人格面具全書中購買人格面具</td><td></td><td></td></tr><tr><td></td><td></td><td>64.40%一般</td><td></td></tr><tr><td></td><td>#15拜託瑪麗</td><td></td><td></td></tr><tr><td></td><td>登錄技能卡片</td><td></td><td></td></tr><tr><td></td><td></td><td>15.10%珍贵</td><td></td></tr><tr><td></td><td>#16卡片收集家 12 Tips</td><td></td><td></td></tr><tr><td></td><td>登錄１００張技能卡片</td><td></td><td></td></tr><tr><td></td><td></td><td>41.70%珍贵</td><td></td></tr><tr><td></td><td>#17隨機應變</td><td></td><td></td></tr><tr><td></td><td>在１場戰鬥中更換５次人格面具</td><td></td><td></td></tr><tr><td></td><td></td><td>10.50%非常珍贵</td><td></td></tr><tr><td></td><td>#18熱情的理世迷 121 Tips</td><td></td><td></td></tr><tr><td></td><td>聽過２５０種理世的後援導航</td><td></td><td></td></tr><tr><td></td><td></td><td>45.90%珍贵</td><td></td></tr><tr><td></td><td>#19強悍攻擊者 4 Tips</td><td></td><td></td></tr><tr><td></td><td>一次攻擊造成９９９以上的傷害</td><td></td><td></td></tr><tr><td></td><td></td><td>59.40%一般</td><td></td></tr><tr><td></td><td>#20優秀司令台</td><td></td><td></td></tr><tr><td></td><td>進行過５０次總攻擊</td><td></td><td></td></tr><tr><td></td><td></td><td>62.40%一般</td><td></td></tr><tr><td></td><td>#21戰鬥能手</td><td></td><td></td></tr><tr><td></td><td>擊中弱點達１００次</td><td></td><td></td></tr><tr><td></td><td></td><td>43.60%珍贵</td><td></td></tr><tr><td></td><td>#22神之手氣 9 Tips</td><td></td><td></td></tr><tr><td></td><td>達成５０次ALL GET BONUS</td><td></td><td></td></tr><tr><td></td><td></td><td>71.40%一般</td><td></td></tr><tr><td></td><td>#23掌握慾望的手 5 Tips</td><td></td><td></td></tr><tr><td></td><td>打倒黃金之手</td><td></td><td></td></tr><tr><td></td><td></td><td>9.30%非常珍贵</td><td></td></tr><tr><td></td><td>#24展示力量之人 29 Tips</td><td></td><td></td></tr><tr><td></td><td>打倒瑪格麗特</td><td></td><td></td></tr><tr><td></td><td></td><td>18.70%珍贵</td><td></td></tr><tr><td></td><td>#25獵殺者獵人 31 Tips</td><td></td><td></td></tr><tr><td></td><td>打倒獵殺者</td><td></td><td></td></tr><tr><td></td><td></td><td>27.20%珍贵</td><td></td></tr><tr><td></td><td>#26美食發掘家 1 Tips</td><td></td><td></td></tr><tr><td></td><td>吃完愛家的特別套餐</td><td></td><td></td></tr><tr><td></td><td></td><td>9.20%非常珍贵</td><td></td></tr><tr><td></td><td>#27書痴 30 Tips</td><td></td><td></td></tr><tr><td></td><td>讀遍所有的書</td><td></td><td></td></tr><tr><td></td><td></td><td>50.80%一般</td><td></td></tr><tr><td></td><td>#28今天動了！ 2 Tips</td><td></td><td></td></tr><tr><td></td><td>從轉蛋機購買道具</td><td></td><td></td></tr><tr><td></td><td></td><td>49.70%珍贵</td><td></td></tr><tr><td></td><td>#29幸運！ 6 Tips</td><td></td><td></td></tr><tr><td></td><td>販賣機抽獎中獎</td><td></td><td></td></tr><tr><td></td><td></td><td>51.70%一般</td><td></td></tr><tr><td></td><td>#30大家的慾望之友 1 Tips</td><td></td><td></td></tr><tr><td></td><td>在時價購物網購物５次</td><td></td><td></td></tr><tr><td></td><td></td><td>39.90%珍贵</td><td></td></tr><tr><td></td><td>#31購物好眼光 1 Tips</td><td></td><td></td></tr><tr><td></td><td>購買家常菜大學的特製炸肉餅</td><td></td><td></td></tr><tr><td></td><td></td><td>38.50%珍贵</td><td></td></tr><tr><td></td><td>#32自炊系男子 8 Tips</td><td></td><td></td></tr><tr><td></td><td>完美做出５次便當</td><td></td><td></td></tr><tr><td></td><td></td><td>48.10%珍贵</td><td></td></tr><tr><td></td><td>#33特別的女性 4 Tips</td><td></td><td></td></tr><tr><td></td><td>與任何一位角色建立特殊關係</td><td></td><td></td></tr><tr><td></td><td></td><td>34.70%珍贵</td><td></td></tr><tr><td></td><td>#34完美的人格 3 Tips</td><td></td><td></td></tr><tr><td></td><td>所有人格參數達到最高級</td><td></td><td></td></tr><tr><td></td><td></td><td>84.70%一般</td><td></td></tr><tr><td></td><td>#35另一個自己 2 Tips</td><td></td><td></td></tr><tr><td></td><td>獲得人格面具伊邪那岐</td><td></td><td></td></tr><tr><td></td><td></td><td>10.60%非常珍贵</td><td></td></tr><tr><td></td><td>#36真實之力 3 Tips</td><td></td><td></td></tr><tr><td></td><td>製作出伊邪那岐大神</td><td></td><td></td></tr><tr><td></td><td></td><td>37.50%珍贵</td><td></td></tr><tr><td></td><td>#37人格面具全書中級者</td><td></td><td></td></tr><tr><td></td><td>人格面具全書登錄超過50%</td><td></td><td></td></tr><tr><td></td><td></td><td>8.90%非常珍贵</td><td></td></tr><tr><td></td><td>#38完整人格面具全書 14 Tips</td><td></td><td></td></tr><tr><td></td><td>完成人格面具全書</td><td></td><td></td></tr><tr><td></td><td></td><td>74.20%一般</td><td></td></tr><tr><td></td><td>#39時髦傳教士</td><td></td><td></td></tr><tr><td></td><td>更換服裝進行戰鬥</td><td></td><td></td></tr><tr><td></td><td></td><td>44.90%珍贵</td><td></td></tr><tr><td></td><td>#40眾人矚目的焦點 4 Tips</td><td></td><td></td></tr><tr><td></td><td>在考試中拿到全年級第一名</td><td></td><td></td></tr><tr><td></td><td></td><td>16.50%珍贵</td><td></td></tr><tr><td></td><td>#41釣魚大師 52 Tips</td><td></td><td></td></tr><tr><td></td><td>釣到海大王魚</td><td></td><td></td></tr><tr><td></td><td></td><td>48.10%珍贵</td><td></td></tr><tr><td></td><td>#42真實羈絆</td><td></td><td></td></tr><tr><td></td><td>任何一個社群達到MAX</td><td></td><td></td></tr><tr><td></td><td></td><td>29.10%珍贵</td><td></td></tr><tr><td></td><td>#43羈絆大師</td><td></td><td></td></tr><tr><td></td><td>１０個社群達到MAX</td><td></td><td></td></tr><tr><td></td><td></td><td>9.80%非常珍贵</td><td></td></tr><tr><td></td><td>#44稻羽傳說 26 Tips</td><td></td><td></td></tr><tr><td></td><td>所有社群皆達到MAX</td><td></td><td></td></tr><tr><td></td><td></td><td>49.00%珍贵</td><td></td></tr><tr><td></td><td>#45能分辨好壞的男人</td><td></td><td></td></tr><tr><td></td><td>喝過夏卡爾的咖啡</td><td></td><td></td></tr><tr><td></td><td></td><td>41.60%珍贵</td><td></td></tr><tr><td></td><td>#46影評人 1 Tips</td><td></td><td></td></tr><tr><td></td><td>看過３次沖奈市的電影</td><td></td><td></td></tr><tr><td></td><td></td><td>30.00%珍贵</td><td></td></tr><tr><td></td><td>#47昆蟲獵人 5 Tips</td><td></td><td></td></tr><tr><td></td><td>在絕佳時機揮動捕蟲網</td><td></td><td></td></tr><tr><td></td><td></td><td>78.80%一般</td><td></td></tr><tr><td></td><td>#48絕妙的攻擊！</td><td></td><td></td></tr><tr><td></td><td>在我方先攻的狀態下開始戰鬥</td><td></td><td></td></tr><tr><td></td><td></td><td>14.40%非常珍贵</td><td></td></tr><tr><td></td><td>#49哥哥好擔心 3 Tips</td><td></td><td></td></tr><tr><td></td><td>探望菜菜子達３次</td><td></td><td></td></tr><tr><td></td><td>#50新問答之王誕生 11 Tips</td><td></td><td></td></tr><tr><td></td><td>在橫跨深夜奇蹟問答的決賽中獲勝</td><td></td><td></td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../p4g/tasks/"><small>← 上一页</small><strong>全支线任务</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="「去伪存真」藏品按星级 × 增益类别的完整列表。">
+  <title>去伪存真藏品表（鹿版） · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/" class="active">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/" class="active">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>明日方舟</span>
+          <b>/</b>
+          <span aria-current="page">去伪存真藏品表（鹿版）</span>
+        </nav>
+        <header class="article-head">
+          <h1>去伪存真藏品表（鹿版）</h1>
+          <p class="article-meta">最近更新于 2026-09-25</p>
+        </header>
+        <div class="prose">
+<p>「去伪存真」藏品按星级 × 增益类别的完整列表。</p>
+<p>共 4 行。原表为「行 = 星级、列 = 类别」的二维表，同一格的多个条目以「、」分隔。</p>
+<h3 id="转写说明">转写说明</h3>
+<p>原表是「行 = 星级、列 = 类别」的二维表，同一个类别下的藏品在多个单元格里竖着 排。本页把每一列的藏品折进同一格、以「、」分隔，行列关系不变。</p>
+<p>原表第 L 列表头是空的（该列在原始文档里没有类别名），本页记为<strong>未标注</strong>， 不做归并。</p>
+<h2 id="出处">出处</h2>
+<p>本页数据取自腾讯文档《集批宝典》子表「去伪存真藏品表 鹿版」（tab <code>000004</code>），由 <strong>哲三</strong> 整理。转写过程<strong>未修改、未补全任何数值</strong>；合并单元格导出后只有左上角有值，因此表里的空格是原始形态。</p>
+<p>原文档：<a href="https://docs.qq.com/sheet/DUFhxeHFCaXJwS0Vl" target="_blank" rel="noopener noreferrer">腾讯文档《集批宝典》</a></p><figure class="data-table"><table data-rows="4"><caption>原表为「行 = 星级、列 = 类别」的二维表，同一格的多个条目以「、」分隔。</caption><thead><tr><th>星级</th><th>输出-局内</th><th>输出-局外△</th><th>增伤</th><th>减甲</th><th>攻速</th><th>技力与费用</th><th>控制</th><th>携带部署</th><th>生存</th><th>未标注</th><th>资源※</th></tr></thead><tbody><tr><td>二星 （共38）</td><td></td><td>统帅肖像、皇帝的恩宠、显圣吊坠、圆石祭坛</td><td>锈蚀刀片、制式防爆用具、黑夜呢喃、苦痛的快乐、奴隶捕猎器、讴歌者面纱</td><td>残破合影、雕词錾刀</td><td></td><td>摩根队长佳酿</td><td>光环</td><td>没吃完的糖果、地形图、神音海螺、红色蝴蝶结</td><td>难闻的止血剂、异铁小圆盾、城墙之子、法术杀手、设计师量尺、魔王的床榻</td><td>眼熟的雕像、开裂的束缚带、洁白的舞鞋、漆黑的舞鞋、活玫瑰</td><td>探灵伯爵、贪婪天平、随身画笔、坎诺特印记、铭记的贺礼、骑士长枪专业版、维多利亚徽章、魔术匣、财眼</td></tr><tr><td>四星 （共52）</td><td>古乔治原浆、折戟-裂岩、光耀卡西米尔、探索者背包</td><td>贵族刺剑、银餐叉</td><td>皇帝的收藏、赶车夫的长鞭、灾难之源、镶金骨骰、断杖-波纹、悬丝傀儡</td><td>恐鱼干</td><td>紧急活性剂、疗养体验卡、投币玩具、魔王的旗帜</td><td>生命之水、香草沙士汽水、人偶之家、钝爪-掠食、古高卢银币、妙用涂鸦</td><td>高闪相机、小格兰法洛</td><td>林间夜话、教堂救济餐券、蓝色丝巾※、精选兽肉罐头、凉拌海草、橙味风暴△</td><td>湖中神盾、急救药箱、知识之桥、小方块、演出用香水、圣城之拥、奇渊面具</td><td>彩虹瓮、苍白花冠、药枚、活木甲、军团护心镜、锈刃-久居、舞者手链</td><td>五秒前准备的锚、遭诅战史集、撬开的道具箱、幸运硬币、莱塔尼亚勋章、思维捕手、古旧钱币</td></tr><tr><td>六星 （共46）</td><td>掠食之手、轰鸣之手、久居之手、荣耀绶带、绿叶菜罐头、诸王的冠冕、归来</td><td>束灵骨</td><td>文明的存续、童趣玩偶、扣挠之手、烟花之手</td><td>裂岩之手</td><td>疗养特供卡、骑士戒律新编、咒仪溯兽</td><td>微缩舞台模型、高卢银行支票、奥秘之手、波纹之手、皇家利口酒、迷梦香精、羽兽肝酱、衣卡兹</td><td>精神治疗录像带、荣耀套餐</td><td>古怪的长笛※、玻璃小鸟※、特级馥郁咖啡豆、咖啡平原咖啡糖、独奏八音盒※、尖叫樱桃△</td><td>古堡的子嗣、散佚诗简</td><td>教母的信物、涌动之餐</td><td>神魂坚韧之歌、锈蚀的铁锤、万能钥匙、演员的首饰盒、罗德岛战术电台、四叶草化石、失落之匙、沉眠同胞、死魂灵残躯、至宝指环</td></tr><tr><td>灵光乍现 （共35）</td><td>叙古拉人的愤怒、黑色郁金香、空羽兽、岩角号</td><td>生命熔炉之薪、老蒲扇、左轮弹巢、老近卫军之锋、无惧之刃、佣兵的饰物</td><td>大静谧、Scout的狙击镜、复仇者、璀璨悲泣、文学的开端、碎片大厦的回忆</td><td>迷迭香之拥</td><td>金酒之杯、私人巫术终端</td><td>第二经济改革法、讨魔义旗、缠梦古堡模型、原始痕迹、绽放</td><td>重力蔑视机关</td><td>皮特水果什锦△、源石鸢尾花※、赤金的远征※</td><td>古旧蒸汽甲胄、青涩眷恋</td><td>未知仪器</td><td>无暇宝玉、拱门与呼救、女妖之吻、王命凡形</td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../arknights/jy-hidden-enemies/"><small>← 上一页</small><strong>隐藏出怪表</strong></a>
+<a class="next" href="../../arknights/jy-collectibles-zhe/"><small>下一页 →</small><strong>去伪存真藏品表（哲版）</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按藏品类别整理的攻击力 / 防御力加成速查（作者：里雪）。">
+  <title>里雪的计算手册 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/" class="active">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/" class="active">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>明日方舟</span>
+          <b>/</b>
+          <span aria-current="page">里雪的计算手册</span>
+        </nav>
+        <header class="article-head">
+          <h1>里雪的计算手册</h1>
+          <p class="article-meta">最近更新于 2026-09-25</p>
+        </header>
+        <div class="prose">
+<p>按藏品类别整理的攻击力 / 防御力加成速查（作者：里雪）。</p>
+<p>共 103 行。原表网格：行号与原文档一致，列号为原文档列标，空格即原表留空。</p>
+<h3 id="说明">说明</h3>
+<p>原表是一份竖排速查表：分类标题单独占一行，下面几行罗列该类别下各藏品的加成 （如「折戟-破釜沉舟（+30）」）。这种排法在单元格网格里就是「一行一个标题、 下面若干行内容」，本页按原样呈现。</p>
+<h2 id="出处">出处</h2>
+<p>本页数据取自腾讯文档《集批宝典》子表「里雪的计算手册」（tab <code>00000f</code>），由 <strong>哲三 收录（原表作者：里雪）</strong> 整理。转写过程<strong>未修改、未补全任何数值</strong>；合并单元格导出后只有左上角有值，因此表里的空格是原始形态。</p>
+<p>原文档：<a href="https://docs.qq.com/sheet/DUFhxeHFCaXJwS0Vl" target="_blank" rel="noopener noreferrer">腾讯文档《集批宝典》</a></p><figure class="data-table"><table data-rows="103"><caption>原表网格：行号与原文档一致，列号为原文档列标，空格即原表留空。</caption><thead><tr><th>行</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th></tr></thead><tbody><tr><td>5</td><td></td><td>所有敌方单位的攻击力，防御力+10%，生命值+50%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>10</td><td></td><td>结晶之谜（+600）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>12</td><td></td><td>铁卫-整固（+20）</td><td>死斗（+25）</td><td></td><td></td><td></td><td></td></tr><tr><td>13</td><td></td><td>职业藏品类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>14</td><td></td><td>折戟-破釜沉舟（+30）</td><td>残弩-神速（+70）</td><td>断杖-织法者（+25）</td><td>医者-妙手（+50）</td><td>锈刃-研磨（+30）</td><td></td></tr><tr><td>15</td><td></td><td>携带希望部署类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>16</td><td></td><td>凉拌海草（+7）</td><td>咖啡平原咖啡糖（+8）</td><td>古旧乐谱残章（+6）</td><td></td><td></td><td></td></tr><tr><td>17</td><td></td><td>编队思绪类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>18</td><td></td><td>远程协议-克敌（+6n）</td><td>破坏协议-压制（+6n）</td><td>私人巫术终端（+35）</td><td></td><td></td><td></td></tr><tr><td>19</td><td></td><td>其他</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>20</td><td></td><td>金酒之杯（+7n）</td><td>Friston.P（+5n）</td><td>投币玩具（+3n）</td><td>骑士戒律·新编（+5n）</td><td>火海（+35）</td><td>异族（+15）</td></tr><tr><td>21</td><td></td><td>死斗（+100）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>22</td><td></td><td>职业藏品类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>23</td><td></td><td>钝爪-突破（-2）</td><td>折戟-突破（-3）</td><td>铁卫-突破（-3）</td><td>残弩-突破（-2）</td><td>断杖-突破（-3）</td><td>支柱-突破（-2）</td></tr><tr><td>24</td><td></td><td>医者-突破（-2）</td><td>锈刃-突破（-2）</td><td></td><td></td><td></td><td></td></tr><tr><td>25</td><td></td><td>编队思绪类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>26</td><td></td><td>原始痕迹（-6）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>27</td><td></td><td>其他</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>28</td><td></td><td>巴别塔誓言（+3）</td><td>佣兵（-2）</td><td>内战（-3）</td><td>思维负荷-混乱（+3）</td><td></td><td></td></tr><tr><td>29</td><td></td><td>回复生命值</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>30</td><td></td><td>演出用香水（+1%）</td><td>精选兽肉罐头（+10）</td><td></td><td></td><td></td><td></td></tr><tr><td>31</td><td></td><td>敌人异常效果影响时间</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>32</td><td></td><td>凯旋号角（+100%）</td><td>高闪相机（+110%）</td><td>精神治疗录像带（+150%）</td><td></td><td></td><td></td></tr><tr><td>33</td><td></td><td>其他</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>34</td><td></td><td>裂岩之手（无视70%防御力）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>36</td><td></td><td>常规类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>37</td><td></td><td>皇帝的恩宠（+15%）</td><td>贵族刺剑（+25%）</td><td>老近卫军之锋（+35%）</td><td>显圣吊坠（+15%）</td><td>银餐叉（+25%）</td><td>损坏的左轮弹巢（+35%）</td></tr><tr><td>38</td><td></td><td>职业藏品类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>39</td><td></td><td>钝爪-百战（+50%）</td><td>折戟-锋刃（+25%）</td><td>折戟-破釜沉舟（+40%）</td><td>铁卫-侵掠（+60%）</td><td>残弩-百步穿杨（+20%）</td><td>残弩-交叉火力（+40%）</td></tr><tr><td>40</td><td></td><td>断杖-织法者（+25%）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>41</td><td></td><td>携带希望部署类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>42</td><td></td><td>橙味风暴（+7%）</td><td>尖叫樱桃（+8%）</td><td>皮特水果什锦（+7%）</td><td>解约协议（+7%）</td><td></td><td></td></tr><tr><td>43</td><td></td><td>编队思绪类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>44</td><td></td><td>突击协议-利刃（+8n%）</td><td>堡垒协议-方阵（+8n%）</td><td>远程协议-遥击（+8n%）</td><td>破坏协议-消除（+8n%）</td><td>老蒲扇（+10n%）</td><td>束灵骨（+3n%）</td></tr><tr><td>45</td><td></td><td>生命熔炉之薪（+5n%）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>46</td><td></td><td>其他</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>47</td><td></td><td>空羽兽（召唤物+30%）</td><td>几丁质刺刃（+100%）</td><td>散轶诗简（+30%）</td><td>圆石祭坛（+5n%）</td><td>佣兵的饰物（+5n%）</td><td>统帅肖像（+10%/30%）</td></tr><tr><td>48</td><td></td><td>死仇时代的恨意（友方+20%）</td><td>宁静之谜（-25%）</td><td>生还者合约（+20n%）</td><td>无惧之刃（+50%）</td><td>抢夺（+10%）</td><td>侵略（+20%）</td></tr><tr><td>49</td><td></td><td>兴亡（+30%）</td><td>矛头分队（+15%/20%）</td><td>历史重构-悠久祝铸（+20%）</td><td></td><td></td><td></td></tr><tr><td>50</td><td></td><td>常规类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>51</td><td></td><td>异铁小圆盾（+15%）</td><td>军团护心镜（+25%）</td><td>古旧的蒸汽甲胄（+35%）</td><td></td><td></td><td></td></tr><tr><td>52</td><td></td><td>职业藏品类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>53</td><td></td><td>钝爪-百战（+50%）</td><td>折戟-破釜沉舟（-40%）</td><td>铁卫-整固（+40%）</td><td></td><td></td><td></td></tr><tr><td>54</td><td></td><td>携带希望部署类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>55</td><td></td><td>皮特水果什锦（+7%）</td><td>地形图（+8%）</td><td>林间夜话（+10%）</td><td></td><td></td><td></td></tr><tr><td>56</td><td></td><td>编队思绪类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>57</td><td></td><td>突击协议-散兵（+10n%）</td><td>堡垒协议-固守（+10n%）</td><td></td><td></td><td></td><td></td></tr><tr><td>58</td><td></td><td>其他</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>59</td><td></td><td>圆石祭坛（+5n%）</td><td>佣兵的饰物（+5n%）</td><td>雕词錾刀（敌方-50%）</td><td>无惧之刃（+50%）</td><td>生还者合约（+20n%）</td><td>死斗（+50%）</td></tr><tr><td>60</td><td></td><td>历史重构-安魂祭礼（+20%）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>61</td><td></td><td>常规类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>62</td><td></td><td>难闻的止血剂（+20%）</td><td>急救药箱（+35%）</td><td>未知仪器（+50%）</td><td></td><td></td><td></td></tr><tr><td>63</td><td></td><td>职业藏品类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>64</td><td></td><td>钝爪-突破（+60%）</td><td>折戟-突破（+40%）</td><td>铁卫-突破（+40%）</td><td>铁卫-整固（+40%）</td><td>残弩-突破（+60%）</td><td>残弩-交叉火力（-40%）</td></tr><tr><td>65</td><td></td><td>断杖-突破（+60%）</td><td>断杖-苦难巫咒（-40%）</td><td>支柱-突破（+60%）</td><td>医者-突破（+60%）</td><td>锈刃-突破（+60%）</td><td></td></tr><tr><td>66</td><td></td><td>携带希望部署类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>67</td><td></td><td>皮特水果什锦（+7%）</td><td>神音海螺（+8%）</td><td>教堂救济餐券（+10%）</td><td></td><td></td><td></td></tr><tr><td>68</td><td></td><td>其他</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>69</td><td></td><td>空羽兽（召唤物+30%）</td><td>几丁质刺刃（+100%）</td><td>散轶诗简（+30%）</td><td>米诺斯颂诗（+5n%）</td><td>“知识之桥”（+5n%）</td><td>佣兵的饰物（+5n%）</td></tr><tr><td>70</td><td></td><td>统帅肖像（+10%/30%）</td><td>血税之谜（友方-35%）</td><td>十戒（敌方-50%）</td><td>“小方块”（+10%/90%）</td><td>取食（+15%）</td><td>垦荒（+30%）</td></tr><tr><td>71</td><td></td><td>兴亡（+50%）</td><td>矛头分队（+15%/20%）</td><td>历史重构-坚定心智（+20%）</td><td>繁荣年代（+50%）</td><td></td><td></td></tr><tr><td>72</td><td></td><td>天灾年代（+200%）</td><td>爆破（-50%）</td><td>直面魂灵3（+20%）</td><td></td><td></td><td></td></tr><tr><td>73</td><td></td><td>职业藏品类</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>74</td><td></td><td>钝爪-熟稔（-35%）</td><td>支柱-勤奋（-40%）</td><td></td><td></td><td></td><td></td></tr><tr><td>75</td><td></td><td>锈刃-可视静谧（-35%）</td><td>驱城（-20%）</td><td></td><td></td><td></td><td></td></tr><tr><td>80</td><td></td><td>古堡的子嗣（+300）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>81</td><td></td><td>古堡的子嗣（+30）</td><td>魔王的床榻（+10）</td><td></td><td></td><td></td><td></td></tr><tr><td>82</td><td></td><td>疗养体验卡（+40）</td><td>疗养特供卡（+70）</td><td>紧急活性剂（+60）</td><td>波纹之手+断杖-波纹（+20）</td><td>国王的新枪（+50）</td><td>魔王的旗帜（+30）</td></tr><tr><td>83</td><td></td><td>丝契之谜（+50）</td><td>背誓（+50）</td><td></td><td></td><td></td><td></td></tr><tr><td>84</td><td></td><td>香草沙士汽水（+0.2）</td><td>羽兽肝酱（+0.35）</td><td>迷梦香精（+0.5）</td><td>掠食之手+钝爪-掠食（+0.5）</td><td>断杖-凝神（+0.4）</td><td>医者-自医（+0.3）</td></tr><tr><td>85</td><td></td><td>奥秘之手（+0.5n）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>86</td><td></td><td>城墙之子（+2）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>88</td><td></td><td>黑色郁金香（+60%）</td><td>绿叶菜罐头（+60%）</td><td>叙拉古人的愤怒（+100%）</td><td>《光耀卡西米尔》（+70%）</td><td>《归来》（+130%）</td><td>空羽兽（干员+60%）</td></tr><tr><td>89</td><td></td><td>岩角号（+20%）</td><td>荣耀绶带（+100%）</td><td>古乔治营养原浆（+30%）</td><td>折戟-裂岩（+8n%）</td><td>锈刃-遗世独立（+70%）</td><td>支柱-援护（+20%）</td></tr><tr><td>90</td><td></td><td>久居之手（+25n%）</td><td>轰鸣之手（+15n%）</td><td>掠食之手（+10n%）</td><td>诸王的冠冕（+50%/150%）</td><td>探索者背包（+60%）</td><td></td></tr><tr><td>91</td><td></td><td>掠食之手（+10n%）</td><td>魔王的床榻（+20%）</td><td></td><td></td><td></td><td></td></tr><tr><td>92</td><td></td><td>湖中神盾（+60%）</td><td>活木甲（50%）</td><td>城墙之子（+50%）</td><td></td><td></td><td></td></tr><tr><td>94</td><td></td><td>眼熟的雕像（-15）</td><td>滚动先祖（+30）</td><td></td><td></td><td></td><td></td></tr><tr><td>96</td><td></td><td>开裂的束缚带（*0.93）</td><td>奇渊面具（*0.88）</td><td>教母的信物（*0.83）</td><td>直面魂灵7（*1.1）</td><td>难度层数（*1.2^ n）</td><td>死仇时代的恨意（敌方*1.2）</td></tr><tr><td>97</td><td></td><td>宁静之谜（*0.75）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>98</td><td></td><td>残破合影（*0.88）</td><td>恐鱼干（*0.79）</td><td>迷迭香之拥（*0.7）</td><td>支柱-枯法（*0.8）</td><td></td><td></td></tr><tr><td>99</td><td></td><td>支柱-枯法（*0.8）</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>100</td><td></td><td>镶金骨骰（*0.85）</td><td>“黑夜呢喃”（*0.9）</td><td>《大静谧》（*0.8）</td><td>“苦痛的快乐”（*0.85）</td><td>滚动先祖（*1.3）</td><td>血税之谜（*0.65）</td></tr><tr><td>101</td><td></td><td>阿纳萨羯磨（*1.5）</td><td>奇观年代（+1.5）</td><td>直面魂灵1（*0.8）</td><td>直面魂灵2（*0.85）</td><td>直面魂灵3（*0.9）</td><td>直面魂灵4（*1.2）</td></tr><tr><td>102</td><td></td><td>难度层数（*1.2^ n）</td><td>直面魂灵3（+20%）</td><td></td><td></td><td></td><td></td></tr><tr><td>103</td><td></td><td>“苦痛的快乐”（*0.85）</td><td>锈刃-久居（*1-5n）</td><td>滚动先祖（*1.3）</td><td>光环（*0.7）</td><td></td><td></td></tr><tr><td>107</td><td></td><td>锈蚀刀片（+15%）</td><td>赶车夫的长鞭（+25%）</td><td>“复仇者”（+35%）</td><td></td><td></td><td>enemy_damage_scale[phy]</td></tr><tr><td>108</td><td></td><td>制式防暴用具（+20%）</td><td>皇帝的收藏（+30%）</td><td>“璀璨悲泣”（+40%）</td><td>灾难之源（法术+20%）</td><td>讴歌者面纱（法术+10%）</td><td>enemy_damage_scale[mag]</td></tr><tr><td>109</td><td></td><td>Scout的狙击镜（+100%）</td><td></td><td></td><td></td><td></td><td>rogue_1_damage_scale_by_distance）</td></tr><tr><td>110</td><td></td><td>断杖-苦难巫咒（+70%）</td><td></td><td></td><td></td><td></td><td>damage_scale[caster]</td></tr><tr><td>111</td><td></td><td>断杖-波纹（+12n%）</td><td></td><td></td><td></td><td></td><td>damage_scale_factor</td></tr><tr><td>112</td><td></td><td>文明的存续（+150%）</td><td></td><td></td><td></td><td></td><td>enemy_damage_scale[pure]</td></tr><tr><td>113</td><td></td><td>文学的开端（+50%）</td><td></td><td></td><td></td><td></td><td>rogue_4_damage_scale[tag]</td></tr><tr><td>114</td><td></td><td>灾难之源（元素+100%）</td><td></td><td></td><td></td><td></td><td>enemy_damage_scale[ep]</td></tr><tr><td>115</td><td></td><td>讴歌者面纱（元素+50%）</td><td></td><td></td><td></td><td></td><td>enemy_damage_scale[ep]</td></tr><tr><td>116</td><td></td><td>奴隶猎捕器（+50%，不含元素）</td><td></td><td></td><td></td><td></td><td>rogue_4_enemy_weak[levitateUnbalanceMassLossEnter]</td></tr><tr><td>118</td><td></td><td>设计师量尺（+15%）</td><td>“法术杀手”（+15%）</td><td>舞者手链（+10%）</td><td></td><td></td><td></td></tr><tr><td>120</td><td></td><td>活玫瑰（治疗*1.2）</td><td>苍白花冠（治疗*1.3）</td><td></td><td></td><td></td><td></td></tr><tr><td>122</td><td></td><td>活玫瑰（生命回复+20%）</td><td>苍白花冠（生命回复+30%）</td><td></td><td></td><td></td><td></td></tr><tr><td>124</td><td></td><td>古高卢银币（+6）</td><td>高卢银行支票（+12）</td><td>《第二经济改革法》（+18）</td><td>钝爪-爆发（+15）</td><td>烙印之谜（+30）</td><td></td></tr><tr><td>128</td><td></td><td>至宝指环（*1.5）</td><td>片瓣（*0.5）</td><td>天灾（*1.5）</td><td>熔炉（*2）</td><td></td><td></td></tr><tr><td>130</td><td></td><td>莱塔尼亚荣誉勋章（*1.3）</td><td>维多利亚“废铁”勋章（*1.2）</td><td>失落之钥（*1.2）</td><td>预示之谜（*1.2）</td><td>片瓣（*0.5）</td><td>话语（*1.25）</td></tr><tr><td>131</td><td></td><td>集会（*1.5）</td><td>历史重构-故地熟途（*1.1）</td><td>历史重构-故地熟途（*1.1）</td><td>历史重构-故地熟途（*1.1）</td><td></td><td></td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../arknights/gen-shop-stats/"><small>← 上一页</small><strong>商店统计</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

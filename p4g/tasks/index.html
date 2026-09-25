@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="全支线任务的委托内容、期限与报酬。">
+  <title>全支线任务 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/" class="active">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/" class="active">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>P4G 黄金版</span>
+          <b>/</b>
+          <span aria-current="page">全支线任务</span>
+        </nav>
+        <header class="article-head">
+          <h1>全支线任务</h1>
+          <p class="article-meta">最近更新于 2026-09-16</p>
+        </header>
+        <div class="prose">
+<p>全支线任务的委托内容、期限与报酬。</p><figure class="data-table"><table data-rows="143"><caption>全支线任务（取自 全支线任务.xlsx · 工作表 Sheet1）</caption><thead><tr><th>※部分任務道具為敵人之一般掉落物(賣商店可新增武防的)，請小心要留下交任務用的數量不要賣掉</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>沒註明一般掉落的即為接了任務才會掉落，需解完任務才會恢復一般掉落</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>其中要注意雙胞胎姊妹任務的攻略期限。 (解完全任務沒獎杯也沒獎勵)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>順序</td><td>名稱</td><td>場所/對象</td><td>攻略</td><td>時間/條件</td><td>獎勵</td></tr><tr><td>1</td><td>迷惘!猜謎學長!</td><td>教學大樓3樓</td><td>「A植物」「錢幣上的植物」</td><td>4/18~</td><td>寶箱鑰匙*3</td></tr><tr><td></td><td></td><td>走廊男學生</td><td></td><td></td><td></td></tr><tr><td>2</td><td>屋頂上的那女孩</td><td>教學大樓2-2</td><td>一連三天問屋頂上的女孩興趣是什麼，下雨天不會出現</td><td>4/25~</td><td>回家軌道</td></tr><tr><td></td><td></td><td>教室內的男學生</td><td></td><td></td><td></td></tr><tr><td>3</td><td>想要夢幻美酒</td><td>鮫川河堤的男性</td><td>電視內的小西酒店裡面搜索</td><td>5/1~</td><td>4000元</td></tr><tr><td>4</td><td>想要天使之像</td><td>教學大樓2-2</td><td>雪子公主城6F以上征服騎士(找不到嗎?看到留鬍子的敵人打慢點他會招喚)</td><td>5/2~</td><td>寶箱鑰匙*3</td></tr><tr><td></td><td></td><td>教室膽小的</td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>女學生</td><td></td><td></td><td></td></tr><tr><td>5</td><td>想要惡魔之像</td><td>教學大樓2樓</td><td>雪子公主城5~7F出現的マジカルマグスから入手</td><td>5/2~7/26</td><td>魚腥草茶*3</td></tr><tr><td></td><td></td><td>走廊的男學生</td><td></td><td></td><td></td></tr><tr><td>6</td><td>想要漆包銅線</td><td>實習大樓一樓</td><td>雪子公主城6~7F出現的炎冰天秤入手</td><td>5/2~</td><td>輕鬆命中帶</td></tr><tr><td></td><td></td><td>的男學生</td><td></td><td></td><td></td></tr><tr><td>7</td><td>希望能和</td><td>神社(隱者)</td><td>1：教室棟1階廊下的鞋櫃前和女學生對話</td><td>5/6~</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td>喜歡的人順利發展</td><td>接到的任務</td><td>2：隔天在教室棟2樓走廊和女學生對話，選擇「讀了」</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3：隔天在教室棟2樓走廊再和女學生對話</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>4：去神社向狐狸回報任務</td><td></td><td></td></tr><tr><td>8</td><td>希望能變得</td><td>神社(隱士)</td><td>和千枝對話或者夜會話都可能得到「肉口香糖」，交給女孩後即可向狐狸回報任務</td><td>任務7完成後</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td>討厭吃點心</td><td>接到的任務</td><td></td><td></td><td></td></tr><tr><td>9</td><td>討厭狗</td><td>神社(隱士)</td><td>1：調查鮫川河邊的狗</td><td>任務8完成後</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td></td><td>接到的任務</td><td>2：隔天商店街北部與狗對話，選「溫柔的跟牠說話」</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3：隔天鮫川河堤與狗對話，選「溫柔的跟牠說話」，需對話兩次</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>4：向家常菜大學買肉給狗吃-&gt;向狐狸回報任務</td><td></td><td></td></tr><tr><td>10</td><td>想要朋友</td><td>神社(隱士)</td><td>1：與鮫川河堤想要朋友的孩子對話，給他時價購物網貼紙2：隔一天之後再跟小男孩對話</td><td>任務9完成後</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td></td><td>接到的任務</td><td>3：夜晚與菜菜子對話獲得「化痰超人貼紙」（11/4以降は冷蔵庫を調べることで入手可能）</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>4：給小男孩貼紙，隔天之後再跟小男孩對話-&gt;向狐狸回報任務</td><td></td><td></td></tr><tr><td>11</td><td>想找回生存價值</td><td>神社(隱士)</td><td>1：跟商店街北側有任務提示符號的男性對話-&gt;獲得未完成的組合模型(綠)。</td><td>任務10完成後</td><td>隱士社群上升，狐狸回復手續費降低，未完成的模型</td></tr><tr><td></td><td></td><td>接到的任務</td><td>2：在房間內工作桌處進行3次模型組裝工作-&gt;獲得&quot;量產型婆羅門&quot;</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3：完成後與該任務男性對話-&gt;獲得未完成的組合模型(紅)-&gt;向狐狸回報任務</td><td></td><td></td></tr><tr><td>12</td><td>想變得能言善道</td><td>神社(隱士)</td><td>1：包容力3以上，在學校屋頂和女學生對話</td><td>任務11完成後</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td></td><td>接到的任務</td><td>2：隔天之後，表達力3以上狀態下再度女學生對話，選「妳好像想要改掉不擅表達的毛病」「教她說話的方式」。</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3：隔天之後，勇氣3以上再和女學生對話，選「有時也需鼓起勇氣道歉」)-&gt;向狐狸回報任務</td><td></td><td></td></tr><tr><td>13</td><td>想習慣貓</td><td>神社(隱士)</td><td>1：和在鮫川河堤的男子對話，選擇「猫？」</td><td>任務12完成後</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td></td><td>接到的任務</td><td>2：與堂島家前面的貓對話(完成任務No20後出現)</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3：再度和猫對話，選擇「帶他來」</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>4：隔天之後，先準備「紅金」後再和男子對話，選「讓他看」</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>5：隔天之後再度和男子對話)-&gt;向狐狸回報任務</td><td></td><td></td></tr><tr><td>14</td><td>找尋掉了的錢</td><td>神社(隱者)</td><td>1：與鮫川河提垃圾桶旁的女子對話</td><td>任務13完成後</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td></td><td>接到的任務</td><td>2：到鮫川河邊樓梯旁的看板附近可以找到「髒污的圓形錢包」</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3：把東西拿給接任務的女子看</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>4：在商店街北側接近神社的路邊調查可以找到「髒污的四方形錢包」</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>5：將東西交給接任務的女子-&gt;向狐狸回報任務</td><td></td><td></td></tr><tr><td>15</td><td>想目睹七里海岸</td><td>神社(隱者)</td><td>1：持有「海釣竿」的狀態下去找鮫川河邊的老爺爺對話，選擇「自分にまかせろ」。</td><td>任務14完成後</td><td>隱士社群上升，狐狸回復手續費降低</td></tr><tr><td></td><td>的大王魚</td><td>接到的任務</td><td>2：七里海岸釣到「海王」。</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3：帶著海王去找鮫川河邊的老爺爺對話。然後去找狐狸報告。</td><td></td><td></td></tr><tr><td>16</td><td>修理書桌</td><td>實習大樓二樓</td><td>雪子公主城4~7F出現的笑うテーブルから「得心應手板」を入手</td><td>5/18~</td><td>蜂王漿*5</td></tr><tr><td></td><td></td><td>女學生</td><td></td><td></td><td></td></tr><tr><td>17</td><td>卡門的</td><td>教學大樓2樓</td><td>雪子公主城3~4F出現的するトランスツインズから「有隱情的鐵棒」を入手</td><td>5/18~</td><td>脈動石</td></tr><tr><td></td><td>課外教學-1</td><td>樓梯角的</td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>祖父江老師</td><td></td><td></td><td></td></tr><tr><td>18</td><td>和書做交換</td><td>書店前的男子</td><td>給他一個白桃果實</td><td>5/23~</td><td>THE 柔道</td></tr><tr><td>19</td><td>代替發面紙</td><td>沖奈市電影院前的男性</td><td>和大街上所有路人對話即可</td><td>6/11~</td><td>5000元</td></tr><tr><td></td><td></td><td></td><td></td><td>取得機車後，騎車出去晃才會知道有沖奈市</td><td></td></tr><tr><td>20</td><td>希望餵貓吃貓食</td><td>商店街南部書店前的男性</td><td>找到鮫川河堤上面的貓，給它任意一條你釣的到的魚</td><td>任務18完成後</td><td>THE 外道</td></tr><tr><td></td><td></td><td></td><td></td><td>6/3~</td><td>堂島家門口會多一隻貓，可以共度時光喔</td></tr><tr><td>21</td><td>還是掛念著貓</td><td>和鮫川河堤上面的貓對話之後給它一條魚</td><td>餵貓9條魚之後...(川王一條抵五條)</td><td>任務20完成後</td><td>軟膏藥</td></tr><tr><td>22</td><td>即使如此</td><td>和鮫川河堤上面的貓對話之後給它一條魚</td><td>餵貓20條魚之後...(川王一條抵五條)</td><td>任務21完成後</td><td>摩蘇酒</td></tr><tr><td></td><td>還是放不下貓</td><td></td><td></td><td></td><td></td></tr><tr><td>23</td><td>想要陳舊鑰匙</td><td>鮫川河堤的</td><td>三溫暖1~4F出現的收賄警官入手</td><td>6/5~</td><td>知識、勇氣提升</td></tr><tr><td></td><td></td><td>老爺爺</td><td></td><td></td><td></td></tr><tr><td>24</td><td>想要石炭</td><td>商店街北部的</td><td>三溫暖5~7F出現的我欲のバザルトから「石炭」を入手</td><td>6/5~</td><td>15000元</td></tr><tr><td></td><td></td><td>老人</td><td></td><td></td><td></td></tr><tr><td>25</td><td>不是稻羽產的</td><td>朱尼斯八十稻羽店的家庭主婦</td><td>在家庭菜園種出高麗菜或者電視購物購買都可以，要三個。</td><td>6/5~</td><td>剣先スコップ</td></tr><tr><td></td><td>高麗菜就不行</td><td></td><td></td><td></td><td></td></tr><tr><td>26</td><td>想要十字架</td><td>教學大樓2-2教室膽小的女學生</td><td>打倒三溫暖6~8F出現的静寂のマリアから可獲得奇怪的十字架</td><td>任務04完成後</td><td>軟骨藥*3</td></tr><tr><td></td><td></td><td></td><td></td><td>6/8~</td><td></td></tr><tr><td>27</td><td>想要除魔頭紗</td><td>教學大樓2-2教室膽小的女學生</td><td>打倒劇場3F以後出現的解放聖母可獲得除魔頭紗</td><td>任務26完成後</td><td>寶箱鑰匙*5</td></tr><tr><td></td><td></td><td></td><td></td><td>7/12~</td><td></td></tr><tr><td>28</td><td>改造書桌</td><td>實習大樓2F的女學生</td><td>打倒三溫暖8F以後出現的哭泣桌可獲得反射板</td><td>任務16完成後</td><td>靈魂鼻煙壺*2</td></tr><tr><td></td><td></td><td></td><td></td><td>6/8~</td><td></td></tr><tr><td>29</td><td>想要雄偉的角</td><td>商店街南部</td><td>打倒三溫暖8F以後出現的死甲蟲可獲得壯麗的角</td><td>6/9~</td><td>18000元</td></tr><tr><td>30</td><td>去找妹妹</td><td>商店街南部</td><td>去河邊找妹妹</td><td>6/9~11/23</td><td>回家軌道*5</td></tr><tr><td>31</td><td>希望你繼承</td><td>教學大樓三樓今年要畢業的男學生</td><td>「清掃員服」在醫院打工1次後於沖奈CROCO*FUR購買，「拖把」用「居合刀」於實習大樓2F的學生交換</td><td>6/11~</td><td>竹掃把</td></tr><tr><td></td><td>清掃社的精神</td><td></td><td></td><td></td><td></td></tr><tr><td>32</td><td>想要稻羽鱒魚</td><td>進入武器店/大陀羅大叔</td><td>給武器店的老闆1隻稻羽鱒魚</td><td>6/14~</td><td>稻羽鱒魚</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>(陽介用武器)</td></tr><tr><td>33</td><td>想要針銀礦</td><td>實習大樓1F走廊的男學生</td><td>打倒劇場6-10F出現的白銀骰子可獲得銀之塊</td><td>任務06完成後</td><td>高昂礦石收音機*2</td></tr><tr><td></td><td></td><td></td><td></td><td>6/30~</td><td></td></tr><tr><td>34</td><td>想要硬靴</td><td>商店街南部書店門口的男性</td><td>打倒三溫暖5-8F出現的跳舞之手獲得厚重皮革(普通掉落物)5個，至武器店賣掉即可買硬靴</td><td>任務20完成後</td><td>害蟲圖鑑 5000元</td></tr><tr><td></td><td></td><td></td><td></td><td>7/3~</td><td></td></tr><tr><td>35</td><td>通往姊姊的道路</td><td>鮫川河邊雙胞胎女孩的妹妹</td><td>打倒劇場1-4F出現的靈魂舞者可獲得花胸針</td><td>任務30完成後</td><td>超值傷藥組合*3</td></tr><tr><td></td><td></td><td></td><td></td><td>7/13~11/23</td><td></td></tr><tr><td>36</td><td>距離姊姊還差一步</td><td>鮫川河邊雙胞胎女孩的妹妹</td><td>打倒遊戲迷宮2-4F出現的盲愛丘比特可獲得葉子小背包</td><td>任務35完成後</td><td>馬卡葉*3</td></tr><tr><td></td><td></td><td></td><td></td><td>8/22~11/23</td><td></td></tr><tr><td>37</td><td>想看看那件</td><td>沖奈市CROCO*FUR前面化濃妝的女性</td><td>給女性看&#x27;紳士燕尾服&#x27;</td><td>任務19完成後</td><td>蜂王漿*3</td></tr><tr><td></td><td>令人心動的衣服</td><td></td><td>(雪子城堡寶箱獲得)</td><td>7/16~</td><td></td></tr><tr><td>38</td><td>想要2種類的</td><td>進入武器店/大陀羅大叔</td><td>在菜園種植魔反玉蜀黍、物反玉蜀黍，各1個</td><td>任務32完成後</td><td>烤玉蜀黍</td></tr><tr><td></td><td>玉蜀黍</td><td></td><td></td><td>7/24~</td><td>(陽介用武器)</td></tr><tr><td>39</td><td>想要燈</td><td>鮫川河堤上的一位大叔</td><td>打倒遊戲迷宮2F出現的地獄烏鴉及3-4F出現的粉碎烏鴉可獲得不熄滅的燈</td><td>8/22~</td><td>30000元</td></tr><tr><td>40</td><td>想要時髦的盤子</td><td>商店街南部書店門口的男子</td><td>打倒劇場9F以後出現的雷風天秤獲得時尚托盤3個(一般掉落)</td><td>任務34完成後</td><td>最愛腦筋急轉彎(書),10000元</td></tr><tr><td></td><td></td><td></td><td></td><td>8/9~</td><td></td></tr><tr><td>41</td><td>想知道關於電影</td><td>沖奈市CROCO*FUR前面化濃妝的女性</td><td>去詢問教學大樓2F樓梯旁的祖父江</td><td>9/2~</td><td></td></tr><tr><td></td><td>裡出現的東西</td><td></td><td></td><td></td><td></td></tr><tr><td>42</td><td>覺醒!猜謎學長!</td><td>教學大樓3F走廊的男學生</td><td>「A」「動作」</td><td>9/2~</td><td>靈魂鼻煙壺</td></tr><tr><td></td><td></td><td></td><td>「B」「指示詞」</td><td></td><td></td></tr><tr><td>43</td><td>心靈感應實驗</td><td>商店街南部雙胞胎女孩的姊姊</td><td>於河邊、商店街的姊妹來回2次對話</td><td>9/5~</td><td>超音速*3</td></tr><tr><td>44</td><td>卡門的課外教學-2</td><td>教學大樓2F樓梯轉角的祖父江老師</td><td>打倒遊戲迷宮9F的鋼鐵巨兵可獲得クルルマメタル</td><td>9/20~</td><td>神秘聖甲蟲*2</td></tr><tr><td>45</td><td>你記得書的內容嗎?</td><td>書店前面的人</td><td>「招式的威力」「用插畫的方式介紹外道的規矩」「1種2頁」「我」</td><td>9/27~</td><td>偉大的存在(書)</td></tr><tr><td>46</td><td>給父親的禮物</td><td>實習大樓2F的女學生</td><td>打倒秘密組織B2～4F出現的激震巨靈獲得熱魂之證3個(一般掉落)</td><td>44834</td><td>寶玉</td></tr><tr><td>47</td><td>去找來喜歡的衣服</td><td>沖奈市的家庭主婦</td><td>打倒秘密組織B3～B7出現的威力城堡獲得「強力石の繊維」8個賣武器屋後即可購買無敵迷你裙</td><td>10/12~</td><td></td></tr><tr><td></td><td></td><td></td><td>註：此為一般掉落物，若同時接了【任務51】則「不會掉落」。</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>推薦：威力城堡是紅色陰影怪，B3的紅色陰影怪會只有均衡巨人或威力城堡。記得是B2→B3的方式在B3洗，B4→B3會不同。</td><td></td><td></td></tr><tr><td>48</td><td>想要水晶球</td><td>教學大樓3F的老師</td><td>打倒秘密組織B1～2F出現的維持雕像獲得水晶球</td><td>44846</td><td>35000元</td></tr><tr><td>49</td><td>想要演習彈</td><td>教學大樓3F的校長</td><td>打倒秘密組織B6～7F出現的邪惡砲台獲得演習彈</td><td>44846</td><td>毅力、包容力UP</td></tr><tr><td>50</td><td>想要高速齒輪</td><td>教學大樓1F的女學生</td><td>打倒秘密組織B6F出現的急速之輪獲得高速齒輪</td><td>44846</td><td>物反鏡*3</td></tr><tr><td>51</td><td>想要石炭-2</td><td>商店街北側的老爺爺</td><td>打倒秘密組織B3～7F出現的威力城堡獲得最高級石炭</td><td>任務24完成後</td><td>40000元</td></tr><tr><td></td><td></td><td></td><td></td><td>10/12~</td><td></td></tr><tr><td>52</td><td>脫離姊姊</td><td>鮫川河邊雙胞胎女孩的妹妹</td><td>打倒秘密組織B7~8F出現的理念之母可獲得分枝髮圈</td><td>任務36完成後</td><td>寶玉輪</td></tr><tr><td></td><td></td><td></td><td></td><td>10/12~11/17</td><td></td></tr><tr><td>53</td><td>最後的心電感應</td><td>商店街南部雙胞胎女孩的姊姊</td><td>雙胞胎姊妹來回對話2次</td><td>11/1~11/17</td><td>超音速*3</td></tr><tr><td>54</td><td>去找我家的孩子</td><td>沖奈市慌張的母親</td><td>1.河邊的狗對話</td><td>44866</td><td></td></tr><tr><td></td><td></td><td></td><td>2.商店街北側的狗對話</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>3.河堤的狗對話</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>4.惣菜大學前的狗給他吃肉(就那些烤肉串)</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>ps.1天1次動作，分4天</td><td></td><td></td></tr><tr><td>55</td><td>反擊！猜謎學長！</td><td>教學大樓3樓走廊的男學生</td><td>「B組」「字母的形狀」「黑痣」「嵐」</td><td>任務42完成後</td><td>靈魂口香糖</td></tr><tr><td></td><td></td><td></td><td></td><td>11/12~</td><td></td></tr><tr><td>56</td><td>屋頂上的那孩子-2</td><td>教學大樓2-2教室的男學生</td><td>打倒天國樂土1-2F出現的知識魔術師獲得動物圖鑑</td><td>任務02完成後</td><td>惡靈玩偶</td></tr><tr><td></td><td></td><td></td><td></td><td>11/22~</td><td>(人格面具</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>模型)</td></tr><tr><td>57</td><td>給父親的禮物-2</td><td>實習大樓2F的女學生</td><td>打倒天國樂土5-7F出現的憤怒桌獲得豪華木材</td><td>11/22~</td><td>強襲狼煙*3</td></tr><tr><td>58</td><td>想要古老礦石</td><td>實習大樓1F的男學生</td><td>打倒天國樂土4-7F出現的天啟之魚獲得古老礦石</td><td>11/22~</td><td>精神收音機</td></tr><tr><td>59</td><td>想要燈-2</td><td>鮫川河堤的老年男性</td><td>打倒天國樂土5-7F出現的魅影領主獲得低調的提燈</td><td>11/22~</td><td>45000元</td></tr><tr><td>60</td><td>想要鮫川的大王魚</td><td>跟武器店大陀羅大叔「閒聊」</td><td>給武器店老闆&#x27;川大魚王&#x27;</td><td>1/10~</td><td>大王魚</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>(完二用武器)</td></tr><tr><td>61</td><td>去找我家的孩子，再一次</td><td>沖奈市慌張的母親</td><td>1.餵在河邊的貓3次魚(1天1次)</td><td>1/10~</td><td></td></tr><tr><td></td><td></td><td></td><td>2.回沖奈市回報</td><td></td><td></td></tr><tr><td>62</td><td>卡門的課外教學-3</td><td>教學大樓2F走廊樓梯轉角的祖父江老師</td><td>打倒禍津曼荼羅6F的嚴肅巨兵獲得奧里哈魯根(一般掉落物)</td><td>1/10~</td><td>銀托盤</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>(雪子用武器)</td></tr><tr><td>63</td><td>想要黃金鍊之束</td><td>教學大樓3F走廊的中山老師</td><td>打倒禍津曼荼羅4~6F的牛頭人二號獲得黃金鍊之束3個(一般掉落)</td><td>1/10~</td><td>65000元</td></tr><tr><td>64</td><td>復活!猜謎學長!</td><td>教學大樓3F走廊的男學生</td><td>選「英文」</td><td>1/10~</td><td>靈魂食品*3</td></tr><tr><td>65</td><td>柏木老師的</td><td>教學大樓1F走廊的柏木老師</td><td>「去氧核醣核酸」[選項為英文deoxyribonucleic acid]「兔子」</td><td>1/16~</td><td>小王冠盔甲(直斗用服裝)</td></tr><tr><td></td><td>特別教學-1</td><td></td><td></td><td></td><td></td></tr><tr><td>66</td><td>想看可愛的拖鞋</td><td>教學大樓1F走廊的柏木老師</td><td>1：實習大樓2樓實習學徒對話</td><td>任務65完成後隔日起</td><td>鬥士盔甲</td></tr><tr><td></td><td></td><td></td><td>2：打倒天國樂土8-9F出現的血腥百臂巨人獲得染血之皮8個(一般掉落)作成「維達之鞋」與實習學徒交換「動物拖鞋」</td><td></td><td>(千枝用服裝)</td></tr><tr><td>67</td><td>想看附柔軟肉球的手套</td><td>教學大樓1F走廊的柏木老師</td><td>紫路宮交換武器「肉球手」(禍津砂石x8、主水石x1) ps：禍津砂石打金手指獲得、主水石跟神社白衣女子用川大王魚換。</td><td>任務66完成後隔日起</td><td>魔法盔甲</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>(雪子用服裝)</td></tr><tr><td>68</td><td>柏木老師的</td><td>教學大樓1F走廊的柏木老師</td><td>「Satellite news gathering」「拉丁文」「出雲」</td><td>任務67完成後隔日起</td><td>連身泳衣</td></tr><tr><td></td><td>特別教學-2</td><td></td><td></td><td></td><td>(直斗用服裝)</td></tr><tr><td>69</td><td>學生的本分</td><td>教學大樓3F走廊的校長</td><td>「風」 「上中下共3巻」「7」「撲克牌」</td><td>任務49完成後</td><td>必勝扇子</td></tr><tr><td></td><td>在於學業</td><td></td><td></td><td>1/23~</td><td>(雪子用武器)</td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../p4g/skills/"><small>← 上一页</small><strong>技能与技能卡</strong></a>
+<a class="next" href="../../p4g/trophies/"><small>下一页 →</small><strong>成就奖杯列表</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="全部技能的消耗、效果与习得条件。">
+  <title>技能一览 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/" class="active">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/" class="active">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>P3P 携带版</span>
+          <b>/</b>
+          <span aria-current="page">技能一览</span>
+        </nav>
+        <header class="article-head">
+          <h1>技能一览</h1>
+          <p class="article-meta">最近更新于 2026-09-16</p>
+        </header>
+        <div class="prose">
+<p>全部技能的消耗、效果与习得条件。</p><figure class="data-table"><table data-rows="68"><caption>技能一览（取自 技能篇.xlsx · 工作表 Sheet1）</caption><thead><tr><th>物理攻擊系SKILL</th><th></th><th></th><th></th><th></th><th>魔法攻擊系SKILL</th><th></th><th></th><th></th><th></th><th>精神異常狀態攻擊系SKILL</th><th></th><th></th><th></th><th></th><th>恢復系SKILL</th><th></th><th></th><th></th><th></th><th>輔助系SKILL</th><th></th><th></th><th></th><th></th><th>自動效果SKILL</th><th></th><th></th></tr></thead><tbody><tr><td>名稱</td><td>效果</td><td>消費</td><td>卡片</td><td></td><td>名稱</td><td>效果</td><td>消費</td><td>卡片</td><td></td><td>名稱</td><td>效果</td><td>消費</td><td>卡片</td><td></td><td>名稱</td><td>效果</td><td>消費</td><td>卡片</td><td></td><td>名稱</td><td>效果</td><td>消費</td><td>卡片</td><td></td><td>名稱</td><td>效果</td><td>卡片</td></tr><tr><td>斬擊</td><td>敵單斬小</td><td>HP7%</td><td>X</td><td></td><td>火焰</td><td>敵單火小</td><td>SP3</td><td>O</td><td></td><td>毒氣</td><td>敵單+中毒</td><td>SP5</td><td>X</td><td></td><td>回復</td><td>我單HP回少</td><td>SP4</td><td>O</td><td></td><td>攻擊祝福</td><td>我單++三回合攻擊up（同效果不可疊加）</td><td>SP6</td><td>O</td><td></td><td>冰結防禦</td><td>免疫凍結</td><td>X</td></tr><tr><td>強力斬擊</td><td>敵單斬小</td><td>HP10%</td><td>O</td><td></td><td>烈焰</td><td>敵單火中</td><td>SP6</td><td>O</td><td></td><td>毒霧</td><td>敵全+中毒</td><td>SP10</td><td>X</td><td></td><td>強回復</td><td>我單HP回中</td><td>SP8</td><td>O</td><td></td><td>命中祝福</td><td>我單++三回合命中、回避率up（同效果不可疊加）</td><td>SP6</td><td>X</td><td></td><td>感電防禦</td><td>免疫感電</td><td>X</td></tr><tr><td>剛殺斬</td><td>敵單斬中</td><td>HP10%</td><td>O</td><td></td><td>熾焰</td><td>敵單火大</td><td>SP12</td><td>O</td><td></td><td>猛毒氣息</td><td>敵全HP25%傷害+中毒（「毒強化」無效）</td><td>SP40</td><td>O</td><td></td><td>超回復</td><td>我單HP回全</td><td>SP20</td><td>O</td><td></td><td>防禦祝福</td><td>我單++三回合防禦up（同效果不可疊加）</td><td>SP6</td><td>O</td><td></td><td>動搖防禦</td><td>免疫動搖</td><td>X</td></tr><tr><td>殘影</td><td>敵單斬中，新月時威力UP</td><td>HP10%</td><td>O</td><td></td><td>廣域火焰</td><td>敵全火小</td><td>SP6</td><td>O</td><td></td><td>魅惑之吻</td><td>敵單+魅惑</td><td>SP5</td><td>X</td><td></td><td>廣域回復</td><td>我全HP回少</td><td>SP8</td><td>O</td><td></td><td>廣域攻擊祝福</td><td>我全++三回合攻擊up（同效果不可疊加）</td><td>SP12</td><td>O</td><td></td><td>魅惑防禦</td><td>免疫魅惑</td><td>O</td></tr><tr><td>月影</td><td>敵單斬中，滿月時威力UP（滿月作戰時有這技能令人安心）</td><td>HP10%</td><td>O</td><td></td><td>廣域烈焰</td><td>敵全火中</td><td>SP12</td><td>O</td><td></td><td>魅惑之舞</td><td>敵全+魅惑</td><td>SP10</td><td>O</td><td></td><td>廣域強回復</td><td>我全HP回中</td><td>SP16</td><td>O</td><td></td><td>廣域命中祝福</td><td>我單++三回合命中、回避率up（同效果不可疊加）</td><td>SP12</td><td>O</td><td></td><td>毒防禦</td><td>免疫毒</td><td>O</td></tr><tr><td>死之終結</td><td>敵單斬中</td><td>HP13%</td><td>O</td><td></td><td>廣域熾焰</td><td>敵全火大</td><td>SP24</td><td>O</td><td></td><td>貓咪花招</td><td>敵單+動搖</td><td>SP5</td><td>X</td><td></td><td>廣域超回復</td><td>我全HP回滿</td><td>SP40</td><td>O</td><td></td><td>廣域防禦祝福</td><td>我全++三回合防禦up（同效果不可疊加）</td><td>SP12</td><td>O</td><td></td><td>自暴自棄防禦</td><td>免疫自暴自棄</td><td>X</td></tr><tr><td>五月雨連斬</td><td>敵單斬大1~2次（2次的話傷害比「無畏劍斬」高）</td><td>HP13%</td><td>O</td><td></td><td>諸神的黃昏</td><td>敵全火特大（魔術師：敘爾特 習得(Lv56)）</td><td>SP30</td><td>X</td><td></td><td>閃光雜音</td><td>敵全+動搖</td><td>SP10</td><td>X</td><td></td><td>救世主之光</td><td>我全HP回滿−全異常</td><td>SP60</td><td>O</td><td></td><td>祝福移除</td><td>敵全−−強化效果（建議用道具替代）</td><td>SP15</td><td>O</td><td></td><td>不動心</td><td>免疫精神異常（太陽：阿修羅王 默認SKILL，用於使用「救世主之光」）</td><td>O</td></tr><tr><td>天軍之劍</td><td>敵單斬大（審判：米迦勒 習得(Lv77)，鬼一般的暴擊率）</td><td>HP13%</td><td>X</td><td></td><td>廣域魔焰</td><td>敵全火大（塔：魔羅 習得(Lv77)）</td><td>SP32</td><td>O</td><td></td><td>混亂之擊</td><td>敵單+混亂</td><td>SP5</td><td>X</td><td></td><td>魅惑治療</td><td>我單−魅惑</td><td>SP5</td><td>O</td><td></td><td>攻擊詛咒</td><td>敵單−−三回合攻擊up（同效果不可疊加）</td><td>SP6</td><td>O</td><td></td><td>斬擊吸收</td><td>斬傷吸收</td><td>O</td></tr><tr><td>無畏劍斬</td><td>敵單斬特大</td><td>HP20%</td><td>O</td><td></td><td>冰凍</td><td>敵單冰小+凍結(10%)</td><td>SP4</td><td>O</td><td></td><td>混亂之境</td><td>敵全+混亂</td><td>SP10</td><td>X</td><td></td><td>自暴自棄治療</td><td>我單−自暴自棄</td><td>SP5</td><td>O</td><td></td><td>命中詛咒</td><td>敵單−−三回合命中、回避率up（同效果不可疊加）</td><td>SP6</td><td>X</td><td></td><td>打擊吸收</td><td>打傷吸收</td><td>O</td></tr><tr><td>疾風斬</td><td>敵全斬中</td><td>HP14%</td><td>O</td><td></td><td>冰封</td><td>敵單冰中+凍結(8%)</td><td>SP8</td><td>O</td><td></td><td>惡魔之觸</td><td>敵單+恐懼</td><td>SP5</td><td>X</td><td></td><td>中毒治療</td><td>我單−中毒</td><td>SP5</td><td>O</td><td></td><td>防禦詛咒</td><td>敵單−−三回合防禦up（同效果不可疊加）</td><td>SP6</td><td>O</td><td></td><td>貫通吸收</td><td>貫傷吸收</td><td>O</td></tr><tr><td>利劍亂舞</td><td>敵全斬中2~4次（總傷害比「死亡界限」高，但低命中率）</td><td>HP16%</td><td>O</td><td></td><td>冰葬</td><td>敵單冰大+凍結(10%)</td><td>SP16</td><td>O</td><td></td><td>惡魔微笑</td><td>敵全+恐懼</td><td>SP10</td><td>O</td><td></td><td>異常回復</td><td>我單−混亂、動搖、恐怖、感電或凍結</td><td>SP3</td><td>O</td><td></td><td>廣域攻擊詛咒</td><td>敵全−−三回合攻擊up（同效果不可疊加）</td><td>SP12</td><td>O</td><td></td><td>火炎吸收</td><td>火傷吸收</td><td>O</td></tr><tr><td>死亡界限</td><td>敵全斬大（高暴擊率）</td><td>HP19%</td><td>O</td><td></td><td>廣域冰結</td><td>敵全冰小+凍結(8%)</td><td>SP8</td><td>O</td><td></td><td>亡者的哀嘆</td><td>敵全恐懼狀態者+即死（BOSS同樣有效）</td><td>SP15</td><td>X</td><td></td><td>廣域異常回復</td><td>我全−混亂、動搖、恐怖、感電或凍結</td><td>SP6</td><td>O</td><td></td><td>廣域命中詛咒</td><td>敵全−−三回合命中、回避率up（同效果不可疊加）</td><td>SP12</td><td>X</td><td></td><td>冰結吸收</td><td>冰傷吸收</td><td>O</td></tr><tr><td>空間殺法</td><td>敵全斬大，絕佳狀態時威力UP（普通狀態時傷害也比「死亡界限」高，</td><td>HP21%</td><td>O</td><td></td><td>廣域冰封</td><td>敵全冰中+凍結(10%)</td><td>SP16</td><td>O</td><td></td><td>詈罵雜言</td><td>敵單+自暴自棄</td><td>SP5</td><td>O</td><td></td><td>重整姿態</td><td>我單−倒地或昏厥</td><td>SP3</td><td>X</td><td></td><td>廣域防禦詛咒</td><td>敵全−−三回合防禦up（同效果不可疊加）</td><td>SP12</td><td>O</td><td></td><td>電擊吸收</td><td>雷傷吸收</td><td>O</td></tr><tr><td></td><td>絕佳狀態時傷害超越「黎明之星」，全技能最高）</td><td></td><td></td><td></td><td>廣域冰葬</td><td>敵全冰大+凍結(8%)</td><td>SP32</td><td>O</td><td></td><td>終末預言</td><td>敵全+自暴自棄</td><td>SP10</td><td>X</td><td></td><td>復活</td><td>我單HP回半−戰鬥不能</td><td>SP20</td><td>O</td><td></td><td>詛咒解除</td><td>我全−−弱化效果（對「耐性消除」有效，建議用道具替代）</td><td>SP15</td><td>O</td><td></td><td>疾風吸收</td><td>風傷吸收</td><td>O</td></tr><tr><td>突撃</td><td>敵單打小</td><td>HP7%</td><td>X</td><td></td><td>寒冰地獄</td><td>敵單冰特大+凍結(100%)（女帝：絲卡蒂 習得(Lv81)）</td><td>SP32</td><td>X</td><td></td><td>沉澱的吐息</td><td>敵單+一定回合異常狀態被附加率</td><td>SP15</td><td>O</td><td></td><td>涅槃</td><td>我單HP回滿−戰鬥不能</td><td>SP40</td><td>O</td><td></td><td>反叛</td><td>全場++三回合暴擊率up</td><td>SP5</td><td>X</td><td></td><td>光反彈</td><td>光傷反彈（同時避免了即死）</td><td>O</td></tr><tr><td>急速衝擊</td><td>敵單打小</td><td>HP9%</td><td>O</td><td></td><td>疾風</td><td>敵單風小</td><td>SP3</td><td>O</td><td></td><td>沉澱的空氣</td><td>全場+一定回合異常狀態被附加率</td><td>SP15</td><td>X</td><td></td><td>自我犧牲</td><td>我全HP回滿，使用者HP降到1（很適合與「不屈的鬥志」組合）</td><td>SP9</td><td>O</td><td></td><td>革命</td><td>全場++三回合暴擊率UP</td><td>SP10</td><td>O</td><td></td><td>闇反彈</td><td>闇傷反彈（同時避免了即死）</td><td>O</td></tr><tr><td>音速拳</td><td>敵單打小</td><td>HP9%</td><td>O</td><td></td><td>烈風</td><td>敵單風中</td><td>SP6</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td>治癒甘露</td><td>我全−除倒地或昏厥以外的異常狀態</td><td>SP25</td><td>O</td><td></td><td>蓄力</td><td>自身++一次物傷威力2倍</td><td>SP15</td><td>O</td><td></td><td>武具的心得</td><td>武器的普攻威力up</td><td>O</td></tr><tr><td>必殺衝刺</td><td>敵單打中1~2次</td><td>HP10%</td><td>O</td><td></td><td>暴風</td><td>敵單風大</td><td>SP12</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>冥想</td><td>自身++一次魔傷威力2倍</td><td>SP15</td><td>O</td><td></td><td>大虎</td><td>自暴自棄狀態普攻威力up</td><td>X</td></tr><tr><td>巨人鐵拳</td><td>敵單打大</td><td>HP12%</td><td>O</td><td></td><td>廣域疾風</td><td>敵全風小</td><td>SP6</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>火炎耐性消除</td><td>敵單火無、吸、反消除</td><td>SP40</td><td>O</td><td></td><td>反擊</td><td>物傷反彈機率小（上位技能效果優先，效果不可疊加）</td><td>O</td></tr><tr><td>疲勞不適醉拳</td><td>敵單打大，疲勞狀態時威力UP（普通狀態時傷害也比「巨人鐵拳」高）</td><td>HP13%</td><td>O</td><td></td><td>廣域烈風</td><td>敵全風中</td><td>SP12</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>冰結耐性消除</td><td>敵單冰無、吸、反消除</td><td>SP40</td><td>O</td><td></td><td>猛反擊</td><td>物傷反彈機率中</td><td>O</td></tr><tr><td>神之手</td><td>敵單打特大</td><td>HP14%</td><td>O</td><td></td><td>廣域暴風</td><td>敵全風大</td><td>SP24</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>疾風耐性消除</td><td>敵單風無、吸、反消除</td><td>SP40</td><td>O</td><td></td><td>超反擊</td><td>物傷反彈機率大</td><td>O</td></tr><tr><td>電光石火</td><td>敵全打小1~3次</td><td>HP15%</td><td>O</td><td></td><td>萬物流轉</td><td>敵單風特大（命運：諾倫 習得(Lv62)）</td><td>SP30</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>電撃耐性消除</td><td>敵單雷無、吸、反消除</td><td>SP40</td><td>O</td><td></td><td>治療促進·小</td><td>戰鬥中每回合前HP回小</td><td>O</td></tr><tr><td>高熱波</td><td>敵全打中</td><td>HP16%</td><td>O</td><td></td><td>落雷</td><td>敵單雷小+感電(10%)</td><td>SP4</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>物理反彈護罩</td><td>我全++一次物理反彈（同效果不可疊加）</td><td>SP55</td><td>O</td><td></td><td>治療促進·中</td><td>戰鬥中每回合前HP回中</td><td>O</td></tr><tr><td>金剛爆破</td><td>敵全打中</td><td>HP18%</td><td>O</td><td></td><td>狂雷</td><td>敵單雷中+感電(8%)</td><td>SP8</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>魔法反彈護罩</td><td>我全++一次魔法反彈（除了萬能屬性，對精神異常、詛咒有效）</td><td>SP55</td><td>O</td><td></td><td>治療促進·大</td><td>戰鬥中每回合前HP回大(6%)</td><td>O</td></tr><tr><td>烈風波</td><td>敵全打大</td><td>HP19%</td><td>O</td><td></td><td>神雷</td><td>敵單雷大+感電(10%)</td><td>SP16</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>金蟬脫殼</td><td>戰鬥中逃走成功率100％（除了不能逃走的戰鬥）</td><td>SP25</td><td>X</td><td></td><td>生命之泉</td><td>戰鬥中每回合前HP回大(8%)（順平專用）</td><td>X</td></tr><tr><td>虛空藝術</td><td>敵全打大（小機率2次）</td><td>HP19%</td><td>O</td><td></td><td>廣域落雷</td><td>敵全雷小+感電(8%)</td><td>SP8</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>氣功·小</td><td>戰鬥中每回合前SP回小(3)</td><td>O</td></tr><tr><td>單發射擊</td><td>敵單貫小</td><td>HP8%</td><td>X</td><td></td><td>廣域狂雷</td><td>敵全雷中+感電(10%)</td><td>SP16</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>氣功·中</td><td>戰鬥中每回合前SP回中(5)</td><td>O</td></tr><tr><td>天使之箭</td><td>敵單貫小+魅惑</td><td>HP9%</td><td>X</td><td></td><td>廣域神雷</td><td>敵全雷大+感電(8%)</td><td>SP32</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>氣功·大</td><td>戰鬥中每回合前SP回大(7)</td><td>O</td></tr><tr><td>二連牙</td><td>敵單貫小2次</td><td>HP9%</td><td>O</td><td></td><td>真理之雷</td><td>敵單雷特大+感電(100%)（皇帝：奧丁 習得(Lv63)）</td><td>SP32</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>咬緊牙關</td><td>戰鬥不能時以HP1復活一次</td><td>O</td></tr><tr><td>雙重射擊</td><td>敵單貫中2次</td><td>HP10%</td><td>O</td><td></td><td>破魔</td><td>敵單光+即死</td><td>SP6</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>不屈的鬥志</td><td>戰鬥不能時以HP滿復活一次（很適合與「自我犧牲」組合）</td><td>O</td></tr><tr><td>百萬連射</td><td>敵單貫小2~4次</td><td>HP10%</td><td>O</td><td></td><td>破魔聖光</td><td>敵單光+很高機率即死</td><td>SP12</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>光之生還</td><td>因光傷而戰鬥不能時低機率HP滿復活（弱光則1more倒地）</td><td>X</td></tr><tr><td>無情穿刺</td><td>敵單貫中，敵方倒地狀態威力UP</td><td>HP10%</td><td>O</td><td></td><td>破魔之陣</td><td>敵全光+即死</td><td>SP12</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>光之大生還</td><td>因光傷而戰鬥不能時HP1復活（弱光則1more倒地）</td><td>O</td></tr><tr><td>瘋狂連擊</td><td>敵單貫大，敵方倒地狀態威力UP</td><td>HP12%</td><td>O</td><td></td><td>破魔聖光陣</td><td>敵全光+很高機率即死</td><td>SP24</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>闇之生還</td><td>因闇傷而戰鬥不能時低機率HP滿復活（弱闇則1more倒地）</td><td>O</td></tr><tr><td>淬毒之箭</td><td>敵單貫大+中毒</td><td>HP13%</td><td>X</td><td></td><td>輪迴講道</td><td>敵全光+超高機率即死（法王：大僧正 習得(Lv56)）</td><td>SP40</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>闇之大生還</td><td>因闇傷而戰鬥不能時HP1復活（弱闇則1more倒地）</td><td>O</td></tr><tr><td>原初衝擊</td><td>敵單貫特大（各方面都差於「戰慄滅殺」，陷阱技能）</td><td>HP21%</td><td>O</td><td></td><td>咒殺</td><td>敵單闇+即死</td><td>SP6</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>勝利的氣息</td><td>裝備持有此技能的P時，每次戰鬥結束時HP·SP回小(8%)</td><td>O</td></tr><tr><td>箭雨</td><td>敵全貫中2次</td><td>HP19%</td><td>O</td><td></td><td>咒殺魔光</td><td>敵單闇+很高機率即死</td><td>SP12</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>勝利的吶喊</td><td>裝備持有此技能的P時，每次戰鬥結束時HP·SP回滿（逃跑時不會發動）</td><td>O</td></tr><tr><td>刹那五月雨撃</td><td>敵全貫中1~2次（用下位的「箭雨」比較好）</td><td>HP19%</td><td>O</td><td></td><td>咒殺之陣</td><td>敵全闇+即死</td><td>SP12</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>攻擊祝福·自動</td><td>戰鬥開始時自動施放「攻擊祝福」</td><td>O</td></tr><tr><td>戰慄滅殺</td><td>敵全貫特大+恐懼（塔：濕婆 習得(Lv85)，暴擊率稍高）</td><td>HP18%</td><td>O</td><td></td><td>咒殺魔光陣</td><td>敵全闇+很高機率即死</td><td>SP24</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>防禦祝福·自動</td><td>戰鬥開始時自動施放「防禦祝福」</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>能去死嗎？</td><td>敵全闇+超高機率即死（死神：愛麗絲 習得(Lv59)）</td><td>SP40</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>命中祝福·自動</td><td>戰鬥開始時自動施放「命中祝福」</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>核熱衝擊</td><td>敵全萬能中</td><td>SP45</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>廣域攻擊祝福·自動</td><td>戰鬥開始時自動施放「廣域攻擊祝福」</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>核烈衝擊</td><td>敵全萬能大</td><td>SP65</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>廣域防禦祝福·自動</td><td>戰鬥開始時自動施放「廣域防禦祝福」</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>核爆衝擊</td><td>敵全萬能特大</td><td>SP85</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>廣域命中祝福·自動</td><td>戰鬥開始時自動施放「廣域命中祝福」</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>漆黑之蛇</td><td>敵單萬能超特大（審判：撒旦 習得(Lv86)）</td><td>SP60</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>火炎增幅</td><td>火傷威力1.25倍</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>黎明之星</td><td>敵全萬能超特大（星：路西菲爾 習得(Lv91)）</td><td>SP80</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>火炎激增</td><td>火傷威力1.5倍（疊加威力約1.8倍）</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>吸血</td><td>敵單吸取35HP</td><td>SP5</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>冰結增幅</td><td>冰傷威力1.25倍</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>吸魔</td><td>敵單吸取20SP</td><td>SP5</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>冰結激增</td><td>冰傷威力1.5倍（疊加威力約1.8倍）</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>電擊增幅</td><td>雷傷威力1.25倍</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>電擊激增</td><td>雷傷威力1.5倍（疊加威力約1.8倍）</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>疾風增幅</td><td>風傷威力1.25倍</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>疾風激增</td><td>風傷威力1.5倍（疊加威力約1.8倍）</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>破魔強化</td><td>光屬性技能成功率up</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>咒殺強化</td><td>闇屬性技能成功率up</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>毒強化</td><td>毒成功率up</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>魅惑強化</td><td>魅惑成功率up</td><td>X</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>恐懼強化</td><td>恐懼成功率up</td><td>X</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>自暴自棄強化</td><td>自暴自棄成功率up</td><td>X</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>異常狀態強化</td><td>所有異常狀態成功率up（效果可與其他異常強化疊加）</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>防禦指導</td><td>敵方暴擊率減半</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>暴擊助言</td><td>我方暴擊率翻倍</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>諸神的加護</td><td>持有者使用HP回復魔法效果UP</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>警戒</td><td>受到先制攻擊機率DOWN</td><td>X</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>逃走加速</td><td>逃走成功率UP</td><td>X</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>武道的素養</td><td>物理攻擊消費HP減半</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>魔術的素養</td><td>魔法消費SP減半</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>經驗成長·小</td><td>即使沒有參與戰鬥也能獲得1/4經驗（上位技能效果優先，效果不可疊加）</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>經驗成長·中</td><td>即使沒有參與戰鬥也能獲得1/2經驗（上位技能效果優先，效果不可疊加）</td><td>O</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>經驗成長·大</td><td>即使沒有參與戰鬥也能獲得全部經驗（量產受胎物品、稀有卡片的好朋友）</td><td>O</td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../p3p/enemy-weakness/"><small>← 上一页</small><strong>全敌人属性弱点及掉落</strong></a>
+<a class="next" href="../../p3p/social-links/"><small>下一页 →</small><strong>全社群解锁地点和条件</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="横向并排的多期「不期而遇」对照表（一层至七层 × 效果 / 备注）。">
+  <title>不期而遇事件表（多期并排） · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/" class="active">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/" class="active">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>明日方舟</span>
+          <b>/</b>
+          <span aria-current="page">不期而遇事件表（多期并排）</span>
+        </nav>
+        <header class="article-head">
+          <h1>不期而遇事件表（多期并排）</h1>
+          <p class="article-meta">最近更新于 2026-09-25</p>
+        </header>
+        <div class="prose">
+<p>横向并排的多期「不期而遇」对照表（一层至七层 × 效果 / 备注）。</p>
+<p>共 49 行。原表网格：行号与原文档一致，列号为原文档列标，空格即原表留空。</p>
+<h3 id="一张-sheet-里并排放着四期">一张 sheet 里并排放着四期</h3>
+<p>原表横向拼了四组「不期而遇」表，每组各有自己的层数列、效果列与备注列，分组 标题写在组首单元格里。导出后合并单元格只剩左上角，所以组首之外的位置是空的。 本页按原样整片呈现，列标与原文档一致，可直接对照。</p>
+<h2 id="出处">出处</h2>
+<p>本页数据取自腾讯文档《集批宝典》子表「不期而遇事件表」（tab <code>000003</code>），由 <strong>哲三</strong> 整理。转写过程<strong>未修改、未补全任何数值</strong>；合并单元格导出后只有左上角有值，因此表里的空格是原始形态。</p>
+<p>原文档：<a href="https://docs.qq.com/sheet/DUFhxeHFCaXJwS0Vl" target="_blank" rel="noopener noreferrer">腾讯文档《集批宝典》</a></p><figure class="data-table"><table data-rows="49"><caption>原表网格：行号与原文档一致，列号为原文档列标，空格即原表留空。</caption><thead><tr><th>行</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>AA</th><th>AB</th><th>AC</th><th>AD</th><th>AE</th><th>AF</th><th>AG</th><th>AH</th><th>AI</th><th>AJ</th><th>AK</th><th>AL</th><th>AM</th><th>AN</th><th>AO</th><th>AP</th><th>AQ</th><th>AR</th><th>AS</th><th>AT</th></tr></thead><tbody><tr><td>2</td><td></td><td></td><td>一层</td><td>二层</td><td>三层</td><td>四层</td><td>五层</td><td>六层</td><td>七层</td><td>制表人 哲三</td><td></td><td></td><td>傀 影 肉 鸽 不 期 而 遇 事 件 一 览</td><td>一层</td><td>二层</td><td>三层</td><td>四层</td><td>五层</td><td>效果</td><td></td><td></td><td>备注</td><td></td><td>水 月 肉 鸽 不 期 而 遇 事 件 一 览</td><td>一层</td><td>二层</td><td>三层</td><td>四层</td><td>五层</td><td>效果</td><td></td><td></td><td>备注</td><td></td><td>萨 米 肉 鸽 不 期 而 遇 事 件 一 览</td><td>一层</td><td>二层</td><td>三层</td><td>四层</td><td>五层</td><td>六层</td><td>七层</td><td>效果</td><td></td><td></td><td>备注</td></tr><tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td></td><td>时间</td><td>资源类</td><td></td><td></td><td></td><td>扎营</td><td></td><td></td><td></td><td></td><td>3血</td><td></td><td></td><td>可重复</td><td></td><td></td><td>悬高之葬</td><td></td><td></td><td></td><td></td><td>1骰子4源石锭</td><td></td><td></td><td>可重复</td><td></td><td></td><td>吉兆</td><td></td><td></td><td></td><td></td><td></td><td></td><td>4源石锭/2希望</td><td></td><td></td><td>制表人 哲三</td></tr><tr><td>4</td><td></td><td></td><td>2</td><td></td><td></td><td></td><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td>善良的木偶</td><td></td><td></td><td></td><td></td><td>5源石锭</td><td></td><td></td><td>可重复</td><td></td><td></td><td>阴云如聚</td><td></td><td></td><td></td><td></td><td>2骰子</td><td></td><td></td><td>可重复</td><td></td><td></td><td>雨！</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1抗干扰/3盾</td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td>4</td><td></td><td></td><td></td><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td>讲故事的人</td><td></td><td></td><td></td><td></td><td>2希望</td><td></td><td></td><td>可重复</td><td></td><td></td><td>噬尘扩散</td><td></td><td></td><td></td><td></td><td>3盾</td><td></td><td></td><td>可重复</td><td></td><td></td><td>随到随取</td><td></td><td></td><td></td><td></td><td></td><td></td><td>6</td><td></td><td></td><td>&gt;3抗干扰</td></tr><tr><td>6</td><td></td><td></td><td></td><td>7</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td>迷幻烛火</td><td></td><td></td><td></td><td></td><td>2血买8源石锭</td><td></td><td></td><td>可重复</td><td></td><td></td><td>天灾信使</td><td></td><td></td><td></td><td></td><td>1钥匙//6块钱买2钥匙</td><td></td><td></td><td>可重复</td><td></td><td></td><td>定期维护</td><td></td><td></td><td></td><td></td><td></td><td></td><td>9</td><td></td><td></td><td>&gt;4抗干扰</td></tr><tr><td>7</td><td></td><td></td><td></td><td>10</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>委托冒险者</td><td></td><td></td><td></td><td>2源石锭买2职业券/5源石锭买万能券</td><td></td><td></td><td>制表人 哲三</td><td></td><td></td><td></td><td>扎营</td><td></td><td></td><td></td><td>2血上限</td><td></td><td></td><td>可重复</td><td></td><td></td><td></td><td>昏黑之室</td><td></td><td></td><td></td><td></td><td></td><td>1坍缩值5源石锭/3坍缩值1藏品/藏品</td><td></td><td></td><td>&gt;5抗干扰</td></tr><tr><td>8</td><td></td><td></td><td></td><td>11</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>“皇家争执”</td><td></td><td></td><td>2职业券/8源石锭买万能券</td><td></td><td></td><td></td><td></td><td></td><td>继承</td><td></td><td></td><td></td><td></td><td>1藏品</td><td></td><td></td><td></td><td></td><td></td><td>萨米之语</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1密文板</td><td></td><td></td><td></td></tr><tr><td>9</td><td></td><td></td><td></td><td></td><td>12</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>先遣小队</td><td></td><td></td><td></td><td>进阶券</td><td></td><td></td><td>限5星及以下</td><td></td><td></td><td></td><td>重返家园</td><td></td><td></td><td></td><td>2源石锭/骰子＞5买2职业//5源石锭买万能券</td><td></td><td></td><td></td><td></td><td></td><td>乌萨斯</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1血上限//1血换4源石锭</td><td></td><td></td><td></td></tr><tr><td>10</td><td></td><td></td><td>极小概率重复刷→</td><td></td><td>13</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>高卢老兵</td><td></td><td></td><td>进阶券</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>引火之木</td><td></td><td></td><td>2职业券/10灯火买万能券</td><td></td><td></td><td></td><td></td><td></td><td>无用之物</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1坍缩值3源石锭/2坍缩值1密文板/-2坍缩值</td><td></td><td></td><td></td></tr><tr><td>11</td><td></td><td></td><td></td><td></td><td>14</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>哥伦比亚酒商</td><td></td><td></td><td></td><td>5源石锭买3希望</td><td></td><td></td><td></td><td></td><td></td><td></td><td>先遣小队</td><td></td><td></td><td></td><td>进阶券</td><td></td><td></td><td>限5星及以下</td><td></td><td></td><td></td><td>野外生存专家</td><td></td><td></td><td></td><td></td><td></td><td>15</td><td></td><td></td><td>&gt;2抗干扰</td></tr><tr><td>12</td><td></td><td></td><td>16</td><td></td><td></td><td></td><td></td><td></td><td>差不</td><td>藏品类</td><td></td><td></td><td></td><td></td><td>“锡人”</td><td></td><td></td><td></td><td>2希望买1藏品</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>灯塔看守人</td><td></td><td>进阶券</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>在地公共信号放大站756号</td><td></td><td></td><td></td><td>17</td><td></td><td></td><td>&gt;3抗干扰</td></tr><tr><td>13</td><td></td><td></td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>猩红舞会</td><td></td><td>钱/血/盾/希望资源转换</td><td></td><td></td><td></td><td></td><td></td><td>海嗣学者</td><td></td><td></td><td></td><td></td><td>1藏品</td><td></td><td></td><td>可能负面</td><td></td><td></td><td></td><td></td><td>特里蒙旅行社</td><td></td><td></td><td></td><td></td><td>19</td><td></td><td></td><td></td></tr><tr><td>14</td><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>剧目需求</td><td></td><td></td><td>21</td><td></td><td></td><td>随机一个</td><td></td><td></td><td></td><td>远销海外</td><td></td><td></td><td></td><td>5源石锭买3希望//1希望</td><td></td><td></td><td>高灯火1希望</td><td></td><td></td><td></td><td></td><td></td><td>在地公共移动站N6号</td><td></td><td></td><td></td><td>22</td><td></td><td></td><td></td></tr><tr><td>15</td><td></td><td></td><td></td><td>23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>狂舞之人</td><td></td><td></td><td>24</td><td></td><td></td><td>随机一个</td><td></td><td></td><td></td><td>相逢</td><td></td><td></td><td></td><td>3血买8源石锭/6血买4血上限</td><td></td><td></td><td></td><td></td><td></td><td>度假胜地</td><td></td><td></td><td></td><td></td><td></td><td></td><td>血回满</td><td></td><td></td><td>极小概率 树洞外出现</td></tr><tr><td>16</td><td></td><td></td><td></td><td></td><td>25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>音乐挑战</td><td></td><td></td><td>26</td><td></td><td></td><td>每次+20%概率</td><td></td><td></td><td></td><td></td><td></td><td>梦中之会</td><td></td><td>源石锭/血/盾/钥匙/骰子资源转换</td><td></td><td></td><td></td><td></td><td></td><td>负伤的主树</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1抗//3坍缩值2抗</td><td></td><td></td><td></td></tr><tr><td>17</td><td></td><td></td><td></td><td></td><td>27</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>“石中剑”</td><td></td><td></td><td>断剑/剑锤</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>孤行的老者</td><td></td><td>15灯火/进阶券/5源石锭2血上限2盾</td><td></td><td></td><td>低/高/高灯火</td><td></td><td></td><td>不见群山</td><td></td><td></td><td></td><td></td><td></td><td></td><td>28</td><td></td><td></td><td>&gt;3抗干扰</td></tr><tr><td>18</td><td></td><td></td><td></td><td>拿了2结局藏品才有→</td><td></td><td>29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>被困的人</td><td></td><td></td><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>为了生存</td><td></td><td></td><td>梭哈源石锭换源石锭</td><td></td><td></td><td></td><td></td><td></td><td>远见所向</td><td></td><td></td><td></td><td></td><td></td><td></td><td>31</td><td></td><td></td><td>&gt;4抗干扰</td></tr><tr><td>19</td><td></td><td></td><td></td><td>32</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>佝偻怪客</td><td></td><td></td><td>33</td><td></td><td></td><td>随机4出3</td><td></td><td></td><td></td><td>苦路</td><td></td><td></td><td></td><td>每2血换1希望1血上限1钥1藏品</td><td></td><td></td><td></td><td></td><td></td><td>疗愈仪式</td><td></td><td></td><td></td><td></td><td></td><td></td><td>34</td><td></td><td></td><td></td></tr><tr><td>20</td><td></td><td></td><td></td><td></td><td>5层boss异格→</td><td>35</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>沉睡石像</td><td></td><td></td><td></td><td>随机一个DLC1前的一层紧急</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>设身处地</td><td></td><td>2血换10灯/1血上限/1券/1钥</td><td></td><td></td><td></td><td></td><td></td><td>黑色足迹</td><td></td><td></td><td></td><td></td><td></td><td></td><td>36</td><td></td><td></td><td></td></tr><tr><td>21</td><td></td><td></td><td></td><td>37</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>受缚之血</td><td></td><td></td><td>邪异囚笼</td><td></td><td></td><td></td><td></td><td></td><td></td><td>信念</td><td></td><td></td><td></td><td>6块钱买藏品</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>22</td><td></td><td></td><td>38</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>幽影狂言</td><td></td><td>“骑士对决”</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>是非黑白</td><td></td><td>2钥匙/3骰子+1负面藏品//1藏品</td><td></td><td></td><td>低/低//高灯火</td><td></td><td></td><td></td><td></td><td></td><td>不冻河</td><td></td><td></td><td></td><td>3希望换4血/4坍缩值/1藏品</td><td></td><td></td><td></td></tr><tr><td>23</td><td></td><td></td><td>2希望/5希望3层boss异格→</td><td></td><td>卫国前夜</td><td></td><td></td><td></td><td>多了</td><td>特殊类</td><td></td><td></td><td></td><td></td><td></td><td></td><td>艺术与疯狂</td><td></td><td>无序盛宴</td><td></td><td></td><td></td><td></td><td></td><td></td><td>大海的遗产</td><td></td><td></td><td></td><td>1藏品//1藏品+1负面藏品</td><td></td><td></td><td></td><td></td><td></td><td>沼泽里的抽泣声</td><td></td><td></td><td></td><td></td><td></td><td></td><td>39</td><td></td><td></td><td></td></tr><tr><td>24</td><td></td><td></td><td></td><td>重打四层/10源石锭→</td><td></td><td>变幻之城</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>鸭爵主演？</td><td></td><td></td><td></td><td></td><td>鸭爵的戏剧</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>诸王不再</td><td></td><td></td><td>藏品/骰子＞5给1个国王藏品</td><td></td><td></td><td></td><td></td><td></td><td></td><td>有利可图</td><td></td><td></td><td></td><td></td><td></td><td>40</td><td></td><td></td><td>&gt;3抗干扰</td></tr><tr><td>25</td><td></td><td></td><td></td><td>41</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>鸭爵的宴会</td><td></td><td></td><td>鸭爵的宴会</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>海边的歌者</td><td></td><td></td><td>42</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>随行人员</td><td></td><td></td><td></td><td></td><td>43</td><td></td><td></td><td>&gt;1抗干扰</td></tr><tr><td>26</td><td></td><td></td><td></td><td>44</td><td></td><td>45</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>即兴鸭子演出</td><td></td><td>高普尼克之拳</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>传统技术</td><td></td><td></td><td>基锤/分浪</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>邪恶计划鸭</td><td></td><td></td><td>46</td><td></td><td></td><td>&gt;2坍缩值</td></tr><tr><td>27</td><td></td><td></td><td>47</td><td></td><td></td><td></td><td></td><td></td><td>哦</td><td>作战类</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>那位乌萨斯人</td><td>这位乌萨斯人</td><td></td><td></td><td></td><td></td><td></td><td></td><td>最后的观潮者</td><td></td><td></td><td></td><td>48</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>百里连营</td><td></td><td></td><td></td><td></td><td>49</td><td></td><td></td><td>&lt;2抗干扰</td></tr><tr><td>28</td><td></td><td></td><td></td><td>50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>邪恶之棺</td><td></td><td></td><td></td><td></td><td>51</td><td></td><td></td><td>前置</td><td></td><td></td><td></td><td></td><td></td><td>变卖身家</td><td></td><td>52</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>请君入戏</td><td></td><td></td><td></td><td></td><td>53</td><td></td><td></td><td></td></tr><tr><td>29</td><td></td><td></td><td></td><td>54</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>以血还血</td><td></td><td></td><td></td><td>55</td><td></td><td></td><td>后置</td><td></td><td></td><td></td><td></td><td>无知是福</td><td></td><td></td><td>56</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>北风女巫</td><td></td><td></td><td></td><td>57</td><td></td><td></td><td>&gt;5抗干扰</td></tr><tr><td>30</td><td></td><td></td><td></td><td></td><td>58</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>暗门</td><td></td><td></td><td></td><td>59</td><td></td><td></td><td>前置A</td><td></td><td></td><td></td><td></td><td></td><td>敬奉火焰</td><td></td><td>60</td><td></td><td></td><td>高灯火战斗</td><td></td><td></td><td></td><td></td><td></td><td></td><td>时刻警惕</td><td></td><td></td><td>英雄无名</td><td></td><td></td><td></td></tr><tr><td>31</td><td></td><td></td><td></td><td></td><td>61</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>密室</td><td></td><td></td><td></td><td>62</td><td></td><td></td><td>前置B</td><td></td><td></td><td></td><td>医者之志</td><td></td><td></td><td></td><td>63</td><td></td><td></td><td>前置</td><td></td><td></td><td>（树洞内有）</td><td></td><td></td><td></td><td>猜疑链</td><td></td><td></td><td>64</td><td></td><td></td><td>&gt;3抗干扰</td></tr><tr><td>32</td><td></td><td></td><td></td><td></td><td>65</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>废品地摊</td><td></td><td></td><td>66</td><td></td><td></td><td>后置1</td><td></td><td></td><td></td><td></td><td></td><td>愚者之心</td><td></td><td>67</td><td></td><td></td><td>后置</td><td></td><td></td><td>变化</td><td></td><td></td><td></td><td></td><td></td><td></td><td>黄沙幻境</td><td></td><td></td><td>4结局前置</td></tr><tr><td>33</td><td></td><td></td><td></td><td></td><td></td><td>68</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>“鉴赏家”</td><td>69</td><td></td><td></td><td>后置2</td><td></td><td></td><td></td><td></td><td>点滴星火</td><td></td><td></td><td>70</td><td></td><td></td><td>前置</td><td></td><td></td><td>71</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>34</td><td></td><td></td><td></td><td></td><td></td><td>72</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>解脱？</td><td></td><td></td><td></td><td></td><td>73</td><td></td><td></td><td>2结局前置</td><td></td><td></td><td></td><td></td><td></td><td>残存微光</td><td></td><td>40灯火/2希望//2血买15灯火</td><td></td><td></td><td>后置</td><td></td><td></td><td>紫色底色为树篱之途内出现</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>35</td><td></td><td></td><td></td><td></td><td>74</td><td></td><td>75</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>疯狂玩偶</td><td></td><td></td><td>76</td><td></td><td></td><td>非必须前置</td><td></td><td></td><td></td><td>藏宝港湾</td><td></td><td></td><td></td><td>随机一个DLC1前的一层紧急</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>36</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>解脱</td><td></td><td>空白遗书</td><td></td><td></td><td>非必须后置</td><td></td><td></td><td></td><td></td><td></td><td>宝箱之舞</td><td></td><td>“喜”从箱来</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>37</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>赴宴</td><td></td><td></td><td></td><td></td><td>77</td><td></td><td></td><td>3结局前置1</td><td></td><td></td><td>狗眼婆娑</td><td></td><td></td><td></td><td></td><td>犹豫不决</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>38</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>追随者集会</td><td>恍悟</td><td></td><td></td><td>3结局前置2</td><td></td><td></td><td></td><td></td><td>鸭力测试</td><td></td><td></td><td>监工现场</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>39</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>别打扰他们</td><td></td><td></td><td></td><td>自缚</td><td></td><td></td><td>4结局前置1</td><td></td><td></td><td></td><td></td><td></td><td>打发时间</td><td></td><td>拳拳到肉</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>40</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>复仇剧</td><td></td><td>观察</td><td></td><td></td><td>4结局前置2</td><td></td><td></td><td></td><td></td><td></td><td></td><td>工作热情</td><td>抱头狗窜</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>41</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>78</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>商业帝国</td><td>鸭本运作</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>42</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>狂徒妄念</td><td></td><td></td><td></td><td></td><td>79</td><td></td><td></td><td>2结局</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>43</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>骑士仍在</td><td></td><td></td><td>80</td><td></td><td></td><td>非必须后置</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>44</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>开端</td><td></td><td></td><td></td><td></td><td>81</td><td></td><td></td><td>3/4结局前置</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>45</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>(20灯火触发)</td><td>深蓝之心</td><td></td><td>82</td><td></td><td></td><td>3结局</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>46</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>赞歌</td><td>绝唱</td><td></td><td></td><td>非必须后置</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>47</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>深蓝仪式</td><td></td><td></td><td></td><td>83</td><td></td><td></td><td>非必须前置</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>48</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>升华</td><td></td><td>84</td><td></td><td></td><td>4结局</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>49</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>瞥视</td><td></td><td></td><td>误入奇境/1藏品</td><td></td><td></td><td>制表人 哲三</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../arknights/gen-ingot/"><small>← 上一页</small><strong>源石锭表</strong></a>
+<a class="next" href="../../arknights/gen-boss/"><small>下一页 →</small><strong>BOSS 数值表</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

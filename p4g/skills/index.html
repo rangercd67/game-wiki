@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="物理技能的名称、可产出技能卡的面具与价格。">
+  <title>技能与技能卡 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/" class="active">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/" class="active">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>P4G 黄金版</span>
+          <b>/</b>
+          <span aria-current="page">技能与技能卡</span>
+        </nav>
+        <header class="article-head">
+          <h1>技能与技能卡</h1>
+          <p class="article-meta">最近更新于 2026-09-16</p>
+        </header>
+        <div class="prose">
+<p>物理技能的名称、可产出技能卡的面具与价格。</p><figure class="data-table"><table data-rows="56"><caption>技能与技能卡（取自 物理技能.xlsx · 工作表 Sheet1）</caption><thead><tr><th>日文名稱</th><th>中文名稱</th><th>可獲得技能卡片的人格面具</th><th>價格</th><th>RANK</th></tr></thead><tbody><tr><td>スラッシュ</td><td>斬擊</td><td>-</td><td>-</td><td>-</td></tr><tr><td>串刺し</td><td>串刺</td><td>-</td><td>-</td><td>-</td></tr><tr><td>突撃</td><td>突擊</td><td>-</td><td>-</td><td>-</td></tr><tr><td>ソニックパンチ</td><td>音速拳</td><td>-</td><td>10000</td><td>2</td></tr><tr><td>シングルショット</td><td>單次射擊</td><td>-</td><td>10000</td><td>2</td></tr><tr><td>アサルトダイブ</td><td>俯衝突擊</td><td>-</td><td>10000</td><td>3</td></tr><tr><td>黒点撃</td><td>黑點擊</td><td>倒懸者 歐特魯斯</td><td>40000</td><td>5</td></tr><tr><td>デッドエンド</td><td>死亡終結</td><td>永劫 蛇龍王</td><td>40000</td><td>5</td></tr><tr><td>パワースラッシュ</td><td>威力斬擊</td><td>正義 能天使</td><td>25000</td><td>4</td></tr><tr><td>剛殺斬</td><td>剛殺斬</td><td>力量 哈奴曼</td><td>40000</td><td>5</td></tr><tr><td>ギガンフィスト</td><td>巨人鐵拳</td><td>教皇 克魯貝洛斯</td><td>60000</td><td>7</td></tr><tr><td>霧雨昇天撃</td><td>霧雨昇天擊</td><td>力量 齊格菲</td><td>70000</td><td>8</td></tr><tr><td>ブレイブザッパー</td><td>勇氣之擊</td><td>戰車 大元帥明王</td><td>80000</td><td>9</td></tr><tr><td>ゴッドハンド</td><td>神之手</td><td>審判 阿爾達</td><td>150000</td><td>10</td></tr><tr><td>イノセントタック</td><td>純真利劍</td><td>惡魔 別西卜</td><td>150000</td><td>10</td></tr><tr><td>二連牙</td><td>二連牙</td><td>-</td><td>10000</td><td>2</td></tr><tr><td>キルラッシュ</td><td>殺戮猛衝</td><td>力量 泰坦</td><td>15000</td><td>3</td></tr><tr><td>ダブルシュート</td><td>雙重射擊</td><td>-</td><td>15000</td><td>3</td></tr><tr><td>ミリオンシュート</td><td>百萬射擊</td><td>塔 饕餮</td><td>50000</td><td>6</td></tr><tr><td>五月雨斬り</td><td>五月雨斬</td><td>塔 平將門</td><td>60000</td><td>7</td></tr><tr><td>疾風斬</td><td>疾風斬</td><td>戰車 阿瑞斯</td><td>15000</td><td>3</td></tr><tr><td>金剛発破</td><td>金剛發破</td><td>教皇 佛勞洛斯</td><td>40000</td><td>5</td></tr><tr><td>ヒートウェイブ</td><td>灼熱波浪</td><td>倒懸者 八房</td><td>40000</td><td>5</td></tr><tr><td>烈風波</td><td>烈風波</td><td>戀愛 西布莉</td><td>50000</td><td>6</td></tr><tr><td>デスバウンド</td><td>死亡界限</td><td>戰車 托爾</td><td>60000</td><td>7</td></tr><tr><td>空間殺法</td><td>空間殺法</td><td>力量 藏王權現</td><td>150000</td><td>10</td></tr><tr><td>電光石火</td><td>電光石火(電光火石)</td><td>女皇 母夜叉</td><td>15000</td><td>3</td></tr><tr><td>暴れまくり</td><td>橫衝直撞</td><td>死神 鬥牛士</td><td>15000</td><td>3</td></tr><tr><td>利剣乱舞</td><td>利劍亂舞</td><td>教皇 北斗星君</td><td>50000</td><td>6</td></tr><tr><td>アイオンの雨</td><td>永恆之雨</td><td>倒懸者 檮杌</td><td>50000</td><td>6</td></tr><tr><td>アローシャワー</td><td>箭浴</td><td>塔 阿巴頓</td><td>60000</td><td>7</td></tr><tr><td>アカシャアーツ</td><td>虛無藝術</td><td>正義 默基瑟德</td><td>80000</td><td>9</td></tr><tr><td>刹那五月雨撃</td><td>剎那五月雨擊</td><td>死神 大黑天</td><td>70000</td><td>8</td></tr><tr><td>アグネヤストラ</td><td>神威之擊</td><td>月亮 聖達芬</td><td>80000</td><td>9</td></tr><tr><td>毒串刺し</td><td>毒串刺</td><td>戰車 埃力格</td><td>10000</td><td>2</td></tr><tr><td>ポイズンアロー</td><td>毒箭</td><td>隱士 一言主</td><td>50000</td><td>6</td></tr><tr><td>ヒステリービンタ</td><td>歇斯底里掌摑</td><td>魔術師 歐若博司</td><td>10000</td><td>2</td></tr><tr><td>脳天落とし</td><td>倒栽痛擊</td><td>力量 睡魔</td><td>10000</td><td>2</td></tr><tr><td>セルブレイカー</td><td>細胞變異</td><td>倒懸者 黃泉軍</td><td>15000</td><td>3</td></tr><tr><td>ブレインシェイク</td><td>頭腦震撼</td><td>惡魔 毘陀羅</td><td>15000</td><td>3</td></tr><tr><td>マズルシュート</td><td>槍口射擊</td><td>正義 大天使</td><td>10000</td><td>2</td></tr><tr><td>両腕落とし</td><td>斬臂</td><td>力量 女武神</td><td>10000</td><td>2</td></tr><tr><td>バスタアタック</td><td>破壞攻擊</td><td>力量 鬼</td><td>25000</td><td>4</td></tr><tr><td>マッドアサルト</td><td>瘋狂突擊</td><td>戰車 金鬼</td><td>70000</td><td>8</td></tr><tr><td>バイラスウェイブ</td><td>病毒波浪</td><td>女教皇 茲茲米特爾</td><td>60000</td><td>7</td></tr><tr><td>べノンザッパー</td><td>猛毒之擊</td><td>皇帝 人面蠍</td><td>70000</td><td>8</td></tr><tr><td>クレイジーチェーン</td><td>瘋狂連擊</td><td>女皇 蛇髮女妖</td><td>25000</td><td>4</td></tr><tr><td>マインドスライス</td><td>心念切斷</td><td>小丑 蒼白騎士</td><td>25000</td><td>4</td></tr><tr><td>マスタードボム</td><td>芥末炸彈</td><td>魔術師 蘭達</td><td>50000</td><td>6</td></tr><tr><td>ナバスネビュラ</td><td>納巴斯星雲</td><td>惡魔 帕祖祖</td><td>50000</td><td>6</td></tr><tr><td>シールボムズ</td><td>封印炸彈</td><td>節制 密特拉</td><td>25000</td><td>4</td></tr><tr><td>木っ端微塵切り</td><td>灰飛煙滅斬</td><td>愚者 歐賽</td><td>40000</td><td>5</td></tr><tr><td>天軍の剣</td><td>天軍之劍</td><td>審判 梅塔特隆 米迦勒 註1</td><td>-</td><td>-</td></tr><tr><td>八艘飛び</td><td>八艘跳躍</td><td>塔 義經 註1</td><td>-</td><td>-</td></tr><tr><td>プララヤ</td><td>大劫</td><td>塔 濕婆 註1</td><td>-</td><td>-</td></tr><tr><td>註1:這些技能是人格面具專用招數,不能繼承也不能轉化為技能卡片</td><td></td><td></td><td></td><td></td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../p4g/persona-fusion/"><small>← 上一页</small><strong>全面具合成表</strong></a>
+<a class="next" href="../../p4g/tasks/"><small>下一页 →</small><strong>全支线任务</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>
