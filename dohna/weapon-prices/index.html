@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 名可操作角色全等级武器的价格、力量(POW)、技巧(TEC)与总数值，附属性作用说明。">
+  <title>武器数据表 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/" class="active">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+<li><a href="../../dohna/weapon-prices/" class="active">武器数据表</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>多娜多娜</span>
+          <b>/</b>
+          <span aria-current="page">武器数据表</span>
+        </nav>
+        <header class="article-head">
+          <h1>武器数据表</h1>
+          <p class="article-meta">最近更新于 2026-10-04</p>
+        </header>
+        <div class="prose">
+<p>游戏内共有 <strong>6 个等级的武器</strong>，同一等级还会分成若干「型」（P 型偏力量、T 型偏技巧、 无后缀为均衡型）。下表把 10 名可操作角色的每一把武器逐条列出，含价格与三项数值。</p>
+<h2 id="读表要点">读表要点</h2>
+<ul>
+<li><code>TOTAL</code> 恒等于 <code>POW + TEC</code>，即同一把武器的总数值。这也是本站转写时的自校验条件，</li>
+</ul>
+<p>122 行全部通过。</p>
+<ul>
+<li><strong>LV6 武器是二周目地图掉落，一周目无法获取。</strong></li>
+<li><strong>空白格 = 原表该格没有填写，不是 0。</strong> 阿熊 / 梅蒂可 / 绮菈绮菈 / 珀儿诺 / 虎太郎 /</li>
+</ul>
+<p>扎帕 的 LV1 只有武器名、没有数值；安缇娜、菊千代、爱丽丝、小丑 在原表中整行空白 （菊千代与爱丽丝连 LV2 也空白），这些空行未录入。</p>
+<ul>
+<li>同档位武器的价格并不相同，个别明显偏低：虎太郎「宝版特制饿狼」19600（同档另两把 28000）、</li>
+</ul>
+<p>扎帕「A战术性EZ」179200 与「A战戈术↑生」102400（同档另一把 256000）、 小丑「金属贝比」59500（同档另两把 85000）。均按原表照录，未作调整。</p>
+<ul>
+<li>数值分布有规律：`LV2 总 380 → LV3 1140/1080 → LV4 3420/3240/3060 → LV5 10260/9720/9180</li>
+</ul>
+<p>→ LV6 30780/29160/27540`。同一等级里，<strong>总数值最高的那一型通常是均衡型</strong>， 偏低的两型分别把数值挪向力量或技巧。</p>
+<h2 id="属性作用">属性作用</h2>
+<p>以下是原图对各项属性的说明（<a href="../../dohna/weapons/">武器系统与选型</a> 已讲过 POW / TEC 的 取舍结论，这里补上原文对 SPD / MP / VP 与「加速起步」的机制描述）：</p>
+<table>
+<thead>
+<tr><th>项</th><th>作用</th></tr>
+</thead>
+<tbody>
+<tr><td>力量 POW</td><td>影响主动技能的伤害</td></tr>
+<tr><td>技巧 TEC</td><td>影响暴击率、施加 debuff 的成功率、被动技能、战斗开始「加速起步」的成功率</td></tr>
+<tr><td>速度 SPD</td><td>影响行动顺序</td></tr>
+<tr><td>MP</td><td>即「蓝量」。蓝量耗尽后伤害会锐减；透支蓝量会降低属性值——<strong>-40% 时 SPD 大幅减少，-70% 时 TEC 与 SPD 大幅减少，-100% 时 POW / TEC / SPD 均大幅减少</strong></td></tr>
+<tr><td>VP</td><td>即「怒气」。造成或承受伤害时积攒，影响部分主动技能的威力；满怒时可以使用怒气技能</td></tr>
+</tbody>
+</table>
+<p><strong>加速起步</strong>：战斗中敌我双方速度（SPD）越高，行动顺序一般越靠前；但仅限发生加速起步的 <strong>第 1 回合</strong>，引起加速起步一方的行动顺序会更容易提前。当敌我双方前锋**总体技巧（TEC） 差距较大**时，便有可能发生加速起步。</p>
+<p><img src="../../media/dohna/weapon-prices/01.jpg" alt="多娜多娜 武器数据表 · 上半（阿熊 / 梅蒂可 / 安缇娜 / 菊千代）" loading="lazy" decoding="async"></p>
+<p><img src="../../media/dohna/weapon-prices/02.jpg" alt="多娜多娜 武器数据表 · 下半（绮菈绮菈 / 珀儿诺 / 爱丽丝 / 虎太郎 / 扎帕 / 小丑）" loading="lazy" decoding="async"></p>
+<h2 id="内容出处">内容出处</h2>
+<blockquote><p>原图为游侠网《多娜多娜 一起做坏事吧》专区攻略文章中的《武器数据表》， 文章附声明「本文内容及配图由入驻作者撰写或者入驻合作网站授权转载」。<strong>原文链接待补。</strong></p>
+<p>数值由本站从截图中逐格转写，并对每一行做了 <code>POW + TEC = TOTAL</code> 自校验（122 行全过， 未发现抄录矛盾）。角色名按站内口径统一：原文的「Kira」「珀尔诺」即 <a href="../../dohna/characters/">可操作角色一览</a> 中的<strong>绮菈绮菈</strong>与<strong>珀儿诺</strong>。</p>
+<p><strong>一处存疑</strong>：扎帕 LV5 的第三把武器，名称中间那个符号在原截图中只有约 5 像素高， 无法百分百辨认，本站按最接近的字形录作 <code>A战戈术↑生</code>。如你有清晰原图，欢迎指正。</p></blockquote><figure class="data-table"><table data-rows="122"><caption>多娜多娜 武器数据表（10 名可操作角色 · 全等级）</caption><thead><tr><th>角色</th><th>LV</th><th>NAME</th><th>PRICE</th><th>POW</th><th>TEC</th><th>TOTAL</th></tr></thead><tbody><tr><td>阿熊</td><td>LV1</td><td>手枪</td><td></td><td></td><td></td><td></td></tr><tr><td>阿熊</td><td>LV2</td><td>II式手枪</td><td>9000</td><td>200</td><td>180</td><td>380</td></tr><tr><td>阿熊</td><td>LV3</td><td>III式手枪</td><td>28000</td><td>540</td><td>600</td><td>1140</td></tr><tr><td>阿熊</td><td>LV3</td><td>III式手枪P型</td><td>28000</td><td>760</td><td>320</td><td>1080</td></tr><tr><td>阿熊</td><td>LV4</td><td>IV式手枪</td><td>85000</td><td>1770</td><td>1650</td><td>3420</td></tr><tr><td>阿熊</td><td>LV4</td><td>IV式手枪P型</td><td>85000</td><td>2040</td><td>1200</td><td>3240</td></tr><tr><td>阿熊</td><td>LV4</td><td>IV式手枪T型</td><td>85000</td><td>1260</td><td>1980</td><td>3240</td></tr><tr><td>阿熊</td><td>LV5</td><td>V式手枪</td><td>256000</td><td>5100</td><td>5160</td><td>10260</td></tr><tr><td>阿熊</td><td>LV5</td><td>V式手枪P型</td><td>256000</td><td>5900</td><td>3820</td><td>9720</td></tr><tr><td>阿熊</td><td>LV5</td><td>V式手枪T型</td><td>256000</td><td>3920</td><td>5800</td><td>9720</td></tr><tr><td>阿熊</td><td>LV6</td><td>VI式手枪</td><td>769000</td><td>15500</td><td>15280</td><td>30780</td></tr><tr><td>阿熊</td><td>LV6</td><td>深红</td><td>769000</td><td>18000</td><td>9540</td><td>27540</td></tr><tr><td>阿熊</td><td>LV6</td><td>足矣</td><td>769000</td><td>10040</td><td>17500</td><td>27540</td></tr><tr><td>梅蒂可</td><td>LV1</td><td>梅蒂可雷达</td><td></td><td></td><td></td><td></td></tr><tr><td>梅蒂可</td><td>LV2</td><td>梅蒂可雷达Δ</td><td>9000</td><td>160</td><td>220</td><td>380</td></tr><tr><td>梅蒂可</td><td>LV3</td><td>梅蒂可雷达Σ</td><td>28000</td><td>590</td><td>550</td><td>1140</td></tr><tr><td>梅蒂可</td><td>LV3</td><td>技可雷达</td><td>28000</td><td>390</td><td>690</td><td>1080</td></tr><tr><td>梅蒂可</td><td>LV4</td><td>梅蒂可雷达Φ</td><td>85000</td><td>1640</td><td>1780</td><td>3420</td></tr><tr><td>梅蒂可</td><td>LV4</td><td>动物雷达</td><td>85000</td><td>2030</td><td>1210</td><td>3240</td></tr><tr><td>梅蒂可</td><td>LV4</td><td>洛可雷达</td><td>85000</td><td>1230</td><td>2010</td><td>3240</td></tr><tr><td>梅蒂可</td><td>LV5</td><td>梅蒂可雷达Ω</td><td>256000</td><td>5120</td><td>5140</td><td>10260</td></tr><tr><td>梅蒂可</td><td>LV5</td><td>烤串雷达</td><td>256000</td><td>5880</td><td>3840</td><td>9720</td></tr><tr><td>梅蒂可</td><td>LV5</td><td>抚子雷达</td><td>256000</td><td>2980</td><td>6200</td><td>9180</td></tr><tr><td>梅蒂可</td><td>LV6</td><td>梅蒂可雷达∞</td><td>769000</td><td>15350</td><td>15430</td><td>30780</td></tr><tr><td>梅蒂可</td><td>LV6</td><td>光可雷达</td><td>769000</td><td>18500</td><td>9040</td><td>27540</td></tr><tr><td>梅蒂可</td><td>LV6</td><td>护式自行反坦克炮</td><td>769000</td><td>12300</td><td>16860</td><td>29160</td></tr><tr><td>安缇娜</td><td>LV2</td><td>ArTerm_V2</td><td></td><td>170</td><td>210</td><td>380</td></tr><tr><td>安缇娜</td><td>LV3</td><td>ArTerm_V3</td><td>28000</td><td>480</td><td>660</td><td>1140</td></tr><tr><td>安缇娜</td><td>LV3</td><td>ArTerm_V3P</td><td>28000</td><td>680</td><td>400</td><td>1080</td></tr><tr><td>安缇娜</td><td>LV4</td><td>ArTerm_V4</td><td>85000</td><td>1680</td><td>1740</td><td>3420</td></tr><tr><td>安缇娜</td><td>LV4</td><td>ArTerm_V4PP</td><td>85000</td><td>2180</td><td>880</td><td>3060</td></tr><tr><td>安缇娜</td><td>LV4</td><td>ArTerm_V4T</td><td>85000</td><td>1180</td><td>2060</td><td>3240</td></tr><tr><td>安缇娜</td><td>LV5</td><td>ArTerm_V5</td><td>256000</td><td>5040</td><td>5220</td><td>10260</td></tr><tr><td>安缇娜</td><td>LV5</td><td>ArTerm_V5P</td><td>256000</td><td>5600</td><td>4120</td><td>9720</td></tr><tr><td>安缇娜</td><td>LV5</td><td>ArTerm_V5T</td><td>256000</td><td>3920</td><td>5800</td><td>9720</td></tr><tr><td>安缇娜</td><td>LV6</td><td>ArTerm_V6</td><td>769000</td><td>14980</td><td>15800</td><td>30780</td></tr><tr><td>安缇娜</td><td>LV6</td><td>ArTerm_V6T</td><td>769000</td><td>16720</td><td>12440</td><td>29160</td></tr><tr><td>安缇娜</td><td>LV6</td><td>通灵盘</td><td>769000</td><td>12280</td><td>16880</td><td>29160</td></tr><tr><td>菊千代</td><td>LV3</td><td>无铭兼定</td><td></td><td>600</td><td>540</td><td>1140</td></tr><tr><td>菊千代</td><td>LV4</td><td>无铭大兼定</td><td>85000</td><td>1750</td><td>1670</td><td>3420</td></tr><tr><td>菊千代</td><td>LV4</td><td>无铭大修罗兼定</td><td>85000</td><td>1970</td><td>1270</td><td>3240</td></tr><tr><td>菊千代</td><td>LV4</td><td>无铭大罗刹兼定</td><td>85000</td><td>1300</td><td>1940</td><td>3240</td></tr><tr><td>菊千代</td><td>LV5</td><td>无铭超兼定</td><td>256000</td><td>5100</td><td>5160</td><td>10260</td></tr><tr><td>菊千代</td><td>LV5</td><td>无铭超修罗兼定</td><td>256000</td><td>5720</td><td>4000</td><td>9720</td></tr><tr><td>菊千代</td><td>LV5</td><td>无铭超罗刹兼定</td><td>256000</td><td>3950</td><td>5770</td><td>9720</td></tr><tr><td>菊千代</td><td>LV6</td><td>无铭极兼定</td><td>769000</td><td>15460</td><td>15320</td><td>30780</td></tr><tr><td>菊千代</td><td>LV6</td><td>居合利刃</td><td>769000</td><td>18350</td><td>9190</td><td>27540</td></tr><tr><td>菊千代</td><td>LV6</td><td>无铭乌伦瑟尔兼定</td><td>769000</td><td>12290</td><td>16870</td><td>29160</td></tr><tr><td>绮菈绮菈</td><td>LV1</td><td>大锯丸</td><td></td><td></td><td></td><td></td></tr><tr><td>绮菈绮菈</td><td>LV2</td><td>利锯丸</td><td>9000</td><td>210</td><td>170</td><td>380</td></tr><tr><td>绮菈绮菈</td><td>LV3</td><td>厚锯丸</td><td>28000</td><td>620</td><td>520</td><td>1140</td></tr><tr><td>绮菈绮菈</td><td>LV3</td><td>稳锯丸</td><td>28000</td><td>400</td><td>680</td><td>1080</td></tr><tr><td>绮菈绮菈</td><td>LV4</td><td>涂锯丸</td><td>85000</td><td>1750</td><td>1670</td><td>3420</td></tr><tr><td>绮菈绮菈</td><td>LV4</td><td>重锯丸</td><td>85000</td><td>1990</td><td>1250</td><td>3240</td></tr><tr><td>绮菈绮菈</td><td>LV4</td><td>柔锯丸</td><td>85000</td><td>1180</td><td>2040</td><td>3220</td></tr><tr><td>绮菈绮菈</td><td>LV5</td><td>彻锯丸</td><td>256000</td><td>5150</td><td>5110</td><td>10260</td></tr><tr><td>绮菈绮菈</td><td>LV5</td><td>满锯丸</td><td>256000</td><td>5820</td><td>3900</td><td>9720</td></tr><tr><td>绮菈绮菈</td><td>LV5</td><td>笑锯丸</td><td>256000</td><td>3100</td><td>6080</td><td>9180</td></tr><tr><td>绮菈绮菈</td><td>LV6</td><td>脆锯丸</td><td>769000</td><td>15740</td><td>15040</td><td>30780</td></tr><tr><td>绮菈绮菈</td><td>LV6</td><td>全分子割刀</td><td>769000</td><td>16680</td><td>12480</td><td>29160</td></tr><tr><td>绮菈绮菈</td><td>LV6</td><td>天雨神刃</td><td>769000</td><td>9460</td><td>18080</td><td>27540</td></tr><tr><td>珀儿诺</td><td>LV1</td><td>拘束带</td><td></td><td></td><td></td><td></td></tr><tr><td>珀儿诺</td><td>LV2</td><td>橡胶皮带</td><td>9000</td><td>150</td><td>230</td><td>380</td></tr><tr><td>珀儿诺</td><td>LV3</td><td>地铁轨道带</td><td>28000</td><td>520</td><td>620</td><td>1140</td></tr><tr><td>珀儿诺</td><td>LV3</td><td>少女带</td><td>28000</td><td>340</td><td>740</td><td>1080</td></tr><tr><td>珀儿诺</td><td>LV4</td><td>公主发带</td><td>85000</td><td>1610</td><td>1810</td><td>3420</td></tr><tr><td>珀儿诺</td><td>LV4</td><td>不安全带</td><td>85000</td><td>1900</td><td>1340</td><td>3240</td></tr><tr><td>珀儿诺</td><td>LV4</td><td>海带</td><td>85000</td><td>840</td><td>2220</td><td>3060</td></tr><tr><td>珀儿诺</td><td>LV5</td><td>马赫带</td><td>256000</td><td>4960</td><td>5300</td><td>10260</td></tr><tr><td>珀儿诺</td><td>LV5</td><td>红带</td><td>256000</td><td>6000</td><td>3180</td><td>9180</td></tr><tr><td>珀儿诺</td><td>LV5</td><td>意大利宽面</td><td>256000</td><td>3030</td><td>6150</td><td>9180</td></tr><tr><td>珀儿诺</td><td>LV6</td><td>克拉肯</td><td>769000</td><td>15330</td><td>15450</td><td>30780</td></tr><tr><td>珀儿诺</td><td>LV6</td><td>白手</td><td>769000</td><td>17770</td><td>9770</td><td>27540</td></tr><tr><td>珀儿诺</td><td>LV6</td><td>范艾伦辐射带</td><td>769000</td><td>12260</td><td>16900</td><td>29160</td></tr><tr><td>爱丽丝</td><td>LV3</td><td>克拉贝尔</td><td></td><td>640</td><td>500</td><td>1140</td></tr><tr><td>爱丽丝</td><td>LV4</td><td>克拉贝尔D4</td><td>85000</td><td>1660</td><td>1760</td><td>3420</td></tr><tr><td>爱丽丝</td><td>LV4</td><td>克拉贝尔P4</td><td>85000</td><td>1940</td><td>1300</td><td>3240</td></tr><tr><td>爱丽丝</td><td>LV4</td><td>克拉贝尔TT4</td><td>85000</td><td>880</td><td>2180</td><td>3060</td></tr><tr><td>爱丽丝</td><td>LV5</td><td>克拉贝尔D5</td><td>256000</td><td>5230</td><td>5030</td><td>10260</td></tr><tr><td>爱丽丝</td><td>LV5</td><td>克拉贝尔P5</td><td>256000</td><td>5770</td><td>3950</td><td>9720</td></tr><tr><td>爱丽丝</td><td>LV5</td><td>克拉贝尔TT5</td><td>256000</td><td>2900</td><td>6280</td><td>9180</td></tr><tr><td>爱丽丝</td><td>LV6</td><td>克拉贝尔D6</td><td>769000</td><td>15050</td><td>15370</td><td>30420</td></tr><tr><td>爱丽丝</td><td>LV6</td><td>克拉贝尔PP6</td><td>769000</td><td>17960</td><td>9580</td><td>27540</td></tr><tr><td>爱丽丝</td><td>LV6</td><td>克拉贝尔TT6</td><td>769000</td><td>9120</td><td>18420</td><td>27540</td></tr><tr><td>虎太郎</td><td>LV1</td><td>特制饿狼</td><td></td><td></td><td></td><td></td></tr><tr><td>虎太郎</td><td>LV2</td><td>特制饿狼改</td><td>9000</td><td>180</td><td>200</td><td>380</td></tr><tr><td>虎太郎</td><td>LV3</td><td>新特制饿狼</td><td>28000</td><td>560</td><td>580</td><td>1140</td></tr><tr><td>虎太郎</td><td>LV3</td><td>宝版特制饿狼</td><td>19600</td><td>440</td><td>460</td><td>900</td></tr><tr><td>虎太郎</td><td>LV4</td><td>大特制饿狼</td><td>85000</td><td>1700</td><td>1720</td><td>3420</td></tr><tr><td>虎太郎</td><td>LV4</td><td>饿狼RB</td><td>85000</td><td>1950</td><td>1290</td><td>3240</td></tr><tr><td>虎太郎</td><td>LV4</td><td>饿狼CR</td><td>85000</td><td>1240</td><td>2000</td><td>3240</td></tr><tr><td>虎太郎</td><td>LV5</td><td>超特制饿狼</td><td>256000</td><td>4980</td><td>5280</td><td>10260</td></tr><tr><td>虎太郎</td><td>LV5</td><td>狂野饿狼</td><td>256000</td><td>6060</td><td>3120</td><td>9180</td></tr><tr><td>虎太郎</td><td>LV5</td><td>贪婪饿狼</td><td>256000</td><td>3990</td><td>5730</td><td>9720</td></tr><tr><td>虎太郎</td><td>LV6</td><td>极板特制饿狼</td><td>769000</td><td>15220</td><td>15560</td><td>30780</td></tr><tr><td>虎太郎</td><td>LV6</td><td>传说的续章</td><td>769000</td><td>16820</td><td>12340</td><td>29160</td></tr><tr><td>虎太郎</td><td>LV6</td><td>龙虾</td><td>769000</td><td>12330</td><td>16830</td><td>29160</td></tr><tr><td>扎帕</td><td>LV1</td><td>红手空拳</td><td></td><td></td><td></td><td></td></tr><tr><td>扎帕</td><td>LV2</td><td>拳击手套</td><td>9000</td><td>220</td><td>160</td><td>380</td></tr><tr><td>扎帕</td><td>LV3</td><td>粉碎拳套</td><td>28000</td><td>580</td><td>560</td><td>1140</td></tr><tr><td>扎帕</td><td>LV3</td><td>硬式粉碎拳套</td><td>28000</td><td>700</td><td>380</td><td>1080</td></tr><tr><td>扎帕</td><td>LV4</td><td>愤怒铁拳</td><td>85000</td><td>1740</td><td>1680</td><td>3420</td></tr><tr><td>扎帕</td><td>LV4</td><td>大军用手套</td><td>85000</td><td>1560</td><td>1500</td><td>3060</td></tr><tr><td>扎帕</td><td>LV4</td><td>猛力冲击</td><td>85000</td><td>2260</td><td>800</td><td>3060</td></tr><tr><td>扎帕</td><td>LV5</td><td>A战术性</td><td>256000</td><td>5500</td><td>4760</td><td>10260</td></tr><tr><td>扎帕</td><td>LV5</td><td>A战术性EZ</td><td>179200</td><td>4960</td><td>4220</td><td>9180</td></tr><tr><td>扎帕</td><td>LV5</td><td>A战戈术↑生</td><td>102400</td><td>4420</td><td>3680</td><td>8100</td></tr><tr><td>扎帕</td><td>LV6</td><td>还是红手空拳</td><td>769000</td><td>15660</td><td>15210</td><td>30870</td></tr><tr><td>扎帕</td><td>LV6</td><td>打斗强攻</td><td>769000</td><td>16600</td><td>12560</td><td>29160</td></tr><tr><td>扎帕</td><td>LV6</td><td>最终强攻</td><td>769000</td><td>9520</td><td>18020</td><td>27540</td></tr><tr><td>小丑</td><td>LV2</td><td>金属强击手</td><td></td><td>190</td><td>190</td><td>380</td></tr><tr><td>小丑</td><td>LV3</td><td>金属飞鹰</td><td>28000</td><td>570</td><td>570</td><td>1140</td></tr><tr><td>小丑</td><td>LV3</td><td>金属暗黑</td><td>28000</td><td>730</td><td>350</td><td>1080</td></tr><tr><td>小丑</td><td>LV4</td><td>金属J</td><td>85000</td><td>1710</td><td>1710</td><td>3420</td></tr><tr><td>小丑</td><td>LV4</td><td>金属贝比</td><td>59500</td><td>1350</td><td>1350</td><td>2700</td></tr><tr><td>小丑</td><td>LV4</td><td>合金属装备</td><td>85000</td><td>1220</td><td>2020</td><td>3240</td></tr><tr><td>小丑</td><td>LV5</td><td>金属极限</td><td>256000</td><td>5130</td><td>5130</td><td>10260</td></tr><tr><td>小丑</td><td>LV5</td><td>金属大师</td><td>256000</td><td>5700</td><td>4020</td><td>9720</td></tr><tr><td>小丑</td><td>LV5</td><td>金属大奖章</td><td>256000</td><td>4060</td><td>5660</td><td>9720</td></tr><tr><td>小丑</td><td>LV6</td><td>金属完毕</td><td>769000</td><td>15390</td><td>15390</td><td>30780</td></tr><tr><td>小丑</td><td>LV6</td><td>石中剑</td><td>769000</td><td>16800</td><td>12360</td><td>29160</td></tr><tr><td>小丑</td><td>LV6</td><td>苏及康特球棒</td><td>769000</td><td>12400</td><td>16760</td><td>29160</td></tr></tbody></table></figure>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../dohna/weapons/"><small>← 上一页</small><strong>武器系统与选型</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>
