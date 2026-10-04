@@ -1,8 +1,8 @@
 {
-  "built_at": "2026-10-04T23:28:35.097097+00:00",
-  "pages": 87,
+  "built_at": "2026-10-04T23:36:53.944392+00:00",
+  "pages": 88,
   "by_game": {
-    "dohna": 7,
+    "dohna": 8,
     "p5r": 20,
     "p3p": 13,
     "p4g": 19,
@@ -15,7 +15,7 @@
     "failed": 0,
     "format": "webp"
   },
-  "site_bytes": 21952753,
+  "site_bytes": 21988930,
   "warnings": [],
   "output": "D:\\Development\\Projects\\game-wiki\\dist-wiki"
 }

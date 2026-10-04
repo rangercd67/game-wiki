@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="逐话列出 ToDo 与完成后的变动——解锁地图、角色进出队伍、无法撤退的关卡与结局风险。">
+  <title>全话流程表（第 1～59 话） · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/" class="active">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+<li><a href="../../dohna/weapon-prices/">武器数据表</a></li>
+<li><a href="../../dohna/talent-traits/">人才词条一览</a></li>
+<li><a href="../../dohna/special-talents/">特殊人才一览</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+<li><a href="../../dohna/episode-flow/" class="active">全话流程表（第 1～59 话）</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>多娜多娜</span>
+          <b>/</b>
+          <span aria-current="page">全话流程表（第 1～59 话）</span>
+        </nav>
+        <header class="article-head">
+          <h1>全话流程表（第 1～59 话）</h1>
+          <p class="article-meta">最近更新于 2026-10-04</p>
+        </header>
+        <div class="prose">
+<p>本表按<strong>话数</strong>逐条列出每话的 ToDo，以及完成之后的变动。所谓「变动」主要是三类：</p>
+<ol>
+<li><strong>解锁新地图</strong> —— 完成后开放哪张图可以继续推进；</li>
+<li><strong>角色进出队伍</strong> —— 谁加入、谁离队；</li>
+<li><strong>风险提示</strong> —— 该话有没有不能撤退的关卡、队伍全灭会触发哪个 Bad Ending。</li>
+</ol>
+<figure class="data-table"><table data-rows="62"><caption>多娜多娜 第 1～59 话流程表（Episode / ToDo / 备注）</caption><thead><tr><th>No.</th><th>Episode</th><th>ToDo</th><th>备注</th></tr></thead><tbody><tr><td>1</td><td>Jumping Cross</td><td>结束环节前往春销</td><td>完成后出现【珀尔诺 专属事件】</td></tr><tr><td>2</td><td>Jumping Cross</td><td>结束环节前往掳人</td><td>前往「ASP」，完成后解锁地图【惠海路】</td></tr><tr><td>3</td><td>Intruder</td><td>在商店购买你喜欢的装备</td><td></td></tr><tr><td>4</td><td>Intruder</td><td>在单日春销中获得 5,000 日元以上收入</td><td>完成后解锁地图【仕山医疗所】</td></tr><tr><td>5</td><td>Intruder</td><td>在掳人中通关仕山医疗所</td><td></td></tr><tr><td>6</td><td>Ambivalenz</td><td>让一个处女人材进行春销</td><td>完成后解锁地图【产峰工业】</td></tr><tr><td>7</td><td>Ambivalenz</td><td>使用素材在商店强化武器</td><td>前往「产峰工业」获得武器强化素材</td></tr><tr><td>8</td><td>Ambivalenz</td><td>在单日春销中获得 10,000 日元以上收入</td><td>完成后解锁地图【美术馆】，「虎太郎」离队</td></tr><tr><td>9</td><td>Catastorophe</td><td>在掳人中通关美术馆</td><td>首次进入「美术馆」时【梅蒂可】加入队伍，完成后「虎太郎」归队</td></tr><tr><td>10</td><td>Fairies&#x27;s Risedence</td><td>在单日春销中招揽到 2 名以上顾客</td><td>完成后解锁地图【芽生宿舍】</td></tr><tr><td>11</td><td>Fairies&#x27;s Risedence</td><td>在掳人中通关芽生宿舍</td><td>完成后【安缇娜】加入队伍</td></tr><tr><td>12</td><td>Only You</td><td>在掳人中通关芽生宿舍</td><td>有机会获得【紫苑 专属 CG】，完成后解锁地图【化学研究所】</td></tr><tr><td>13</td><td>Bind Seeker</td><td>在掳人中通关化学研究所</td><td>有机会获得【菊千代 Ver.东云派 专属 CG】，完成后【小丑】加入队伍</td></tr><tr><td>14</td><td>Shadow Hunter</td><td>在单日春销中获得 15,000 日元以上收入</td><td>完成后解锁地图【东云码头】</td></tr><tr><td>15</td><td>Shadow Hunter</td><td>在掳人中通关东云码头</td><td>无法撤退，队伍全灭后触发【绮菈绮菈 Bad Ending】。有机会获得【暗影 专属 CG】。完成后【爱丽丝】加入队伍</td></tr><tr><td>16</td><td>Crescent Moon Girl</td><td>在产峰工业夺拿人材</td><td></td></tr><tr><td>17</td><td>Crescent Moon Girl</td><td>在单日春销中获得 20,000 日元以上收入</td><td></td></tr><tr><td>18</td><td>Crescent Moon Girl</td><td>前往商店</td><td></td></tr><tr><td>19</td><td>Crescent Moon Girl</td><td>派遣任一人材</td><td></td></tr><tr><td>20</td><td>Crescent Moon Girl</td><td>在春销中连续招揽到 2 名以上顾客</td><td>完成后解锁地图【YR精废厂】</td></tr><tr><td>21</td><td>Crescent Moon Girl</td><td>在掳人中通关 YR精废厂</td><td>完成后【菊千代】加入队伍</td></tr><tr><td>22</td><td>一切过去之后</td><td>在单日春销中获得 25,000 日元以上收入</td><td></td></tr><tr><td>23</td><td>一切过去之后</td><td>在一次派遣中获得 50,000 日元以上收入</td><td>完成后解锁地图【亚商城】</td></tr><tr><td>24</td><td>一切过去之后</td><td>在掳人中通关亚商城</td><td>未立即完成此 ToDo 将触发【珀尔诺 坏结局事件】</td></tr><tr><td>25</td><td>Crazy House</td><td>前往商店</td><td>完成后解锁地图【信息工学楼】</td></tr><tr><td>26</td><td>Crazy House</td><td>在掳人中通关信息工学楼</td><td>完成后「梅蒂可」离队，据点内无法进行交游；未立即完成此 ToDo 将触发【梅蒂可 坏结局事件】。完成后「梅蒂可」归队，可重新进行交游</td></tr><tr><td>27</td><td>寻光</td><td>在掳人中通关仕山医疗所</td><td></td></tr><tr><td>28</td><td>Flower Knight</td><td>前往商店</td><td></td></tr><tr><td>29</td><td>Flower Knight</td><td>在一次派遣中获得 100,000 日元以上收入</td><td></td></tr><tr><td>30</td><td>Flower Knight</td><td>在单日春销中招揽到 3 名以上顾客</td><td></td></tr><tr><td>31</td><td>Flower Knight</td><td>在掳人中通关后亚地</td><td>完成后解锁地图【后亚地】，「小丑」离队；未立即完成此 ToDo 将触发【小丑 专属事件】。完成后解锁地图【造船厂】，「小丑」归队</td></tr><tr><td>32</td><td>Big Bang Age</td><td>在掳人中通关造船厂</td><td>无法撤退，队伍全灭后触发【梅蒂可 Bad Ending】</td></tr><tr><td>33</td><td>Beat Angel</td><td>在单日春销中获得 30,000 日元以上收入</td><td></td></tr><tr><td>34</td><td>Beat Angel</td><td>在春销时连续招揽 3 名以上顾客</td><td>完成后「绮菈绮菈」离队，据点内无法进行交游</td></tr><tr><td>35</td><td>Beat Angel</td><td>前往商店</td><td>完成后解锁地图【第三学校】</td></tr><tr><td>36</td><td>Beat Angel</td><td>在掳人中通关第三学校</td><td>无法撤退，队伍全灭后触发【珀尔诺 Bad Ending】。未立即完成此 ToDo 将触发【绮菈绮菈 坏结局事件】。完成后解锁地图【产业园区】，可重新进行交游</td></tr><tr><td>37</td><td>隐月</td><td>在单日春销中获得 35,000 日元以上收入</td><td></td></tr><tr><td>38</td><td>隐月</td><td>在一次派遣中获得 150,000 日元以上收入</td><td></td></tr><tr><td>39</td><td>隐月</td><td>让一个处女人材进行春销</td><td>完成后解锁地图【花霞祭】（一次性地图）</td></tr><tr><td>40</td><td>少女战记</td><td>在掳人中通关花霞祭</td><td>无法撤退，队伍全灭后触发【菊千代 Bad Ending】。如不选择「学生会馆前」出口，将触发【爱丽丝 坏结局事件】。完成后「爱丽丝」离队，据点内无法进行交游</td></tr><tr><td>41</td><td>白兔</td><td>在某处通关掳人关卡</td><td>任意掳人关卡完成后将会出现「吕布战」</td></tr><tr><td>42</td><td>白兔</td><td>前往商店</td><td></td></tr><tr><td>43</td><td>白兔</td><td>在掳人中通关惠海路</td><td>完成后「爱丽丝」归队、「菊千代」离队，据点内无法进行交游（一直持续中……）</td></tr><tr><td>44</td><td>Beat Blades</td><td>在单日春销中获得 40,000 日元以上收入</td><td>完成后解锁地图【昂埃皮克】</td></tr><tr><td>45</td><td>Beat Blades</td><td>在掳人中通关昂埃皮克</td><td>未立即完成此 ToDo 将触发【菊千代 坏结局事件】，有机会获得【终名 专属 CG】；「菊千代」归队，「阿熊」「珀尔诺」「安缇娜」离队，据点内无法进行交游（一直持续中……）</td></tr><tr><td>46</td><td>梦幻泡影</td><td>在单日春销中获得 5,000 日元以上收入</td><td>完成后「绮菈绮菈」「梅蒂可」离队，据点内无法进行交游（一直持续中……）</td></tr><tr><td>47</td><td>梦幻泡影</td><td>在单日春销中获得 10,000 日元以上收入</td><td>完成后出现【老板娘 专属事件】；「珀尔诺」「绮菈绮菈」「梅蒂可」归队，据点内无法进行交游（一直持续中……）</td></tr><tr><td>48</td><td>梦幻泡影</td><td>在某处通关掳人关卡</td><td>完成后「阿熊」归队，据点内无法进行交游（一直持续中……）</td></tr><tr><td>49</td><td>梦幻泡影</td><td>在掳人中通关信息工学楼</td><td>未立即完成此 ToDo 将触发【安缇娜 坏结局事件】，完成后「安缇娜」归队，可重新进行交游</td></tr><tr><td>50</td><td>Nor</td><td>在单日春销中获得 45,000 日元以上收入</td><td></td></tr><tr><td>51</td><td>Nor</td><td>在掳人中通关昂埃皮克</td><td></td></tr><tr><td>52</td><td>Misty</td><td>在春销时连续招揽到 4 名以上顾客</td><td></td></tr><tr><td>53</td><td>Misty</td><td>在一次派遣中获得 200,000 日元以上收入</td><td>完成后解锁地图【中央线】（一次性地图）</td></tr><tr><td>54</td><td>Misty</td><td>在掳人中通关中央线</td><td>无法撤退，队伍全灭后触发【爱丽丝 Bad Ending】。完成后「扎帕」「阿熊」离队，且将永久无法进行交游</td></tr><tr><td>55</td><td>Iron Maiden</td><td>没有</td><td></td></tr><tr><td>56</td><td>Iron Maiden</td><td>没有</td><td>完成后「珀尔诺」成为了人材，「阿熊」归队</td></tr><tr><td>57</td><td>Iron Maiden</td><td>向亚总义董事山内知佐文派遣珀尔诺</td><td>在派遣「珀尔诺」之前让她春销则会触发【珀尔诺 坏结局事件】</td></tr><tr><td>58</td><td>Iron Maiden</td><td>前往商店</td><td>完成后解锁地图【坎坷路】</td></tr><tr><td>59</td><td>Iron Maiden</td><td>在掳人中通关坎坷路</td><td>无法撤退，队伍全灭后触发【安缇娜 Bad Ending】。进入地图后将直至游戏结束</td></tr><tr><td></td><td>DARCROWS</td><td>——</td><td></td></tr><tr><td></td><td>ATLACH-NACHA</td><td>——</td><td></td></tr><tr><td></td><td>Spacy Wonder</td><td>——</td><td></td></tr></tbody></table></figure>
+<h2 id="读表要点">读表要点</h2>
+<ul>
+<li><strong>「完成后解锁地图【X】」</strong> 指该话 ToDo 完成后开放的新地图，不是当前要去的地方。</li>
+<li><strong>「无法撤退」</strong> 表示该关卡中途不能退出，队伍全灭就会直接触发后面写的那个 Bad Ending。</li>
+</ul>
+<p>这类关卡建议进图前先存档。</p>
+<ul>
+<li><strong>「未立即完成此 ToDo 将触发【X】」</strong> 表示这件事<strong>拖到下一话再做</strong>就会触发坏结局事件。</li>
+</ul>
+<p>标了这句的行不要拖。</p>
+<ul>
+<li><strong>「据点内无法进行交游一直持续中……」</strong> 是剧情推进期的正常状态，相关角色归队后会恢复；</li>
+</ul>
+<p>标了 <strong>「可重新进行交游」</strong> 的行就是恢复点。</p>
+<ul>
+<li><strong>表末三行</strong>（<code>DARCROWS</code> / <code>ATLACH-NACHA</code> / <code>Spacy Wonder</code>）在原表里就只有话名、</li>
+</ul>
+<p>没有 ToDo，本表照原样保留。</p>
+<ul>
+<li><strong>话名保留原表拼写</strong>，包括 <code>Catastorophe</code>、<code>Fairies's Risedence</code> 这两处与常见拼法不同的写法。</li>
+<li>⚠️ <strong>话数 ≠ 章节号。</strong> <a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a> 用的是「第 8～24 章」，</li>
+</ul>
+<p>与本表的「第 1～59 话」<strong>不是同一套编号</strong>，两页的数字不能直接对应，请分别按各页的条目核对。</p>
+<h2 id="与章节不可逆节点与结局的分工">与「章节不可逆节点与结局」的分工</h2>
+<table>
+<thead>
+<tr><th>页面</th><th>视角</th><th>用途</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>本页</strong></td><td>按<strong>话</strong></td><td>查「这一话我要做什么」「做完会解锁什么」</td></tr>
+<tr><td><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></td><td>按<strong>章</strong></td><td>查「哪些动作不做就锁结局」，逐章体检</td></tr>
+</tbody>
+</table>
+<p>两页的结局风险描述一致（本表的 Bad Ending 条目就对应那页的「结局分歧」），只是切分粒度不同。</p>
+<h2 id="内容出处">内容出处</h2>
+<blockquote><p>素材为社区整理的逐话 ToDo 表，由站内转写录入，59 条编号行 + 3 条表末行，逐行核对过。</p>
+<p><strong>本站对个别标签做了中性化处理。</strong> 原表备注列里指向成人向素材的标签，本表统一改写为 中性表述；改写不影响推进流程本身的信息：</p>
+<table>
+<thead>
+<tr><th>原表写法</th><th>本表写法</th></tr>
+</thead>
+<tbody>
+<tr><td><code>【XX 爆衣CG】</code></td><td><code>【XX 专属 CG】</code></td></tr>
+<tr><td><code>【XX H剧情】</code></td><td><code>【XX 专属事件】</code></td></tr>
+<tr><td><code>【XX NTR剧情】</code>／<code>【XX NTR回忆】</code></td><td><code>【XX 坏结局事件】</code></td></tr>
+</tbody>
+</table>
+<p>ToDo 列是<strong>游戏内的任务文本</strong>，原样保留（含「春销」「人材」等游戏系統词）， 以便与游戏内显示直接对照。</p>
+<p><strong>内容边界</strong>：本站对成人向游戏只收系统、数值与分支资料，不写成人类素材的收集指引， 因此本页不刊出原始素材截图，也不列出具体素材本身，只保留推进流程所需的信息。</p></blockquote>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../dohna/chapter-branches/"><small>← 上一页</small><strong>章节不可逆节点与结局</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>
