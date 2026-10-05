@@ -1098,5 +1098,25 @@
  "p5r/palace-shido/10.png": {
   "max_edge": 2200,
   "source": "P5R攻略2.0/P5R/1鸭志田殿堂/鸭志田隐藏房间.png"
+ },
+ "boardgame/title-card.jpg": {
+  "max_edge": 2400,
+  "source": "桌游-BGG榜单/title-card.jpg"
+ },
+ "boardgame/rank-01-10.jpg": {
+  "max_edge": 2400,
+  "source": "桌游-BGG榜单/rank-01-10.jpg"
+ },
+ "boardgame/rank-11-20.jpg": {
+  "max_edge": 2400,
+  "source": "桌游-BGG榜单/rank-11-20.jpg"
+ },
+ "boardgame/rank-21-30.jpg": {
+  "max_edge": 2400,
+  "source": "桌游-BGG榜单/rank-21-30.jpg"
+ },
+ "boardgame/shot-original.jpg": {
+  "max_edge": 1792,
+  "source": "桌游-BGG榜单/bgg-shot-original.jpg"
  }
 }

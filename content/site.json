@@ -52,6 +52,14 @@
         { "id": "gen", "title": "集成战略·通用机制" },
         { "id": "xianshu", "title": "仙术杯#6 赛事数据" }
       ]
+    },
+    {
+      "id": "boardgame",
+      "title": "桌游",
+      "groups": [
+        { "id": "rank", "title": "排行榜" },
+        { "id": "guide", "title": "读榜指南" }
+      ]
     }
   ]
 }
