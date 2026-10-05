@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="全 22 个地图共 25 枚徽章的具体房间位置与效果，按地图编号排列。">
+  <title>徽章位置一览 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/" class="active">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+<li><a href="../../dohna/badges/">徽章搭配</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+<li><a href="../../dohna/weapon-prices/">武器数据表</a></li>
+<li><a href="../../dohna/talent-traits/">人才词条一览</a></li>
+<li><a href="../../dohna/special-talents/">特殊人才一览</a></li>
+<li><a href="../../dohna/talent-ratings/">特殊人才评价</a></li>
+<li><a href="../../dohna/drop-maps/">掉落点路线图</a></li>
+<li><a href="../../dohna/drop-details/">掉落明细与掉落率</a></li>
+<li><a href="../../dohna/badge-locations/" class="active">徽章位置一览</a></li>
+<li><a href="../../dohna/special-talents-quests/">特殊人才任务条件</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+<li><a href="../../dohna/episode-flow/">全话流程表（第 1～59 话）</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>多娜多娜</span>
+          <b>/</b>
+          <span aria-current="page">徽章位置一览</span>
+        </nav>
+        <header class="article-head">
+          <h1>徽章位置一览</h1>
+          <p class="article-meta">最近更新于 2026-10-05</p>
+        </header>
+        <div class="prose">
+<p><strong>徽章</strong>（バッジ）是每个地图固定房间里的一件收集品，拾取后永久生效， 装满 2 枚的搭配思路见 <a href="../../dohna/badges/">徽章搭配</a>。本页给出全部 <strong>25 枚</strong>徽章的 所在区域、具体房间与效果。</p>
+<h2 id="读表要点">读表要点</h2>
+<ul>
+<li>表按<strong>地图编号</strong>排列，同一地图有 2 枚徽章时会连续出现两行。</li>
+<li>「效果」里的 <code>A / B / C / D / V</code> 是<strong>技能栏位</strong>：<code>A技能</code>、<code>B技能</code>、<code>C技能</code>、</li>
+</ul>
+<p><code>D技能</code> 对应角色的 4 个普通技能栏，<code>V技能</code> 是怒气（VP）技能。 「BUFF增益 +20%」指该栏技能的增益类效果数值 +20%， 「威力 +20%」指伤害倍率 +20%，「MP -6」指该栏技能耗蓝 -6， 「BUFF持续 +N回合」指该栏技能施加的增益延长 N 回合。</p>
+<ul>
+<li><strong>2 枚徽章没有效果差异</strong>：<code>Skip</code> 在芽生宿舍宿舍管理员室与第三学校烹饪室各有一枚，</li>
+</ul>
+<p>效果同为 <code>SPD +1</code>。英文资料把第三学校那枚记作 <code>Skip Replica</code>（复制品）， 效果相同。</p>
+<ul>
+<li>原图对 <code>Herb</code> 系列的效果写法不统一（有的写 <code>HP+400</code>、有的写 <code>最大HP+200</code>），</li>
+</ul>
+<p>实际作用都是<strong>提高最大 HP</strong>，本页统一写成「最大HP +N」。</p>
+<ul>
+<li><strong>没有徽章的地图</strong>：2 惠海路、18 中央线、19 坎坷路、20 灾箭路、21 总部、22 URN。</li>
+</ul>
+<figure class="data-table"><table data-rows="25"><caption>多娜多娜 全地图徽章位置与效果（25 枚，按地图编号排列）</caption><thead><tr><th>区域</th><th>位置</th><th>徽章</th><th>效果</th></tr></thead><tbody><tr><td>1 ASP</td><td>娱乐室</td><td>Atom</td><td>A技能 BUFF增益 +20%</td></tr><tr><td>3 仕山医疗所</td><td>院长室</td><td>Herb1</td><td>最大HP +200</td></tr><tr><td>3 仕山医疗所</td><td>门诊挂号</td><td>b1</td><td>最大HP +200</td></tr><tr><td>4 产峰工业</td><td>产品仓库</td><td>Herb2</td><td>最大HP +400</td></tr><tr><td>5 美术馆</td><td>曜会天目碗</td><td>Alien</td><td>A技能 MP -6</td></tr><tr><td>6 芽生宿舍</td><td>宿舍管理员室</td><td>Skip</td><td>SPD +1</td></tr><tr><td>7 化学研究所</td><td>放射线间</td><td>Doom</td><td>D技能 BUFF增益 +20%</td></tr><tr><td>7 化学研究所</td><td>解剖间</td><td>Brain</td><td>B技能 MP -6</td></tr><tr><td>8 东云码头</td><td>货港 Y08</td><td>Ajari</td><td>A技能 BUFF持续 +1回合</td></tr><tr><td>8 东云码头</td><td>变电设备</td><td>Ace</td><td>A技能威力 +20%</td></tr><tr><td>9 YR精废厂</td><td>组装室</td><td>Crown</td><td>C技能 BUFF增益 +20%</td></tr><tr><td>10 亚商城</td><td>奴印良品</td><td>Herb3</td><td>最大HP +800</td></tr><tr><td>10 亚商城</td><td>得浦午餐</td><td>Virus</td><td>V技能 BUFF持续 +2回合</td></tr><tr><td>11 信息工学楼</td><td>器材室</td><td>Candy</td><td>C技能 MP -6</td></tr><tr><td>11 信息工学楼</td><td>瓦砾</td><td>Herb5</td><td>最大HP +6000</td></tr><tr><td>12 后亚地</td><td>卓著工作室</td><td>Bear</td><td>B技能威力 +20%</td></tr><tr><td>13 造船所</td><td>舾装品仓库</td><td>Dice</td><td>D技能威力 +20%</td></tr><tr><td>13 造船所</td><td>资材仓库</td><td>Vamp</td><td>V技能 BUFF增益 +40%</td></tr><tr><td>14 第三学校</td><td>烹饪室</td><td>Skip</td><td>SPD +1</td></tr><tr><td>14 第三学校</td><td>女子更衣室</td><td>Dream</td><td>D技能 BUFF持续 +1回合</td></tr><tr><td>15 产业园区</td><td>间 B3</td><td>Dose</td><td>D技能 MP -6</td></tr><tr><td>15 产业园区</td><td>会议室</td><td>Crash</td><td>C技能威力 +20%</td></tr><tr><td>16 花霞祭</td><td>野外茶会</td><td>Herb4</td><td>最大HP +2000</td></tr><tr><td>17 昂埃皮克</td><td>大套房</td><td>Cook</td><td>C技能 BUFF持续回合 +1</td></tr><tr><td>17 昂埃皮克</td><td>舰桥</td><td>Viper</td><td>V技能威力 +40%</td></tr></tbody></table></figure>
+<h2 id="内容出处">内容出处</h2>
+<blockquote><p>徽章位置与效果来自百度贴吧「多娜多娜来一起做坏事吧」吧的同名资料（作者 <strong>轰击晨星i</strong>）， 经以下三份来源逐条互校后录入，25 条的位置与效果全部一致：</p>
+<ul>
+<li>逗游网 <a href="https://www.doyo.cn/article/436000" target="_blank" rel="noopener noreferrer">《多娜多娜中文地图资料大全》</a>（官中版，正文文字）</li>
+<li>OMOBI <a href="https://www.omobi.cc/archives/221492.html" target="_blank" rel="noopener noreferrer">《全徽章獲取效果匯總》</a>（繁中文字版）</li>
+<li>英文资料 <a href="https://www.cyberly.org/game-cheats/pc-walkthroughs/dohna-dohna-issho-ni-warui-koto-o-shiyou-.html" target="_blank" rel="noopener noreferrer">Cyberly — Dohna Dohna Walkthrough &amp; Guide</a></li>
+</ul>
+<p>（含徽章适用角色一览，本页未收录）</p>
+<p><strong>一处说明</strong>：原帖截图里 <code>ASP</code> 的徽章房间在低清下易读成「服务器室」， 而逗游网与 OMOBI 的文字版均作「<strong>娱乐室</strong>」，本站采用后者。 截图里「BUFF增益」后的符号受 JPEG 压缩影响难以辨认，文字版确认为 <code>+</code>（正号）， 本站据此录入。</p></blockquote>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../dohna/drop-details/"><small>← 上一页</small><strong>掉落明细与掉落率</strong></a>
+<a class="next" href="../../dohna/special-talents-quests/"><small>下一页 →</small><strong>特殊人才任务条件</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

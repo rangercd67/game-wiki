@@ -1,21 +1,21 @@
 {
-  "built_at": "2026-10-05T00:41:36.342436+00:00",
-  "pages": 90,
+  "built_at": "2026-10-05T03:58:56.818890+00:00",
+  "pages": 94,
   "by_game": {
-    "dohna": 10,
+    "dohna": 14,
     "p5r": 20,
     "p3p": 13,
     "p4g": 19,
     "arknights": 28
   },
   "media": {
-    "written": 185,
+    "written": 228,
     "missing": 0,
-    "bytes": 19319730,
+    "bytes": 21280764,
     "failed": 0,
     "format": "webp"
   },
-  "site_bytes": 22045770,
+  "site_bytes": 24125762,
   "warnings": [],
   "output": "D:\\Development\\Projects\\game-wiki\\dist-wiki"
 }

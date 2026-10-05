@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按武器等级的掉落点速查（含概率），以及 20 个区域的逐点掉落表原图。">
+  <title>掉落明细与掉落率 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/" class="active">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+<li><a href="../../dohna/badges/">徽章搭配</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+<li><a href="../../dohna/weapon-prices/">武器数据表</a></li>
+<li><a href="../../dohna/talent-traits/">人才词条一览</a></li>
+<li><a href="../../dohna/special-talents/">特殊人才一览</a></li>
+<li><a href="../../dohna/talent-ratings/">特殊人才评价</a></li>
+<li><a href="../../dohna/drop-maps/">掉落点路线图</a></li>
+<li><a href="../../dohna/drop-details/" class="active">掉落明细与掉落率</a></li>
+<li><a href="../../dohna/badge-locations/">徽章位置一览</a></li>
+<li><a href="../../dohna/special-talents-quests/">特殊人才任务条件</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+<li><a href="../../dohna/episode-flow/">全话流程表（第 1～59 话）</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>多娜多娜</span>
+          <b>/</b>
+          <span aria-current="page">掉落明细与掉落率</span>
+        </nav>
+        <header class="article-head">
+          <h1>掉落明细与掉落率</h1>
+          <p class="article-meta">最近更新于 2026-10-05</p>
+        </header>
+        <div class="prose">
+<p>多娜多娜的掉落分两类：<strong>武器</strong>（按 2～6 级在地图上固定刷新）与<strong>道具</strong>（回复类、 据点增益类、战斗辅助类、春销类）。本页上半是按<strong>武器等级</strong>整理的速查表， 下半是各区域的<strong>逐点掉落表原图</strong>。</p>
+<h2 id="读表要点">读表要点</h2>
+<ul>
+<li><strong>武器等级与章节挂钩</strong>：2～3 级在前中期地图，4～5 级在中后期，6 级只在</li>
+</ul>
+<p><strong>URN</strong>（二周目地图）掉落。</p>
+<ul>
+<li>上表的概率有两列口径：多数点位是 <code>25%</code>，少数是 <code>40%</code>/<code>12.50%</code>/<code>50%</code>——</li>
+</ul>
+<p>表示该点位所在格子抽出这一项的概率，同一格子的其余项按剩余概率分配。</p>
+<ul>
+<li><strong>上表与原帖的「逐图掉落表」有 3 处不一致</strong>（已在「备注」列标出）：</li>
+</ul>
+<p>产峰工业的「撤出区域 / 产品仓库」两个点位的概率在原帖里被写反了， 化学研究所「生物安全柜」的 2 级武器概率也不一致。本站以<strong>逐图表原图</strong>为准， 上表照录原帖速查表原样，两处并列便于对照。</p>
+<ul>
+<li>原帖另有一句提示：<strong>造船所「酬宾室」的 5 级武器概率较高，但需要炸药开门</strong>；</li>
+</ul>
+<p>相应地，<strong>「离线门」需要炸药</strong>——后期商店会刷炸药，一颗炸药可炸开离线门一次。</p>
+<ul>
+<li>下表的图是原帖截图按区域切出的<strong>原表</strong>（3 倍放大，未改动任何数值）。</li>
+</ul>
+<p>表中「概率」列留空表示该行与原表一致继承上一行，本站未作补全。</p>
+<figure class="data-table"><table data-rows="37"><caption>多娜多娜 武器掉落等级速查（原帖按武器等级的掉落点汇总）</caption><thead><tr><th>等级</th><th>区域</th><th>地点</th><th>概率</th><th>备注</th></tr></thead><tbody><tr><td>2级</td><td>ASP</td><td>服务器室</td><td>25.00%</td><td></td></tr><tr><td>2级</td><td>产峰工业</td><td>撤出区域</td><td>25.00%</td><td>逐图表作 40%</td></tr><tr><td>2级</td><td>产峰工业</td><td>产品仓库</td><td>40.00%</td><td>逐图表作 25%</td></tr><tr><td>2级</td><td>美术馆</td><td>仓库</td><td>25.00%</td><td></td></tr><tr><td>2级</td><td>美术馆</td><td>商店</td><td>25.00%</td><td></td></tr><tr><td>2级</td><td>芽生宿舍</td><td>洗衣店</td><td>12.50%</td><td></td></tr><tr><td>2级</td><td>化学研究所</td><td>生物安全柜</td><td>12.50%</td><td>逐图表作 40%</td></tr><tr><td>2级</td><td>东云码头</td><td>货港 F15</td><td>12.50%</td><td></td></tr><tr><td>2级</td><td>YR精废厂</td><td>恒温室</td><td>40.00%</td><td></td></tr><tr><td>2级</td><td>仕山医疗所</td><td>门诊挂号</td><td>12.50%</td><td></td></tr><tr><td>3级</td><td>亚商城</td><td>乔伊哈温</td><td>40.00%</td><td></td></tr><tr><td>3级</td><td>亚商城</td><td>奴印良品</td><td>25.00%</td><td></td></tr><tr><td>3级</td><td>后亚地</td><td>卓著工作室</td><td>25.00%</td><td>原帖另注：此箱只需过一关即可拿到，是全图最好拿的箱子之一</td></tr><tr><td>3级</td><td>信息工学楼</td><td>C15 教室</td><td>12.50%</td><td></td></tr><tr><td>3级</td><td>信息工学楼</td><td>瓦砾</td><td>25.00%</td><td></td></tr><tr><td>3级</td><td>信息工学楼</td><td>器材室</td><td>12.50%</td><td></td></tr><tr><td>3级</td><td>造船所</td><td>乙船装卸</td><td>40.00%</td><td></td></tr><tr><td>3级</td><td>造船所</td><td>资材仓库</td><td>25.00%</td><td></td></tr><tr><td>3级</td><td>产业园区</td><td>间 E3</td><td>25.00%</td><td></td></tr><tr><td>3级</td><td>东云码头</td><td>货港 Y05</td><td>40.00%</td><td>逐图表作 武器 4 级 40%</td></tr><tr><td>3级</td><td>YR精废厂</td><td>组装室</td><td>25.00%</td><td></td></tr><tr><td>4级</td><td>产业园区</td><td>间 F2</td><td>40.00%</td><td></td></tr><tr><td>4级</td><td>产业园区</td><td>间 X</td><td>25.00%</td><td></td></tr><tr><td>4级</td><td>产业园区</td><td>间 A1</td><td>40.00%</td><td></td></tr><tr><td>4级</td><td>昂埃皮克</td><td>餐厅</td><td>25.00%</td><td></td></tr><tr><td>4级</td><td>昂埃皮克</td><td>诊所</td><td>25.00%</td><td>诊所同时有 5 级武器</td></tr><tr><td>5级</td><td>造船所</td><td>酬宾室</td><td>40.00%</td><td>需要炸药开门</td></tr><tr><td>5级</td><td>昂埃皮克</td><td>诊所</td><td>12.50%</td><td></td></tr><tr><td>5级</td><td>昂埃皮克</td><td>直升机机场</td><td>25.00%</td><td></td></tr><tr><td>6级</td><td>URN</td><td>C4</td><td>25.00%</td><td>二周目地图</td></tr><tr><td>6级</td><td>URN</td><td>F2</td><td>25.00%</td><td>二周目地图</td></tr><tr><td>6级</td><td>URN</td><td>H7</td><td>25.00%</td><td>二周目地图</td></tr><tr><td>6级</td><td>URN</td><td>K6</td><td>25.00%</td><td>二周目地图</td></tr><tr><td>6级</td><td>URN</td><td>M6</td><td>25.00%</td><td>二周目地图</td></tr><tr><td>6级</td><td>URN</td><td>CellIQ</td><td>25.00%</td><td>二周目地图</td></tr><tr><td>6级</td><td>URN</td><td>T7</td><td>25.00%</td><td>二周目地图</td></tr><tr><td>6级</td><td>URN</td><td>Z5</td><td>25.00%</td><td>二周目地图</td></tr></tbody></table></figure>
+<h2 id="各区域逐点掉落表原图">各区域逐点掉落表（原图）</h2>
+<p>下面按地图编号给出 20 个区域的掉落表。原帖中的「地图」列（ASP / 产峰工业 ……） 对应左侧的区块，「地点」列是该地图内的房间名。</p>
+<h3 id="1-asp">1 ASP</h3>
+<p><img src="../../media/dohna/drop-details/01.webp" alt="多娜多娜 1 ASP 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="2-惠海路">2 惠海路</h3>
+<p><img src="../../media/dohna/drop-details/02.webp" alt="多娜多娜 2 惠海路 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="3-仕山医疗所">3 仕山医疗所</h3>
+<p><img src="../../media/dohna/drop-details/03.webp" alt="多娜多娜 3 仕山医疗所 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="4-产峰工业">4 产峰工业</h3>
+<p><img src="../../media/dohna/drop-details/04.webp" alt="多娜多娜 4 产峰工业 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="5-美术馆">5 美术馆</h3>
+<p><img src="../../media/dohna/drop-details/05.webp" alt="多娜多娜 5 美术馆 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="6-芽生宿舍">6 芽生宿舍</h3>
+<p><img src="../../media/dohna/drop-details/06.webp" alt="多娜多娜 6 芽生宿舍 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="7-化学研究所">7 化学研究所</h3>
+<p><img src="../../media/dohna/drop-details/07.webp" alt="多娜多娜 7 化学研究所 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="8-东云码头">8 东云码头</h3>
+<p><img src="../../media/dohna/drop-details/08.webp" alt="多娜多娜 8 东云码头 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="9-yr精废厂">9 YR精废厂</h3>
+<p><img src="../../media/dohna/drop-details/09.webp" alt="多娜多娜 9 YR精废厂 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="10-亚商城">10 亚商城</h3>
+<p><img src="../../media/dohna/drop-details/10.webp" alt="多娜多娜 10 亚商城 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="11-信息工学楼">11 信息工学楼</h3>
+<p><img src="../../media/dohna/drop-details/11.webp" alt="多娜多娜 11 信息工学楼 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="12-后亚地">12 后亚地</h3>
+<p><img src="../../media/dohna/drop-details/12.webp" alt="多娜多娜 12 后亚地 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="13-造船所">13 造船所</h3>
+<p><img src="../../media/dohna/drop-details/13.webp" alt="多娜多娜 13 造船所 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="14-第三学校">14 第三学校</h3>
+<p><img src="../../media/dohna/drop-details/14.webp" alt="多娜多娜 14 第三学校 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="15-产业园区">15 产业园区</h3>
+<p><img src="../../media/dohna/drop-details/15.webp" alt="多娜多娜 15 产业园区 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="16-花霞祭">16 花霞祭</h3>
+<p><img src="../../media/dohna/drop-details/16.webp" alt="多娜多娜 16 花霞祭 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="17-昂埃皮克">17 昂埃皮克</h3>
+<p><img src="../../media/dohna/drop-details/17.webp" alt="多娜多娜 17 昂埃皮克 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="20-灾箭路">20 灾箭路</h3>
+<p><img src="../../media/dohna/drop-details/20.webp" alt="多娜多娜 20 灾箭路 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="21-总部">21 总部</h3>
+<p><img src="../../media/dohna/drop-details/21.webp" alt="多娜多娜 21 总部 掉落表" loading="lazy" decoding="async"></p>
+<h3 id="22-urn">22 URN</h3>
+<p><img src="../../media/dohna/drop-details/22.webp" alt="多娜多娜 22 URN 掉落表" loading="lazy" decoding="async"></p>
+<p>18 中央线与 19 坎坷路是<strong>单线贯通</strong>的地图，没有掉落表（原帖也未提供）。</p>
+<h2 id="资料缺口">资料缺口</h2>
+<ul>
+<li><strong>逐点掉落明细尚未表格化</strong>。上面的原表共 400 余行，本站按「不编数据」的原则</li>
+</ul>
+<p>先以原图呈现，逐格核对后再转为可筛选的数据表。</p>
+<ul>
+<li>武器强化所需的素材与金额、据点设施的解锁条件与效果数值，公开来源均只有标题，</li>
+</ul>
+<p>暂不提供。</p>
+<h2 id="内容出处">内容出处</h2>
+<blockquote><p>原图为百度贴吧「多娜多娜来一起做坏事吧」吧的《多娜多娜中文地图资料大全》， 作者 <strong>轰击晨星i</strong>，同文发布于逗游网与 OMOBI：</p>
+<ul>
+<li>逗游网 <a href="https://www.doyo.cn/article/436000" target="_blank" rel="noopener noreferrer">《多娜多娜中文地图资料大全 全区域路线图+物品掉落表》</a></li>
+<li>OMOBI <a href="https://www.omobi.cc/archives/221492.html" target="_blank" rel="noopener noreferrer">《全地圖掉落表匯總 / 全徽章獲取效果匯總》</a></li>
+<li>英文资料 <a href="https://www.cyberly.org/game-cheats/pc-walkthroughs/dohna-dohna-issho-ni-warui-koto-o-shiyou-.html" target="_blank" rel="noopener noreferrer">Cyberly — Dohna Dohna Walkthrough &amp; Guide</a></li>
+</ul>
+<p><strong>武器等级速查表</strong>按原帖照录（含与原帖逐图表不一致的 3 行，已在备注列标明）； <strong>逐点掉落表</strong>以原帖截图按区域切出、3 倍放大后原样呈现，未作任何数值改写。</p></blockquote>
+        </div>
+<nav class="page-nav">
+<a class="prev" href="../../dohna/drop-maps/"><small>← 上一页</small><strong>掉落点路线图</strong></a>
+<a class="next" href="../../dohna/badge-locations/"><small>下一页 →</small><strong>徽章位置一览</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>
