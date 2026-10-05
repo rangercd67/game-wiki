@@ -151,5 +151,58 @@ class BlockTests(unittest.TestCase):
         self.assertIn("<p>提示：见下表</p>", html)
 
 
+class ListContinuationTests(unittest.TestCase):
+    """列表项的缩进续行。
+
+    攻略里的要点常常一句写不完，折行续写是最自然的写法。
+    续行必须并入同一项——否则一个列表会被切成好几个 `<ul>`，
+    而且跨行写的 `**粗体**` / `` `行内代码` `` 会把标记当作字面字符漏在页面上。
+    """
+
+    def test_continuation_joins_the_same_item(self):
+        html = render("- 前半句\n  后半句\n")
+        self.assertEqual(html, "<ul>\n<li>前半句 后半句</li>\n</ul>")
+
+    def test_continuation_does_not_split_the_list(self):
+        html = render("- 甲\n  甲的续行\n- 乙\n  乙的续行\n")
+        self.assertEqual(html.count("<ul>"), 1)
+        self.assertEqual(html.count("<li>"), 2)
+
+    def test_bold_spanning_two_lines_renders(self):
+        html = render("- 说明**跨行\n  加粗**结束\n")
+        self.assertIn("<strong>跨行 加粗</strong>", html)
+        self.assertNotIn("**", html)
+
+    def test_code_span_across_lines_renders(self):
+        html = render("- 见 `LV2 →\n  LV3` 的说明\n")
+        self.assertIn("<code>LV2 → LV3</code>", html)
+        self.assertNotIn("`", html)
+
+    def test_ordered_list_keeps_numbering_with_continuations(self):
+        html = render("1. 第一条\n   续行\n2. 第二条\n")
+        self.assertEqual(html.count("<ol>"), 1)
+        self.assertEqual(html.count("<li>"), 2)
+
+    def test_trailing_two_spaces_in_continuation_is_a_hard_break(self):
+        html = render("- 上  \n  下\n")
+        self.assertIn("<li>上<br>下</li>", html)
+
+    def test_nested_list_is_not_swallowed_by_continuation(self):
+        html = render("- 前期\n  - 战车\n- 后期\n")
+        self.assertIn("<li>前期<ul>", html)
+        self.assertIn("<li>战车</li>", html)
+        self.assertIn("<li>后期</li>", html)
+
+    def test_unindented_paragraph_after_list_is_not_absorbed(self):
+        html = render("- 项目\n说明文字\n")
+        self.assertIn("<li>项目</li>", html)
+        self.assertIn("<p>说明文字</p>", html)
+
+    def test_blank_line_ends_the_list(self):
+        html = render("- 项目\n\n  缩进但它属于新段落\n")
+        self.assertIn("<li>项目</li>", html)
+        self.assertEqual(html.count("<ul>"), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

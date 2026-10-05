@@ -7,7 +7,8 @@ wiki 需要的是**可预测**的渲染，而不是完整的 CommonMark，因此
 支持的块级语法：
 - 标题 `#`~`######`，自动生成锚点 id，可用 `{#custom-id}` 指定
 - 段落，行尾两个空格表示强制换行
-- 无序列表 `-` `*` `+` 与有序列表 `1.` `1)`，支持缩进嵌套
+- 无序列表 `-` `*` `+` 与有序列表 `1.` `1)`，支持缩进嵌套，
+  以及**缩进续行**（列表项超长时折行续写，续行并入同一项，与段落同规则）
 - 表格（管道语法，支持 `:---` / `---:` / `:---:` 对齐）
 - 围栏代码块 ```` ``` ```` / `~~~`
 - 引用 `>`（递归解析，适合做「注意事项」提示块）
@@ -169,13 +170,20 @@ def _table(lines: list[str], index: int) -> tuple[int, str]:
 
 
 def _list(lines: list[str], index: int) -> tuple[int, str]:
-    """按缩进宽度递归解析列表，缩进更深的项成为子列表。"""
+    """按缩进宽度递归解析列表，缩进更深的项成为子列表。
+
+    列表项允许**缩进续行**：项目文字折行续写时（续行比基准缩进更深、
+    且不是新的列表项、不是别的块起始），续行并入同一项，
+    与段落一样用空格连接、行尾两空格作硬换行。
+    没有这条规则，同一个列表会被续行切成好几个 `<ul>`，
+    且跨行的 `**粗体**` 会在页面上漏出字面星号。
+    """
     first = _BULLET.match(lines[index]) or _ORDERED.match(lines[index])
     assert first is not None
     base_indent = len(first.group(1))
     ordered = _BULLET.match(lines[index]) is None
 
-    items: list[tuple[str, list[str]]] = []
+    items: list[tuple[list[str], list[str]]] = []
     while index < len(lines):
         match = _BULLET.match(lines[index]) or _ORDERED.match(lines[index])
         if not match:
@@ -190,29 +198,54 @@ def _list(lines: list[str], index: int) -> tuple[int, str]:
             index, nested = _list(lines, index)
             items[-1][1].append(nested)
             continue
-        items.append((match.group(3), []))
+        item_lines = [match.group(3)]
         index += 1
+        while index < len(lines):
+            following = lines[index]
+            if not following.strip():
+                break
+            if len(following) - len(following.lstrip()) <= base_indent:
+                break  # 回到基准缩进：不是续行
+            if _BULLET.match(following) or _ORDERED.match(following):
+                break  # 更深缩进的列表标记 → 子列表
+            if _starts_block(lines, index):
+                break
+            item_lines.append(following)
+            index += 1
+        items.append((item_lines, []))
 
     tag = "ol" if ordered else "ul"
     parts = [f"<{tag}>"]
-    for text, children in items:
+    for item_lines, children in items:
         # 子列表紧贴父项文本，避免在 <li> 内留下无意义的换行
-        parts.append(f"<li>{inline(text)}{''.join(children)}</li>")
+        parts.append(f"<li>{_join_inline(item_lines)}{''.join(children)}</li>")
     parts.append(f"</{tag}>")
     return index, "\n".join(parts)
 
 
-def _paragraph(lines: list[str]) -> str:
-    """把连续行合成段落，行尾两个空格渲染为 <br>。"""
+def _join_inline(lines: list[str]) -> str:
+    """把连续若干行拼成一段行内内容，行尾两个空格渲染为 <br>。
+
+    关键顺序：**先拼行、再走行内解析**。反过来（逐行 inline 后拼接）时，
+    跨行书写的 `**粗体**` 与 `` `行内代码` `` 会各自在半句里落单，
+    页面上直接漏出字面标记。段落与列表项的缩进续行共用这套规则。
+
+    这里可以安全地拼入 `<br>`：`_text()` 的转义早在 `render()` 入口做完了，
+    `inline()` 只做正则替换，不会再转义。
+    """
     chunks: list[str] = []
     previous_hard = False
     for position, line in enumerate(lines):
         hard = line.endswith("  ")
         if position:
             chunks.append("<br>" if previous_hard else " ")
-        chunks.append(inline(line.strip()))
+        chunks.append(line.strip())
         previous_hard = hard
-    return "<p>" + "".join(chunks) + "</p>"
+    return inline("".join(chunks))
+
+
+def _paragraph(lines: list[str]) -> str:
+    return "<p>" + _join_inline(lines) + "</p>"
 
 
 def _blocks(lines: list[str]) -> str:

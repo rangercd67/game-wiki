@@ -1,4 +1,392 @@
 {
+ "arknights/mirage-iii/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/III-血色空脉-默认规则.png"
+ },
+ "arknights/mirage-iv-recall/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/IV-受害者腐殖-追忆规则.png"
+ },
+ "arknights/mirage-iv/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/IV-受害者腐殖-默认规则.png"
+ },
+ "arknights/mirage-v/01.png": {
+  "max_edge": 2400,
+  "source": "明日方舟-黑流树海/误入奇境可能生成位置/V-卡德霍之颅-默认规则.png"
+ },
+ "dohna/drop-details/01.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/01-ASP.png"
+ },
+ "dohna/drop-details/02.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/02-惠海路.png"
+ },
+ "dohna/drop-details/03.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/03-仕山医疗所.png"
+ },
+ "dohna/drop-details/04.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/04-产峰工业.png"
+ },
+ "dohna/drop-details/05.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/05-美术馆.png"
+ },
+ "dohna/drop-details/06.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/06-芽生宿舍.png"
+ },
+ "dohna/drop-details/07.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/07-化学研究所.png"
+ },
+ "dohna/drop-details/08.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/08-东云码头.png"
+ },
+ "dohna/drop-details/09.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/09-YR精废厂.png"
+ },
+ "dohna/drop-details/10.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/10-亚商城.png"
+ },
+ "dohna/drop-details/11.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/11-信息工学楼.png"
+ },
+ "dohna/drop-details/12.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/12-后亚地.png"
+ },
+ "dohna/drop-details/13.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/13-造船所.png"
+ },
+ "dohna/drop-details/14.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/14-第三学校.png"
+ },
+ "dohna/drop-details/15.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/15-产业园区.png"
+ },
+ "dohna/drop-details/16.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/16-花霞祭.png"
+ },
+ "dohna/drop-details/17.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/17-昂埃皮克.png"
+ },
+ "dohna/drop-details/20.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/20-灾箭路.png"
+ },
+ "dohna/drop-details/21.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/21-总部.png"
+ },
+ "dohna/drop-details/22.png": {
+  "max_edge": 1200,
+  "source": "多娜多娜-掉落点路线图/表格/22-URN.png"
+ },
+ "dohna/drop-maps/01.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/01-ASP.png"
+ },
+ "dohna/drop-maps/02.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/02-惠海路.png"
+ },
+ "dohna/drop-maps/03.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/03-仕山医疗所.png"
+ },
+ "dohna/drop-maps/04.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/04-产峰工业.png"
+ },
+ "dohna/drop-maps/05.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/05-美术馆.png"
+ },
+ "dohna/drop-maps/06.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/06-芽生宿舍.png"
+ },
+ "dohna/drop-maps/07.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/07-化学研究所.png"
+ },
+ "dohna/drop-maps/08.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/08-东云码头.png"
+ },
+ "dohna/drop-maps/09.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/09-YR精废厂.png"
+ },
+ "dohna/drop-maps/10.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/10-亚商城.png"
+ },
+ "dohna/drop-maps/11.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/11-信息工学楼.png"
+ },
+ "dohna/drop-maps/12.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/12-后亚地.png"
+ },
+ "dohna/drop-maps/13.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/13-造船所.png"
+ },
+ "dohna/drop-maps/14.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/14-第三学校.png"
+ },
+ "dohna/drop-maps/15.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/15-产业园区.png"
+ },
+ "dohna/drop-maps/16.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/16-花霞祭.png"
+ },
+ "dohna/drop-maps/17.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/17-昂埃皮克.png"
+ },
+ "dohna/drop-maps/18.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/18-中央线.png"
+ },
+ "dohna/drop-maps/19.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/19-坎坷路.png"
+ },
+ "dohna/drop-maps/20.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/20-灾箭路.png"
+ },
+ "dohna/drop-maps/21.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/21-总部.png"
+ },
+ "dohna/drop-maps/22.png": {
+  "max_edge": 1600,
+  "source": "多娜多娜-掉落点路线图/22-URN.png"
+ },
+ "dohna/special-talents/portraits.png": {
+  "max_edge": 2400,
+  "source": "多娜多娜-掉落点路线图/特殊角色13人头像.png"
+ },
+ "dohna/talent-basics/01.jpg": {
+  "max_edge": 4000,
+  "source": "多娜多娜-人才词条/人材属性与经营-原文截图.jpg"
+ },
+ "dohna/talent-traits/01.png": {
+  "max_edge": 3840,
+  "source": "多娜多娜-人才词条/词条推荐-原文截图.png"
+ },
+ "dohna/talent-traits/02.jpg": {
+  "max_edge": 4000,
+  "source": "多娜多娜-人才词条/词条表-原文截图.jpg"
+ },
+ "dohna/walkthrough/f04-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f04-01.jpg"
+ },
+ "dohna/walkthrough/f04-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f04-02.jpg"
+ },
+ "dohna/walkthrough/f05-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f05-01.jpg"
+ },
+ "dohna/walkthrough/f05-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f05-02.jpg"
+ },
+ "dohna/walkthrough/f05-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f05-03.jpg"
+ },
+ "dohna/walkthrough/f05-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f05-04.jpg"
+ },
+ "dohna/walkthrough/f05-06.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f05-06.jpg"
+ },
+ "dohna/walkthrough/f06-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f06-01.jpg"
+ },
+ "dohna/walkthrough/f06-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f06-03.jpg"
+ },
+ "dohna/walkthrough/f06-06.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f06-06.jpg"
+ },
+ "dohna/walkthrough/f07-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f07-02.jpg"
+ },
+ "dohna/walkthrough/f08-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f08-02.jpg"
+ },
+ "dohna/walkthrough/f09-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f09-04.jpg"
+ },
+ "dohna/walkthrough/f09-05.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f09-05.jpg"
+ },
+ "dohna/walkthrough/f09-06.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f09-06.jpg"
+ },
+ "dohna/walkthrough/f09-07.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f09-07.jpg"
+ },
+ "dohna/walkthrough/f11-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f11-02.jpg"
+ },
+ "dohna/walkthrough/f12-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f12-03.jpg"
+ },
+ "dohna/walkthrough/f13-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f13-03.jpg"
+ },
+ "dohna/walkthrough/f14-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f14-03.jpg"
+ },
+ "dohna/walkthrough/f14-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f14-04.jpg"
+ },
+ "dohna/walkthrough/f16-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f16-01.jpg"
+ },
+ "dohna/walkthrough/f16-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f16-02.jpg"
+ },
+ "dohna/walkthrough/f17-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f17-03.jpg"
+ },
+ "dohna/walkthrough/f18-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f18-04.jpg"
+ },
+ "dohna/walkthrough/f19-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f19-02.jpg"
+ },
+ "dohna/walkthrough/f20-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f20-04.jpg"
+ },
+ "dohna/walkthrough/f21-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f21-02.jpg"
+ },
+ "dohna/walkthrough/f21-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f21-03.jpg"
+ },
+ "dohna/walkthrough/f22-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f22-04.jpg"
+ },
+ "dohna/walkthrough/f23-05.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f23-05.jpg"
+ },
+ "dohna/walkthrough/f23-06.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f23-06.jpg"
+ },
+ "dohna/walkthrough/f23-07.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f23-07.jpg"
+ },
+ "dohna/walkthrough/f24-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f24-03.jpg"
+ },
+ "dohna/walkthrough/f25-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f25-03.jpg"
+ },
+ "dohna/walkthrough/f25-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f25-04.jpg"
+ },
+ "dohna/walkthrough/f27-04.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f27-04.jpg"
+ },
+ "dohna/walkthrough/f28-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f28-01.jpg"
+ },
+ "dohna/walkthrough/f28-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f28-02.jpg"
+ },
+ "dohna/walkthrough/f28-03.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f28-03.jpg"
+ },
+ "dohna/walkthrough/f30-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f30-01.jpg"
+ },
+ "dohna/walkthrough/f31-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f31-01.jpg"
+ },
+ "dohna/walkthrough/f32-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f32-01.jpg"
+ },
+ "dohna/walkthrough/f33-01.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f33-01.jpg"
+ },
+ "dohna/walkthrough/f33-02.jpg": {
+  "max_edge": 1200,
+  "source": "多娜多娜-贴吧流程攻略/f33-02.jpg"
+ },
+ "dohna/weapon-prices/01.jpg": {
+  "max_edge": 2200,
+  "source": "多娜多娜-武器数据表/武器数据表-p1.jpg"
+ },
+ "dohna/weapon-prices/02.jpg": {
+  "max_edge": 2200,
+  "source": "多娜多娜-武器数据表/武器数据表-p2.jpg"
+ },
  "p3p/enemy-weakness/01.jpg": {
   "max_edge": 1920,
   "source": "P3P&P4G攻略合集包/P3P/全敌人属性弱点及掉落/全敌人1.jpg"
@@ -710,21 +1098,5 @@
  "p5r/palace-shido/10.png": {
   "max_edge": 2200,
   "source": "P5R攻略2.0/P5R/1鸭志田殿堂/鸭志田隐藏房间.png"
- },
- "arknights/mirage-iii/01.png": {
-  "max_edge": 2400,
-  "source": "明日方舟-黑流树海/误入奇境可能生成位置/III-血色空脉-默认规则.png"
- },
- "arknights/mirage-iv/01.png": {
-  "max_edge": 2400,
-  "source": "明日方舟-黑流树海/误入奇境可能生成位置/IV-受害者腐殖-默认规则.png"
- },
- "arknights/mirage-v/01.png": {
-  "max_edge": 2400,
-  "source": "明日方舟-黑流树海/误入奇境可能生成位置/V-卡德霍之颅-默认规则.png"
- },
- "arknights/mirage-iv-recall/01.png": {
-  "max_edge": 2400,
-  "source": "明日方舟-黑流树海/误入奇境可能生成位置/IV-受害者腐殖-追忆规则.png"
  }
 }

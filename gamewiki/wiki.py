@@ -60,6 +60,9 @@ _REBASE = re.compile(r'(?P<attr>href|src)="/(?!/)')
 _TAG = re.compile(r"<[^>]+>")
 # 产物里的图片引用，用于把 /media/<内容源名> 换成实际投递的文件名
 _MEDIA_REF = re.compile(r"/media/([^\"'\s)>]+)")
+# 正文里放在单独一行的 `:::data`，作为 front-matter `data:` 表格的落点标记。
+# 渲染后它是 `<p>:::data</p>`。
+_DATA_SLOT = "<p>:::data</p>"
 
 # PNG 是 3D 截图的糟糕容器：实测 1124x635 的殿堂截图存成 PNG 要 1.25 MB
 # （1.75 字节/像素，几乎不压缩）。同一张图转 WebP 后可省 3/4 左右，
@@ -196,10 +199,28 @@ def collect_pages(content_root: Path, site: dict) -> tuple[list[Page], list[str]
         missing = page.order != page.order  # NaN 判定
         return (1 if missing else 0, 0.0 if missing else page.order, page.title)
 
+    # 全局重排 pages 本身：游戏按 site.json 的声明顺序，组内按 order。
+    # 侧边导航（_render_nav）与首页卡片都直接遍历 pages，之前它们吃到的是
+    # `sorted(rglob("*.md"))` 的文件名序，于是「导航顺序」与「上一页/下一页」
+    # 自相矛盾（实测 13 个多页分组里 9 个不一致，如 p5r/palace 导航从双叶起）。
+    # 一次性排好，导航、首页、搜索索引三处口径统一。
+    game_rank = {game["id"]: index for index, game in enumerate(games)}
+    group_rank = {
+        (game["id"], group_id): index
+        for game in games
+        for index, (group_id, _) in enumerate(_groups_for(site, game["id"]))
+    }
+    pages.sort(
+        key=lambda page: (
+            game_rank.get(page.game, len(games)),
+            group_rank.get((page.game, page.group), 1 << 30),
+            sort_key(page),
+        )
+    )
+
     for game_id in known_games:
         for group_id, _ in _groups_for(site, game_id):
             bucket = [p for p in pages if p.game == game_id and p.group == group_id]
-            bucket.sort(key=sort_key)
             for position, page in enumerate(bucket):
                 page.prev = bucket[position - 1] if position else None
                 page.next = bucket[position + 1] if position + 1 < len(bucket) else None
@@ -407,6 +428,20 @@ def _render_data_table(content_root: Path, page: Page) -> str:
     )
 
 
+def _place_data_table(body_html: str, table_html: str) -> str:
+    """把数据表放进正文。
+
+    正文里单独一行写了 `:::data`，表格就插在那个位置（渲染后标记是 `<p>:::data</p>`）；
+    没写则沿用旧行为追加到正文末尾。追加的落点在「内容出处」之后，读起来别扭，
+    显式占位可以让表格紧跟自己的小标题。
+    """
+    if not table_html:
+        return body_html
+    if _DATA_SLOT in body_html:
+        return body_html.replace(_DATA_SLOT, table_html)
+    return body_html + table_html
+
+
 def _render_page_nav(page: Page) -> str:
     """组内上一页 / 下一页，用于攻略的连续阅读。"""
     if not page.prev and not page.next:
@@ -474,7 +509,9 @@ def build(
         return "/" + media_urls.get(name, f"{MEDIA_DIR}/{name}")
 
     for page in pages:
-        body_html = render(page.body) + _render_data_table(content, page)
+        body_html = _place_data_table(
+            render(page.body), _render_data_table(content, page)
+        )
         if media_urls:
             body_html = _MEDIA_REF.sub(_remap_media, body_html)
         page.html = _REBASE.sub(lambda m: f'{m.group("attr")}="{page.prefix}', body_html)

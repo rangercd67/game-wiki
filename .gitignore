@@ -37,6 +37,11 @@ data/local/
 # Local content library: game guides and source material stay out of Git
 library/
 
+# One-off exports handed to the user (self-contained HTML, images inlined as
+# base64). They are deliverables, not source: regenerate them from content/
+# instead of duplicating megabytes of binary in history.
+exports/
+
 # IDE and OS files
 .idea/
 .vscode/
