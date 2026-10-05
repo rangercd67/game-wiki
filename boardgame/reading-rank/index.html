@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="平均分与贝叶斯均分的区别、名次为什么会漂、人数配置里的「最佳人数」是谁定的，以及这份榜单不适合回答的问题。">
+  <title>怎么读 BGG 排行榜 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+<a href="../../boardgame/" class="active">桌游</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+<li><a href="../../dohna/badges/">徽章搭配</a></li>
+<li><a href="../../dohna/talent-basics/">人材属性与经营环节</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+<li><a href="../../dohna/weapon-prices/">武器数据表</a></li>
+<li><a href="../../dohna/talent-traits/">人才词条一览</a></li>
+<li><a href="../../dohna/special-talents/">特殊人才一览</a></li>
+<li><a href="../../dohna/talent-ratings/">特殊人才评价</a></li>
+<li><a href="../../dohna/drop-maps/">掉落点路线图</a></li>
+<li><a href="../../dohna/drop-details/">掉落明细与掉落率</a></li>
+<li><a href="../../dohna/badge-locations/">徽章位置一览</a></li>
+<li><a href="../../dohna/special-talents-quests/">特殊人才任务条件</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+<li><a href="../../dohna/episode-flow/">全话流程表（第 1～59 话）</a></li>
+<li><a href="../../dohna/walkthrough/">逐日流程（DAY 1～68）</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../boardgame/">桌游</a>
+<div class="nav-group"><span>排行榜</span><ul>
+<li><a href="../../boardgame/bgg-top100/">BGG 排行榜 Top 100</a></li>
+<li><a href="../../boardgame/bgg-top30/">Top 30 逐款对照</a></li>
+</ul></div>
+<div class="nav-group"><span>读榜指南</span><ul>
+<li><a href="../../boardgame/reading-rank/" class="active">怎么读 BGG 排行榜</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>桌游</span>
+          <b>/</b>
+          <span aria-current="page">怎么读 BGG 排行榜</span>
+        </nav>
+        <header class="article-head">
+          <h1>怎么读 BGG 排行榜</h1>
+          <p class="article-meta">最近更新于 2026-10-05</p>
+        </header>
+        <div class="prose">
+<p>BGG 排行榜看起来只是一列名次，实际上有两套分数、一套投票机制和三处常见的误读。 这一页把它们讲清楚，之后再看<a href="../../boardgame/bgg-top100/">Top 100</a>那张表会顺很多。</p>
+<h2 id="两个分数平均分与贝叶斯均分">两个分数：平均分与贝叶斯均分</h2>
+<p>BGG 每个游戏都显示两个分数，<strong>排序用的是后者</strong>：</p>
+<table>
+<thead>
+<tr><th>分数</th><th>是什么</th><th>用途</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>平均分</strong>（Average Rating）</td><td>所有打过分的玩家的算术平均，就是普通的平均分</td><td>看「打过分的人有多喜欢」</td></tr>
+<tr><td><strong>贝叶斯均分</strong>（Geek Rating，榜上写作 Bayes average）</td><td>BGG 为排序专门算的加权分：给每款游戏<strong>先塞进一批接近中位数的「假想票」</strong>，再和真实评分一起求平均</td><td><strong>排名次</strong></td></tr>
+</tbody>
+</table>
+<p>假想票的作用是保护新游戏：一款新作如果只被 50 个人打了 9 分，平均分能冲到 9.5， 但它显然还不该排在《工业革命:伯明翰》前面。把一批「不高不低的票」掺进去后， <strong>票数越少，真实平均分被稀释得越厉害</strong>，一旦票数攒够，贝叶斯均分就会向真实平均分靠拢。 BGG 官方没有公布假想票的具体张数，社区推测在 100 张上下，<strong>本站按官方未公开处理，不做推算</strong>。</p>
+<p>两条分数的差距可以直接量出来（2026-10-05 快照）：</p>
+<table>
+<thead>
+<tr><th>游戏</th><th>平均分</th><th>贝叶斯均分</th><th>差距</th><th>评价人数</th><th>名次</th></tr>
+</thead>
+<tbody>
+<tr><td>工业革命:伯明翰</td><td>8.56</td><td>8.39</td><td><strong>0.17</strong></td><td>60,430</td><td>第 1</td></tr>
+<tr><td>星空觅迹（SETI）</td><td>8.41</td><td>8.06</td><td>0.36</td><td>22,399</td><td>第 14</td></tr>
+<tr><td>尖塔奇兵</td><td>8.61</td><td>8.05</td><td>0.56</td><td>14,545</td><td>第 15</td></tr>
+<tr><td>霜港迷城</td><td>8.72</td><td>7.97</td><td><strong>0.75</strong></td><td>10,588</td><td>第 20</td></tr>
+<tr><td>Oathsworn: Into the Deepwood</td><td><strong>8.74</strong>（全榜最高）</td><td>7.72</td><td><strong>1.02</strong></td><td>7,081</td><td>第 65</td></tr>
+</tbody>
+</table>
+<p><strong>读法</strong>：票数越少，差距越大。上表最后一款的平均分是全榜最高的 8.74，但因为只有 7,081 张票，贝叶斯均分被压到 7.72，名次掉到第 65。所以——</p>
+<ul>
+<li>想说「某游戏评价很高」，引<strong>平均分</strong>；</li>
+<li>想说「某游戏在圈里排第几」，引<strong>贝叶斯均分和名次</strong>。</li>
+</ul>
+<h2 id="名次为什么会漂">名次为什么会漂</h2>
+<p>排行榜不是固定的档案，它每天都在动，机制只有三条：</p>
+<ol>
+<li><strong>新游戏往上挤</strong>。评价人数攒够的新作会直接进榜并快速攀升，2024 年的《星空觅迹》 与《尖塔奇兵》就是这么进到 Top 15 的。</li>
+<li><strong>老游戏的分数缓慢下滑</strong>。老游戏的分数会随着「慕名而来的人变多、口味变分散」而 轻微回落，于是名次被后来者挤下去，《冷热战斗》（2005）与《勃艮第城堡》（2011） 就在做这件事。</li>
+<li><strong>相邻名次的差距极小</strong>。Top 100 里第 1 名到第 100 名的贝叶斯均分只差 <strong>0.79 分</strong>， 相邻名次之间的差中位数只有 <strong>0.004 分</strong>，个别相邻两名甚至完全同分（这时靠其它规则定序）， <strong>一两位的变动没有任何解读价值</strong>。</li>
+</ol>
+<p>实证：<a href="../../boardgame/bgg-top30/">Top 30 逐款对照</a> 那张截图出自视频制作时点， 与 2026-10-05 的快照相比，30 款里有 <strong>10 款</strong>的名次变过，全部是 <strong>±1～2 位</strong>， 没有一款掉出或冲进 Top 30。</p>
+<p><strong>引用名次时一定要带快照日期</strong>，否则过两周就对不上了。</p>
+<h2 id="人数配置里的最佳人数是谁定的">人数配置里的「最佳人数」是谁定的</h2>
+<p>榜单里常见 <code>2-4人(3-4人最佳)</code> 这样的写法，两个数字来源完全不同：</p>
+<table>
+<thead>
+<tr><th>写法</th><th>含义</th><th>来源</th></tr>
+</thead>
+<tbody>
+<tr><td><code>2-4人</code></td><td>说明书标注的<strong>支持人数</strong>（盒子上的数字）</td><td>出版社，也就是设计者定的</td></tr>
+<tr><td><code>3-4人最佳</code></td><td>玩过的人投票选出的<strong>最合适人数</strong></td><td><strong>玩家投票</strong>，BGG 页面上「User suggested number of players」的众数</td></tr>
+</tbody>
+</table>
+<p>所以「最佳人数」不是权威结论而是一个人气的众数：样本少的新游戏、只有一种人数的 双人游戏（比如《七大奇迹:对决》写 <code>2人(2人最佳)</code>，等于没提供额外信息）、 以及被单个玩家群集体投票影响的条目，都要留个心眼。</p>
+<p>另外两处常见的坑：</p>
+<ul>
+<li><strong>支持人数不等于能玩好</strong>。很多重策标着 <code>1-4人</code>，实际官方是在后期才补的单人模式， 单刷体验和多人差别很大。</li>
+<li><strong>人数上限常靠扩展抬高</strong>。《沙丘:帝国-起义》写 <code>1-4、6人</code>，那个「6 人」需要额外 组件，不是盒子里就有的。</li>
+</ul>
+<h2 id="这份榜单不适合回答的问题">这份榜单不适合回答的问题</h2>
+<table>
+<thead>
+<tr><th>想回答的问题</th><th>为什么榜单帮不上</th></tr>
+</thead>
+<tbody>
+<tr><td>「新手第一款买什么」</td><td>Top 100 绝大多数是重策，BGG 的排名越高反而越难上手；入门要看 Family 分类榜</td></tr>
+<tr><td>「聚会玩什么」</td><td>派对、亲子、欢乐向游戏的评分天花板本来就低，几乎进不了前 100</td></tr>
+<tr><td>「国产原创桌游排第几」</td><td>样本量与国际曝光不足，名次被系统性低估，不能当作质量结论</td></tr>
+<tr><td>「哪款最好玩」</td><td>分数是<strong>一群人</strong>的平均口味，与「你会不会喜欢」是两件事</td></tr>
+<tr><td>「中文版哪里买」</td><td>BGG 是数据库，不管发行与库存；中文译名也没有统一标准（见<a href="../../boardgame/bgg-top30/">Top 30 对照</a>的译名说明）</td></tr>
+</tbody>
+</table>
+<h2 id="想自己核一遍">想自己核一遍</h2>
+<ul>
+<li><strong>官网入口</strong>：<a href="https://boardgamegeek.com/browse/boardgame" target="_blank" rel="noopener noreferrer">boardgamegeek.com/browse/boardgame</a>，可按名次翻页，表头能切换排序字段。</li>
+<li><strong>用 BGG id 直达</strong>：<a href="../../boardgame/bgg-top30/">Top 30 逐款对照</a>与 <a href="../../boardgame/bgg-top100/">Top 100</a>两张表里都留了 <code>BGG id</code>，官网链接的规律是 <code>boardgamegeek.com/boardgame/&lt;id></code>，例如第 1 名《工业革命:伯明翰》是 <code>224517</code>。</li>
+<li><strong>看历史名次</strong>：BGG 官网只给当前名次，想看某款游戏半年来的曲线可以查每日快照镜像仓库（见下）。</li>
+</ul>
+<h2 id="内容出处">内容出处</h2>
+<blockquote><ul>
+<li><strong>数值与快照</strong>：BoardGameGeek 官方排行榜，快照 <strong>2026-10-05</strong>。BGG 主站对本机直连 返回 Cloudflare 挑战页，本页数据经每日同步官网排名的公开镜像 <a href="https://github.com/beefsack/bgg-ranking-historicals" target="_blank" rel="noopener noreferrer">beefsack/bgg-ranking-historicals</a> 取得，字段与官网排行页一致。</li>
+<li><strong>贝叶斯均分的机制</strong>：BGG 官方只公布「Geek Rating 用于排序、由真实评分与一批 预置票共同算出」，<strong>假想票的张数官方未公开</strong>。本页只描述机制与可观测到的差距， 不反推公式。</li>
+<li><strong>最佳人数的来源</strong>：BGG 游戏页面上的玩家投票（User suggested number of players）， 本页按「投票众数」表述，不当作官方规格。</li>
+<li><strong>举例数据</strong>：Frosthaven、工业革命:伯明翰、尖塔奇兵、星空觅迹、Oathsworn 的 平均分与票数均取自上面的快照，未做取整以外的加工。</li>
+</ul></blockquote>
+        </div>
+
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>

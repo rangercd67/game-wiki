@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN" data-prefix="../../" data-site="藏经阁">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BoardGameGeek 官方排行榜前 100 名（快照 2026-10-05）：英文原名、年份、平均分、贝叶斯均分与评价人数。">
+  <title>BGG 排行榜 Top 100 · 藏经阁</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("wiki-theme");
+      const preferred = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = saved === "dark" || saved === "light" ? saved : preferred;
+    })();
+  </script>
+  <link rel="stylesheet" href="../../assets/wiki.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button id="navToggle" class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="brand" href="../../">
+        <span class="brand-mark">藏</span>
+        <span class="brand-text"><strong>藏经阁</strong><small>PERSONA GUIDE WIKI</small></span>
+      </a>
+      <nav class="game-tabs" aria-label="游戏切换">
+<a href="../../dohna/">多娜多娜</a>
+<a href="../../p5r/">P5R 皇家版</a>
+<a href="../../p3p/">P3P 携带版</a>
+<a href="../../p4g/">P4G 黄金版</a>
+<a href="../../arknights/">明日方舟</a>
+<a href="../../boardgame/" class="active">桌游</a>
+      </nav>
+      <div class="topbar-actions">
+        <button id="searchOpen" class="search-open" type="button" aria-label="搜索">
+          <span aria-hidden="true">⌕</span><span class="search-hint">搜索</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="切换深浅主题">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside id="sidebar" class="sidebar">
+      <nav class="nav-tree" aria-label="页面导航">
+<div class="nav-game">
+<a class="nav-game-title" href="../../dohna/">多娜多娜</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../dohna/characters/">可操作角色一览</a></li>
+<li><a href="../../dohna/badges/">徽章搭配</a></li>
+<li><a href="../../dohna/talent-basics/">人材属性与经营环节</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../dohna/weapons/">武器系统与选型</a></li>
+<li><a href="../../dohna/weapon-prices/">武器数据表</a></li>
+<li><a href="../../dohna/talent-traits/">人才词条一览</a></li>
+<li><a href="../../dohna/special-talents/">特殊人才一览</a></li>
+<li><a href="../../dohna/talent-ratings/">特殊人才评价</a></li>
+<li><a href="../../dohna/drop-maps/">掉落点路线图</a></li>
+<li><a href="../../dohna/drop-details/">掉落明细与掉落率</a></li>
+<li><a href="../../dohna/badge-locations/">徽章位置一览</a></li>
+<li><a href="../../dohna/special-talents-quests/">特殊人才任务条件</a></li>
+</ul></div>
+<div class="nav-group"><span>剧情与分支</span><ul>
+<li><a href="../../dohna/chapter-branches/">章节不可逆节点与结局</a></li>
+<li><a href="../../dohna/episode-flow/">全话流程表（第 1～59 话）</a></li>
+<li><a href="../../dohna/walkthrough/">逐日流程（DAY 1～68）</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p5r/">P5R 皇家版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p5r/guide-start/">新手必读：该优先发展什么</a></li>
+<li><a href="../../p5r/guide-schedule/">全事件白金攻略日程</a></li>
+<li><a href="../../p5r/guide-treasure-demon/">宝魔出现位置与掉落</a></li>
+</ul></div>
+<div class="nav-group"><span>殿堂攻略</span><ul>
+<li><a href="../../p5r/palace-shido/">色欲的城堡（鸭志田）</a></li>
+<li><a href="../../p5r/palace-madarame/">虚荣的美术馆（斑目）</a></li>
+<li><a href="../../p5r/palace-kaneshiro/">暴食的银行（金城）</a></li>
+<li><a href="../../p5r/palace-futaba/">愤怒的金字塔（双叶）</a></li>
+<li><a href="../../p5r/palace-okumura/">贪婪的宇宙基地（奥村）</a></li>
+<li><a href="../../p5r/palace-sae/">嫉妒的赌场（新岛冴）</a></li>
+<li><a href="../../p5r/palace-masayoshi/">傲慢的游轮（狮童）</a></li>
+<li><a href="../../p5r/palace-mementos/">印象空间最深处</a></li>
+<li><a href="../../p5r/palace-qliphoth/">邪恶世界树</a></li>
+<li><a href="../../p5r/palace-maruki/">？？？：研究所（丸喜）</a></li>
+</ul></div>
+<div class="nav-group"><span>推荐攻略</span><ul>
+<li><a href="../../p5r/guide-difficulty/">推荐面具选择与难度建议</a></li>
+<li><a href="../../p5r/guide-max-stats/">把面具属性拉满到 99</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p5r/persona-list/">人格面具总表</a></li>
+<li><a href="../../p5r/persona-traits/">面具特性一览</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p5r/crossword/">填字游戏答案</a></li>
+</ul></div>
+<div class="nav-group"><span>其他</span><ul>
+<li><a href="../../p5r/misc-links/">延伸阅读与外部资源</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p3p/">P3P 携带版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p3p/guide-notice/">游玩前注意事项</a></li>
+<li><a href="../../p3p/guide-male-schedule/">男主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-female-schedule/">女主篇一周目全社群 MAX 日程</a></li>
+<li><a href="../../p3p/guide-gift/">送礼物攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p3p/fusion-table/">全面具合成表</a></li>
+<li><a href="../../p3p/persona-list/">全面具属性及出现位置</a></li>
+<li><a href="../../p3p/equipment/">全装备列表及获得方式</a></li>
+<li><a href="../../p3p/enemy-weakness/">全敌人属性弱点及掉落</a></li>
+<li><a href="../../p3p/skills/">技能一览</a></li>
+<li><a href="../../p3p/social-links/">全社群解锁地点和条件</a></li>
+<li><a href="../../p3p/side-quests/">支线任务攻略</a></li>
+<li><a href="../../p3p/weapon-fusion/">武器合成攻略</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../p4g/">P4G 黄金版</a>
+<div class="nav-group"><span>常用攻略</span><ul>
+<li><a href="../../p4g/guide-main/">P4G 完整攻略</a></li>
+</ul></div>
+<div class="nav-group"><span>数据图鉴</span><ul>
+<li><a href="../../p4g/enemy-weakness/">全敌人弱点属性</a></li>
+<li><a href="../../p4g/persona-fusion/">全面具合成表</a></li>
+<li><a href="../../p4g/skills/">技能与技能卡</a></li>
+<li><a href="../../p4g/tasks/">全支线任务</a></li>
+<li><a href="../../p4g/trophies/">成就奖杯列表</a></li>
+</ul></div>
+<div class="nav-group"><span>日常</span><ul>
+<li><a href="../../p4g/schedule-01/">1 月日程</a></li>
+<li><a href="../../p4g/schedule-02/">2 月日程</a></li>
+<li><a href="../../p4g/schedule-03/">3 月日程</a></li>
+<li><a href="../../p4g/schedule-04/">4 月日程</a></li>
+<li><a href="../../p4g/schedule-05/">5 月日程</a></li>
+<li><a href="../../p4g/schedule-06/">6 月日程</a></li>
+<li><a href="../../p4g/schedule-07/">7 月日程</a></li>
+<li><a href="../../p4g/schedule-08/">8 月日程</a></li>
+<li><a href="../../p4g/schedule-09/">9 月日程</a></li>
+<li><a href="../../p4g/schedule-10/">10 月日程</a></li>
+<li><a href="../../p4g/schedule-11/">11 月日程</a></li>
+<li><a href="../../p4g/schedule-12/">12 月日程</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../arknights/">明日方舟</a>
+<div class="nav-group"><span>集成战略·黑流树海</span><ul>
+<li><a href="../../arknights/mirage-iii/">误入奇境 · III 血色空脉</a></li>
+<li><a href="../../arknights/mirage-iv/">误入奇境 · IV 受害者腐殖</a></li>
+<li><a href="../../arknights/mirage-iv-recall/">误入奇境 · IV 受害者腐殖（追忆规则）</a></li>
+<li><a href="../../arknights/mirage-v/">误入奇境 · V 卡德霍之颅</a></li>
+<li><a href="../../arknights/tree-sea-events/">不期而遇事件总表（树海 dlc0）</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·界园</span><ul>
+<li><a href="../../arknights/jy-events-dlc1/">不期而遇事件总表（界园 dlc1）</a></li>
+<li><a href="../../arknights/jy-events-dlc2/">不期而遇事件总表（界园 dlc2）</a></li>
+<li><a href="../../arknights/jy-ideas/">构想分布表</a></li>
+<li><a href="../../arknights/jy-hidden-enemies/">隐藏出怪表</a></li>
+<li><a href="../../arknights/jy-collectibles-deer/">去伪存真藏品表（鹿版）</a></li>
+<li><a href="../../arknights/jy-collectibles-zhe/">去伪存真藏品表（哲版）</a></li>
+<li><a href="../../arknights/jy-ending12-route/">1、2 结局船路线图</a></li>
+<li><a href="../../arknights/jy-ending2-dr/">2 结局减伤区域图</a></li>
+<li><a href="../../arknights/jy-layer3-nodes/">三层节点统计（已完成使命）</a></li>
+<li><a href="../../arknights/jy-tongbao/">通宝交换学一图流</a></li>
+<li><a href="../../arknights/jy-finale-route/">终曲合声路线图</a></li>
+</ul></div>
+<div class="nav-group"><span>集成战略·通用机制</span><ul>
+<li><a href="../../arknights/gen-exp/">经验表</a></li>
+<li><a href="../../arknights/gen-ingot/">源石锭表</a></li>
+<li><a href="../../arknights/gen-random-events/">不期而遇事件表（多期并排）</a></li>
+<li><a href="../../arknights/gen-boss/">BOSS 数值表</a></li>
+<li><a href="../../arknights/gen-eras/">年代表</a></li>
+<li><a href="../../arknights/gen-narrow-encounter/">狭路相逢表</a></li>
+<li><a href="../../arknights/gen-shop-rare/">商店高级藏品表</a></li>
+<li><a href="../../arknights/gen-shop-stats/">商店统计</a></li>
+<li><a href="../../arknights/gen-lixue-manual/">里雪的计算手册</a></li>
+</ul></div>
+<div class="nav-group"><span>仙术杯#6 赛事数据</span><ul>
+<li><a href="../../arknights/xs6-players/">仙术杯#6 选手统计</a></li>
+<li><a href="../../arknights/xs6-finance/">仙术杯#6 财报</a></li>
+</ul></div>
+</div>
+<div class="nav-game">
+<a class="nav-game-title" href="../../boardgame/">桌游</a>
+<div class="nav-group"><span>排行榜</span><ul>
+<li><a href="../../boardgame/bgg-top100/" class="active">BGG 排行榜 Top 100</a></li>
+<li><a href="../../boardgame/bgg-top30/">Top 30 逐款对照</a></li>
+</ul></div>
+<div class="nav-group"><span>读榜指南</span><ul>
+<li><a href="../../boardgame/reading-rank/">怎么读 BGG 排行榜</a></li>
+</ul></div>
+</div>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <article class="article panel">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../">首页</a>
+          <b>/</b>
+          <span>桌游</span>
+          <b>/</b>
+          <span aria-current="page">BGG 排行榜 Top 100</span>
+        </nav>
+        <header class="article-head">
+          <h1>BGG 排行榜 Top 100</h1>
+          <p class="article-meta">最近更新于 2026-10-05</p>
+        </header>
+        <div class="prose">
+<p><strong>BoardGameGeek（BGG）</strong> 的排行榜是桌游圈事实上的标准榜单：任何一款收录在库里的游戏， 只要有足够多的玩家给它打分，就会被汇总出一个名次。下面这张表是 <strong>2026-10-05</strong> 的快照， 按 BGG 的 Overall Rank 从第 1 名排到第 100 名。</p>
+<p>表头带筛选框，可以直接搜游戏名或年份。<strong>「平均分」与「贝叶斯均分」是两个不同的数</strong>， 排序用的是后者，两者的区别见<a href="../../boardgame/reading-rank/">怎么读 BGG 排行榜</a>。</p>
+<figure class="data-table"><table data-rows="100"><caption>BoardGameGeek 官方排行榜 Top 100 · 快照 2026-10-05</caption><thead><tr><th>BGG 名次</th><th>英文原名</th><th>年份</th><th>平均分</th><th>贝叶斯均分</th><th>评价人数</th><th>BGG id</th></tr></thead><tbody><tr><td>1</td><td>Brass: Birmingham</td><td>2018</td><td>8.56</td><td>8.39</td><td>60,430</td><td>224517</td></tr><tr><td>2</td><td>Ark Nova</td><td>2021</td><td>8.54</td><td>8.36</td><td>63,369</td><td>342942</td></tr><tr><td>3</td><td>Pandemic Legacy: Season 1</td><td>2015</td><td>8.50</td><td>8.34</td><td>57,884</td><td>161936</td></tr><tr><td>4</td><td>Gloomhaven</td><td>2017</td><td>8.53</td><td>8.29</td><td>67,808</td><td>174430</td></tr><tr><td>5</td><td>Dune: Imperium – Uprising</td><td>2023</td><td>8.70</td><td>8.27</td><td>20,474</td><td>397598</td></tr><tr><td>6</td><td>Dune: Imperium</td><td>2020</td><td>8.41</td><td>8.22</td><td>59,996</td><td>316554</td></tr><tr><td>7</td><td>Twilight Imperium: Fourth Edition</td><td>2017</td><td>8.56</td><td>8.22</td><td>29,093</td><td>233078</td></tr><tr><td>8</td><td>War of the Ring: Second Edition</td><td>2011</td><td>8.55</td><td>8.20</td><td>25,622</td><td>115746</td></tr><tr><td>9</td><td>Terraforming Mars</td><td>2016</td><td>8.33</td><td>8.18</td><td>115,200</td><td>167791</td></tr><tr><td>10</td><td>Star Wars: Rebellion</td><td>2016</td><td>8.42</td><td>8.17</td><td>36,926</td><td>187645</td></tr><tr><td>11</td><td>Spirit Island</td><td>2017</td><td>8.34</td><td>8.14</td><td>64,879</td><td>162886</td></tr><tr><td>12</td><td>Gloomhaven: Jaws of the Lion</td><td>2020</td><td>8.35</td><td>8.09</td><td>42,058</td><td>291457</td></tr><tr><td>13</td><td>Gaia Project</td><td>2017</td><td>8.35</td><td>8.08</td><td>31,906</td><td>220308</td></tr><tr><td>14</td><td>SETI: Search for Extraterrestrial Intelligence</td><td>2024</td><td>8.41</td><td>8.05</td><td>22,399</td><td>418059</td></tr><tr><td>15</td><td>Slay the Spire: The Board Game</td><td>2024</td><td>8.61</td><td>8.05</td><td>14,545</td><td>338960</td></tr><tr><td>16</td><td>Twilight Struggle</td><td>2005</td><td>8.23</td><td>8.04</td><td>52,498</td><td>12333</td></tr><tr><td>17</td><td>The Castles of Burgundy</td><td>2011</td><td>8.16</td><td>8.03</td><td>70,696</td><td>84876</td></tr><tr><td>18</td><td>The Lord of the Rings: Duel for Middle-earth</td><td>2024</td><td>8.35</td><td>8.00</td><td>22,334</td><td>421006</td></tr><tr><td>19</td><td>Through the Ages: A New Story of Civilization</td><td>2015</td><td>8.24</td><td>8.00</td><td>35,212</td><td>182028</td></tr><tr><td>20</td><td>Frosthaven</td><td>2022</td><td>8.72</td><td>7.97</td><td>10,588</td><td>295770</td></tr><tr><td>21</td><td>Great Western Trail</td><td>2016</td><td>8.14</td><td>7.96</td><td>44,194</td><td>193738</td></tr><tr><td>22</td><td>Brass: Lancashire</td><td>2007</td><td>8.20</td><td>7.96</td><td>27,789</td><td>28720</td></tr><tr><td>23</td><td>Eclipse: Second Dawn for the Galaxy</td><td>2020</td><td>8.38</td><td>7.96</td><td>17,936</td><td>246900</td></tr><tr><td>24</td><td>7 Wonders Duel</td><td>2015</td><td>8.07</td><td>7.95</td><td>110,804</td><td>173346</td></tr><tr><td>25</td><td>Nemesis</td><td>2018</td><td>8.24</td><td>7.95</td><td>38,379</td><td>167355</td></tr><tr><td>26</td><td>A Feast for Odin</td><td>2016</td><td>8.16</td><td>7.94</td><td>34,242</td><td>177736</td></tr><tr><td>27</td><td>Scythe</td><td>2016</td><td>8.09</td><td>7.94</td><td>94,768</td><td>169786</td></tr><tr><td>28</td><td>Clank! Legacy: Acquisitions Incorporated</td><td>2019</td><td>8.48</td><td>7.93</td><td>11,595</td><td>266507</td></tr><tr><td>29</td><td>Concordia</td><td>2013</td><td>8.07</td><td>7.92</td><td>46,469</td><td>124361</td></tr><tr><td>30</td><td>Lost Ruins of Arnak</td><td>2020</td><td>8.08</td><td>7.92</td><td>59,033</td><td>312484</td></tr><tr><td>31</td><td>Great Western Trail: Second Edition</td><td>2021</td><td>8.26</td><td>7.90</td><td>18,720</td><td>341169</td></tr><tr><td>32</td><td>Sky Team</td><td>2023</td><td>8.11</td><td>7.89</td><td>34,949</td><td>373106</td></tr><tr><td>33</td><td>Arkham Horror: The Card Game</td><td>2016</td><td>8.12</td><td>7.89</td><td>48,293</td><td>205637</td></tr><tr><td>34</td><td>Root</td><td>2018</td><td>8.07</td><td>7.88</td><td>66,364</td><td>237182</td></tr><tr><td>35</td><td>Orléans</td><td>2014</td><td>8.05</td><td>7.86</td><td>36,226</td><td>164928</td></tr><tr><td>36</td><td>Terra Mystica</td><td>2012</td><td>8.03</td><td>7.86</td><td>51,448</td><td>120677</td></tr><tr><td>37</td><td>Too Many Bones</td><td>2017</td><td>8.27</td><td>7.84</td><td>17,574</td><td>192135</td></tr><tr><td>38</td><td>Wingspan</td><td>2019</td><td>7.99</td><td>7.84</td><td>115,806</td><td>266192</td></tr><tr><td>39</td><td>Mage Knight Board Game</td><td>2011</td><td>8.08</td><td>7.84</td><td>35,441</td><td>96848</td></tr><tr><td>40</td><td>Barrage</td><td>2019</td><td>8.13</td><td>7.83</td><td>22,325</td><td>251247</td></tr><tr><td>41</td><td>Hegemony: Lead Your Class to Victory</td><td>2023</td><td>8.35</td><td>7.83</td><td>13,026</td><td>321608</td></tr><tr><td>42</td><td>Kanban EV</td><td>2020</td><td>8.37</td><td>7.81</td><td>10,675</td><td>284378</td></tr><tr><td>43</td><td>Crokinole</td><td>1876</td><td>8.07</td><td>7.80</td><td>21,580</td><td>521</td></tr><tr><td>44</td><td>Viticulture Essential Edition</td><td>2015</td><td>7.95</td><td>7.80</td><td>56,080</td><td>183394</td></tr><tr><td>45</td><td>The Crew: Mission Deep Sea</td><td>2021</td><td>8.04</td><td>7.80</td><td>26,750</td><td>324856</td></tr><tr><td>46</td><td>Everdell</td><td>2018</td><td>7.97</td><td>7.80</td><td>70,247</td><td>199792</td></tr><tr><td>47</td><td>Clank!: Catacombs</td><td>2022</td><td>8.23</td><td>7.80</td><td>15,455</td><td>365717</td></tr><tr><td>48</td><td>Heat: Pedal to the Metal</td><td>2022</td><td>7.99</td><td>7.80</td><td>43,484</td><td>366013</td></tr><tr><td>49</td><td>Ticket to Ride Legacy: Legends of the West</td><td>2023</td><td>8.60</td><td>7.79</td><td>7,261</td><td>390092</td></tr><tr><td>50</td><td>Marvel Champions: The Card Game</td><td>2019</td><td>8.11</td><td>7.79</td><td>28,377</td><td>285774</td></tr><tr><td>51</td><td>Harmonies</td><td>2024</td><td>8.03</td><td>7.78</td><td>33,203</td><td>414317</td></tr><tr><td>52</td><td>Food Chain Magnate</td><td>2015</td><td>8.03</td><td>7.77</td><td>23,622</td><td>175914</td></tr><tr><td>53</td><td>Underwater Cities</td><td>2018</td><td>8.04</td><td>7.77</td><td>23,476</td><td>247763</td></tr><tr><td>54</td><td>The Lord of the Rings: Fate of the Fellowship</td><td>2025</td><td>8.34</td><td>7.76</td><td>12,020</td><td>436217</td></tr><tr><td>55</td><td>Cthulhu: Death May Die</td><td>2019</td><td>8.18</td><td>7.76</td><td>17,484</td><td>253344</td></tr><tr><td>56</td><td>Pax Pamir: Second Edition</td><td>2019</td><td>8.12</td><td>7.76</td><td>18,121</td><td>256960</td></tr><tr><td>57</td><td>Age of Innovation</td><td>2023</td><td>8.42</td><td>7.75</td><td>8,976</td><td>383179</td></tr><tr><td>58</td><td>Puerto Rico</td><td>2002</td><td>7.90</td><td>7.75</td><td>74,816</td><td>3076</td></tr><tr><td>59</td><td>On Mars</td><td>2020</td><td>8.16</td><td>7.74</td><td>15,322</td><td>184267</td></tr><tr><td>60</td><td>Pandemic Legacy: Season 0</td><td>2020</td><td>8.33</td><td>7.74</td><td>9,770</td><td>314040</td></tr><tr><td>61</td><td>Cascadia</td><td>2021</td><td>7.88</td><td>7.73</td><td>57,434</td><td>295947</td></tr><tr><td>62</td><td>Caverna: The Cave Farmers</td><td>2013</td><td>7.92</td><td>7.73</td><td>37,644</td><td>102794</td></tr><tr><td>63</td><td>Anachrony</td><td>2017</td><td>8.03</td><td>7.73</td><td>21,964</td><td>185343</td></tr><tr><td>64</td><td>Blood on the Clocktower</td><td>2022</td><td>8.33</td><td>7.72</td><td>12,521</td><td>240980</td></tr><tr><td>65</td><td>Oathsworn: Into the Deepwood</td><td>2022</td><td>8.74</td><td>7.72</td><td>7,081</td><td>251661</td></tr><tr><td>66</td><td>Agricola</td><td>2007</td><td>7.85</td><td>7.72</td><td>77,347</td><td>31260</td></tr><tr><td>67</td><td>Obsession</td><td>2018</td><td>8.07</td><td>7.72</td><td>18,880</td><td>231733</td></tr><tr><td>68</td><td>Grand Austria Hotel</td><td>2015</td><td>7.96</td><td>7.71</td><td>25,725</td><td>182874</td></tr><tr><td>69</td><td>Blood Rage</td><td>2015</td><td>7.89</td><td>7.71</td><td>52,469</td><td>170216</td></tr><tr><td>70</td><td>Endeavor: Deep Sea</td><td>2024</td><td>8.21</td><td>7.71</td><td>11,801</td><td>367966</td></tr><tr><td>71</td><td>Lisboa</td><td>2017</td><td>8.16</td><td>7.71</td><td>13,150</td><td>161533</td></tr><tr><td>72</td><td>The White Castle</td><td>2023</td><td>7.98</td><td>7.70</td><td>24,559</td><td>371942</td></tr><tr><td>73</td><td>Great Western Trail: New Zealand</td><td>2023</td><td>8.44</td><td>7.69</td><td>7,456</td><td>380607</td></tr><tr><td>74</td><td>Pandemic Legacy: Season 2</td><td>2017</td><td>8.01</td><td>7.69</td><td>18,497</td><td>221107</td></tr><tr><td>75</td><td>Sleeping Gods</td><td>2021</td><td>8.08</td><td>7.68</td><td>16,399</td><td>255984</td></tr><tr><td>76</td><td>Power Grid</td><td>2004</td><td>7.80</td><td>7.68</td><td>70,179</td><td>2651</td></tr><tr><td>77</td><td>Tzolk&#x27;in: The Mayan Calendar</td><td>2012</td><td>7.84</td><td>7.68</td><td>42,924</td><td>126163</td></tr><tr><td>78</td><td>Clans of Caledonia</td><td>2017</td><td>7.94</td><td>7.67</td><td>23,269</td><td>216132</td></tr><tr><td>79</td><td>Mansions of Madness: Second Edition</td><td>2016</td><td>7.91</td><td>7.67</td><td>40,857</td><td>205059</td></tr><tr><td>80</td><td>Voidfall</td><td>2023</td><td>8.50</td><td>7.67</td><td>7,462</td><td>337627</td></tr><tr><td>81</td><td>Quacks</td><td>2018</td><td>7.80</td><td>7.66</td><td>60,357</td><td>244521</td></tr><tr><td>82</td><td>Bomb Busters</td><td>2024</td><td>8.03</td><td>7.66</td><td>15,734</td><td>413246</td></tr><tr><td>83</td><td>Paladins of the West Kingdom</td><td>2019</td><td>7.95</td><td>7.66</td><td>21,002</td><td>266810</td></tr><tr><td>84</td><td>Le Havre</td><td>2008</td><td>7.83</td><td>7.65</td><td>34,179</td><td>35677</td></tr><tr><td>85</td><td>Android: Netrunner</td><td>2012</td><td>7.89</td><td>7.65</td><td>31,473</td><td>124742</td></tr><tr><td>86</td><td>The Gallerist</td><td>2015</td><td>8.00</td><td>7.65</td><td>16,784</td><td>125153</td></tr><tr><td>87</td><td>Agricola (Revised Edition)</td><td>2016</td><td>7.95</td><td>7.65</td><td>21,780</td><td>200680</td></tr><tr><td>88</td><td>Star Wars: Imperial Assault</td><td>2014</td><td>7.95</td><td>7.64</td><td>26,168</td><td>164153</td></tr><tr><td>89</td><td>Wingspan Asia</td><td>2022</td><td>8.21</td><td>7.64</td><td>10,666</td><td>366161</td></tr><tr><td>90</td><td>Darwin&#x27;s Journey</td><td>2023</td><td>8.09</td><td>7.63</td><td>12,897</td><td>322289</td></tr><tr><td>91</td><td>Maracaibo</td><td>2019</td><td>7.93</td><td>7.62</td><td>18,984</td><td>276025</td></tr><tr><td>92</td><td>Revive</td><td>2022</td><td>8.05</td><td>7.62</td><td>13,443</td><td>332772</td></tr><tr><td>93</td><td>Mechs vs. Minions</td><td>2016</td><td>7.94</td><td>7.62</td><td>18,534</td><td>209010</td></tr><tr><td>94</td><td>Final Girl</td><td>2021</td><td>8.21</td><td>7.61</td><td>12,004</td><td>277659</td></tr><tr><td>95</td><td>Race for the Galaxy</td><td>2007</td><td>7.74</td><td>7.61</td><td>59,491</td><td>28143</td></tr><tr><td>96</td><td>Kingdom Death: Monster</td><td>2015</td><td>8.47</td><td>7.61</td><td>10,523</td><td>55690</td></tr><tr><td>97</td><td>The Crew: The Quest for Planet Nine</td><td>2019</td><td>7.75</td><td>7.61</td><td>49,536</td><td>284083</td></tr><tr><td>98</td><td>Five Tribes: The Djinns of Naqala</td><td>2014</td><td>7.76</td><td>7.61</td><td>45,772</td><td>157354</td></tr><tr><td>99</td><td>Azul</td><td>2017</td><td>7.71</td><td>7.60</td><td>111,214</td><td>230802</td></tr><tr><td>100</td><td>El Grande</td><td>1995</td><td>7.77</td><td>7.59</td><td>33,690</td><td>93</td></tr></tbody></table></figure>
+<h2 id="读表要点">读表要点</h2>
+<table>
+<thead>
+<tr><th>观察</th><th>依据</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Top 100 的门槛分在 8.39 到 7.60 之间</strong></td><td>第 1 名工业革命:伯明翰的贝叶斯均分 8.39，第 100 名 7.60</td></tr>
+<tr><td><strong>平均分最高的不是第 1 名</strong></td><td>平均分最高的是第 <strong>65</strong> 名的 Oathsworn: Into the Deepwood（8.74），但它只有 7,081 张票；而第 1 名的平均分是 8.56，票数是 6.04 万</td></tr>
+<tr><td><strong>票数少的游戏，两个分数的差距被放大</strong></td><td>Frosthaven 平均分 8.72、贝叶斯均分 7.97（差 0.75，1.06 万票），只排第 20；同区间的工业革命:伯明翰差 0.17（6.04 万票）</td></tr>
+<tr><td><strong>榜单偏新</strong></td><td>Top 100 里 <strong>80</strong> 款是 2015 年及以后出版的，其中 <strong>36</strong> 款在 2020 年及以后</td></tr>
+<tr><td><strong>评价人数最多的不在前 20</strong></td><td>《Wingspan》有 11.58 万张票，是 Top 100 里票数最多的，名次却是第 38</td></tr>
+<tr><td><strong>上榜条目都有一定样本量</strong></td><td>前 100 名里票数最少的也有 7,081 张（第 65 名的 Oathsworn）——BGG 对评价人数不足的条目不排名次</td></tr>
+</tbody>
+</table>
+<h2 id="为什么只有-100-条">为什么只有 100 条</h2>
+<p>榜单本身有 <strong>31,409</strong> 条有名字的条目。本页只取前 100，是因为 100 名之后的分数差距 已经很小（整段贝叶斯均分只差约 0.8 分），逐名次解读意义不大。若需要更靠后的名次， 可用页面底部的官网入口自查——BGG 的排行页支持按名次翻页。</p>
+<h2 id="内容出处">内容出处</h2>
+<blockquote><p>名次、评分、票数均来自 <strong>BoardGameGeek</strong> 官方排行榜（<a href="https://boardgamegeek.com/browse/boardgame" target="_blank" rel="noopener noreferrer">boardgamegeek.com/browse/boardgame</a>）， 快照日期 <strong>2026-10-05</strong>。</p>
+<p><strong>取数通道说明</strong>：BGG 主站对程序化请求返回 Cloudflare 挑战页（<code>Just a moment...</code>）， 用本机代理直连官网排行页与 XML API 均被拦（HTTP 403 / 401）。本快照取自每日抓取 并同步 BGG 官方排名的公开镜像仓库 <a href="https://github.com/beefsack/bgg-ranking-historicals" target="_blank" rel="noopener noreferrer">beefsack/bgg-ranking-historicals</a>， 取其 <code>2026-10-05.csv</code>，字段为 <code>ID, Name, Year, Rank, Average, Bayes average, Users rated, URL, Thumbnail</code>， 与官网排行页显示的口径一致。<strong>未做任何数值改写</strong>，仅把票数加上千分位、把分数统一到两位小数。</p>
+<p><strong>名次会天天变</strong>。本页是某一天的切片，不代表长期格局；同一款游戏在不同日期的名次 可能相差几位。引用时请注明快照日期。</p></blockquote>
+        </div>
+<nav class="page-nav">
+<span></span>
+<a class="next" href="../../boardgame/bgg-top30/"><small>下一页 →</small><strong>Top 30 逐款对照</strong></a>
+</nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <p>攻略内容整理自公开资料，原始出处已在各页面标注。本站为静态站点，构建时生成。</p>
+  </footer>
+
+  <dialog id="searchDialog" class="search-dialog">
+    <div class="search-box">
+      <input id="searchInput" type="search" autocomplete="off" placeholder="搜索攻略页面…">
+      <button id="searchClose" type="button" aria-label="关闭搜索">×</button>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <script src="../../assets/wiki.js" defer></script>
+</body>
+</html>
